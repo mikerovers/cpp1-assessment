@@ -1,4 +1,5 @@
 #include "FileReader.h"
+#include "../Exception/FileNotOpenedException.h"
 
 std::ifstream FileReader::openFile(const char *path)
 {
@@ -8,6 +9,6 @@ std::ifstream FileReader::openFile(const char *path)
     if (file.is_open()) {
         return file;
     } else {
-        throw FileNotOpenedException(path);
+         throw FileNotOpenedException(path);
     }
 }

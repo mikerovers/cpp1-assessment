@@ -1,5 +1,7 @@
 #include "MonsterFileParser.h"
 #include "FileReader.h"
+#include "../Exception/FileNotOpenedException.h"
+#include "../Exception/MonsterParsingException.h"
 
 const int MAXLINE = 256;
 
@@ -19,7 +21,9 @@ void MonsterFileParser::parse(const char path[])
         }
 
         monsterFile.close();
-    } catch (int e) {
+    } catch (FileNotOpenedException e) {
+
+    } catch (MonsterParsingException e) {
 
     }
 }
@@ -32,9 +36,7 @@ Monster* MonsterFileParser::parseMonster(const char m[])
         auto* monster = new Monster();
 
         try {
-            auto h = matches[1];
-            std::cout << h.str() << "\n";
-            char* name = const_cast<char*>(h.str().c_str());
+            char* name = const_cast<char*>(matches[1].str().c_str());
 
             monster->setName(name);
             monster->setLevel(static_cast<unsigned int>(atoi(matches[2].str().c_str())));
@@ -47,7 +49,7 @@ Monster* MonsterFileParser::parseMonster(const char m[])
 
             return monster;
         } catch (int e) {
-
+            throw MonsterParsingException();
         }
     } else {
         return nullptr;
