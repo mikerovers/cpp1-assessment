@@ -10,12 +10,14 @@ Dungeon::Dungeon(int const width, int const height, int const depth) {
 }
 
 Dungeon::~Dungeon() {
-	for (int h = 0; h < _height; h++)
-	{
-		delete[] _grid[h];
+	for (int d = 0; d < _depth; d++) {
+		for (int h = 0; h < _height; h++)
+		{
+			delete[] _levels[d][h];
+		}
+		delete _levels[d];
 	}
 	delete[] _grid;
-	//delete _height, _width;
 }
 
 class Room** Dungeon::GetGrid(int const level) {
@@ -40,8 +42,6 @@ void Dungeon::GenerateGrid()
 		}
 		_levels[d] = _grid;
 	}
-
-
 }
 
 void Dungeon::SetNeighbours() 
