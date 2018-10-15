@@ -10,8 +10,8 @@ DungeonBuilder::~DungeonBuilder() {
 
 }
 
-Dungeon* DungeonBuilder::BuildDungeon(int const width, int const height) {
-	Dungeon* dungeon = new Dungeon(width, height);
+Dungeon* DungeonBuilder::BuildDungeon(int const width, int const height, int const depth) {
+	Dungeon* dungeon = new Dungeon(width, height, depth);
 	dungeon->GenerateGrid();
 	dungeon->SetNeighbours();
 	return dungeon;

@@ -42,8 +42,8 @@ void Output::ClearScreen() const {
 	system("CLS");
 }
 
-void Output::ShowMap(Dungeon* const dungeon) const {
-	Room** grid = dungeon->GetGrid();
+void Output::ShowMap(Dungeon* const dungeon, int level) const {
+	Room** grid = dungeon->GetGrid(level);
 	int width = dungeon->GetWidth();
 	int height = dungeon->GetHeight();
 
@@ -69,8 +69,8 @@ void Output::ShowMap(Dungeon* const dungeon) const {
 }
 
 
-void Output::ShowNeighbours(Dungeon* const dungeon) const {
-	Room** grid = dungeon->GetGrid();
+void Output::ShowNeighbours(Dungeon* const dungeon, int level) const {
+	Room** grid = dungeon->GetGrid(level);
 	int width = dungeon->GetWidth();
 	int height = dungeon->GetHeight();
 

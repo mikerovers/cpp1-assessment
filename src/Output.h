@@ -8,8 +8,8 @@ public:
 	Output();
 	~Output();
 	void ShowIntroduction() const;
-	void ShowMap(Dungeon* dungeon) const;
-	void ShowNeighbours(Dungeon* dungeon) const;
+	void ShowMap(Dungeon* dungeon, int const currentLevel) const;
+	void ShowNeighbours(Dungeon* dungeon, int const currentLevel) const;
 	void ShowFalseCommand() const;
 	void ClearScreen() const;
 	void ShowCommands() const;

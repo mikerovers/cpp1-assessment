@@ -34,8 +34,9 @@ void Game::Setup() {
 		_output->AskForDungeonDepth();
 		depth = _input->GetIntInput();
 	}
+	_currentLevel = 0;
 	DungeonBuilder* builder = new DungeonBuilder();
-	_dungeon = builder->BuildDungeon(width, height);
+	_dungeon = builder->BuildDungeon(width, height, depth);
 }
 
 void Game::Start() 
@@ -63,6 +64,11 @@ Dungeon * Game::GetDungeon() const
 Output * Game::GetOutput() const
 {
 	return _output;
+}
+
+int Game::GetCurrentLevel() const
+{
+	return _currentLevel;
 }
 
 void Game::SetRunning(bool const running)
