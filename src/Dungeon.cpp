@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Dungeon.h"
-#include "room.h"
+#include "NormalRoom.h"
+#include "RandomGenerator.h"
 
 // TODO random generation
 Dungeon::Dungeon(int const width, int const height, int const depth) {
@@ -20,7 +21,7 @@ Dungeon::~Dungeon() {
 	delete[] _grid;
 }
 
-class Room** Dungeon::GetGrid(int const level) {
+class BaseRoom** Dungeon::GetGrid(int const level) {
 	return _levels[level];
 }
 
@@ -34,17 +35,18 @@ int Dungeon::GetHeight() {
 
 void Dungeon::GenerateGrid()
 {
-	_levels = new Room**[_depth];
+	_levels = new BaseRoom**[_depth];
 	for (int d = 0; d < _depth; d++) {
-		_grid = new Room*[_height];
+		_grid = new BaseRoom*[_height];
 		for (int h = 0; h < _height; h++) {
-			_grid[h] = new Room[_width];
+			_grid[h] = new BaseRoom[_width];
 		}
 		_levels[d] = _grid;
 	}
 }
 
-void Dungeon::SetNeighbours() 
+
+void Dungeon::SetNeighbours()
 {
 	for (int d = 0; d < _depth; d++) {
 		for (int h = 0; h < _height; h++) {
@@ -58,5 +60,19 @@ void Dungeon::SetNeighbours()
 		}
 	}
 }
+
+void Dungeon::AddPlayer() {
+	RandomGenerator* random = new RandomGenerator();
+	int width = random->Generate(1, _width);
+	int height = random->Generate(1, _height);
+	_levels[0][height][width].SetHasPlayer(true);
+	//std::cout << width << std::endl;
+	//std::cout << height << std::endl;
+}
+
+void Dungeon::AddSpecialRooms() {
+	Dungeon::AddPlayer();
+}
+
 
 

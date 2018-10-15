@@ -14,5 +14,6 @@ Dungeon* DungeonBuilder::BuildDungeon(int const width, int const height, int con
 	Dungeon* dungeon = new Dungeon(width, height, depth);
 	dungeon->GenerateGrid();
 	dungeon->SetNeighbours();
+	dungeon->AddSpecialRooms();
 	return dungeon;
 }

@@ -151,26 +151,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BaseRoom.h" />
+    <ClInclude Include="BaseStaircaseRoom.h" />
     <ClInclude Include="CharArrayComparator.h" />
     <ClInclude Include="CommandFactory.h" />
+    <ClInclude Include="DownStaircaseRoom.h" />
     <ClInclude Include="Dungeon.h" />
     <ClInclude Include="DungeonBuilder.h" />
+    <ClInclude Include="EndBossRoom.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="NullCommand.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Room.h" />
+    <ClInclude Include="RandomGenerator.h" />
+    <ClInclude Include="NormalRoom.h" />
     <ClInclude Include="ShowCommandsCommand.h" />
     <ClInclude Include="ShowMapCommand.h" />
     <ClInclude Include="ExitCommand.h" />
+    <ClInclude Include="UpStaircaseRoom.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BaseRoom.cpp" />
+    <ClCompile Include="BaseStaircaseRoom.cpp" />
     <ClCompile Include="CharArrayComparator.cpp" />
     <ClCompile Include="CommandFactory.cpp" />
+    <ClCompile Include="DownStaircaseRoom.cpp" />
     <ClCompile Include="Dungeon.cpp" />
     <ClCompile Include="DungeonBuilder.cpp" />
+    <ClCompile Include="EndBossRoom.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="ICommand.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -183,10 +193,12 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Room.cpp" />
+    <ClCompile Include="RandomGenerator.cpp" />
+    <ClCompile Include="NormalRoom.cpp" />
     <ClCompile Include="ShowCommandsCommand.cpp" />
     <ClCompile Include="ShowMapCommand.cpp" />
     <ClCompile Include="ExitCommand.cpp" />
+    <ClCompile Include="UpStaircaseRoom.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

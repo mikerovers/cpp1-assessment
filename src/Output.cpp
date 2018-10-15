@@ -43,7 +43,7 @@ void Output::ClearScreen() const {
 }
 
 void Output::ShowMap(Dungeon* const dungeon, int level) const {
-	Room** grid = dungeon->GetGrid(level);
+	BaseRoom** grid = dungeon->GetGrid(level);
 	int width = dungeon->GetWidth();
 	int height = dungeon->GetHeight();
 
@@ -70,7 +70,7 @@ void Output::ShowMap(Dungeon* const dungeon, int level) const {
 
 
 void Output::ShowNeighbours(Dungeon* const dungeon, int level) const {
-	Room** grid = dungeon->GetGrid(level);
+	BaseRoom** grid = dungeon->GetGrid(level);
 	int width = dungeon->GetWidth();
 	int height = dungeon->GetHeight();
 
@@ -79,10 +79,10 @@ void Output::ShowNeighbours(Dungeon* const dungeon, int level) const {
 	{
 		for (int w = 0; w < width; w++)
 		{
-			Room* northRoom = grid[h][w].GetNorthNeighbour();
-			Room* eastRoom = grid[h][w].GetEastNeighbour();
-			Room* southRoom = grid[h][w].GetSouthNeighbour();
-			Room* westRoom = grid[h][w].GetWestNeighbour();
+			BaseRoom* northRoom = grid[h][w].GetNorthNeighbour();
+			BaseRoom* eastRoom = grid[h][w].GetEastNeighbour();
+			BaseRoom* southRoom = grid[h][w].GetSouthNeighbour();
+			BaseRoom* westRoom = grid[h][w].GetWestNeighbour();
 
 			counter++;
 			std::cout << "Nummer" << counter << ":" << std::endl;

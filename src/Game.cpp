@@ -45,7 +45,7 @@ void Game::Start()
 	CommandFactory* commandFactory = new CommandFactory();
 	ICommand* command;
 
-	_output->ClearScreen();
+	//_output->ClearScreen();
 	_output->ShowGameStarted();
 	while (Game::_running) {
 		char line[50];

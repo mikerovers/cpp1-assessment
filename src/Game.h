@@ -1,6 +1,6 @@
 #pragma once
 #include "Dungeon.h"
-#include "Room.h"
+#include "BaseRoom.h"
 
 class Game {
 private:

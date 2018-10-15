@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "Room.h"
+#include "BaseRoom.h"
 #include "Dungeon.h"
 
 class Output {
