@@ -1,0 +1,25 @@
+﻿  pch.cpp
+  BaseRoom.cpp
+  BaseStaircaseRoom.cpp
+  CharArrayComparator.cpp
+  CommandFactory.cpp
+  DownStaircaseRoom.cpp
+  Dungeon.cpp
+  DungeonBuilder.cpp
+  EndBossRoom.cpp
+  Game.cpp
+  ICommand.cpp
+  Input.cpp
+  Kerkers.cpp
+  NullCommand.cpp
+  Output.cpp
+  RandomGenerator.cpp
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\randomgenerator.cpp(19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\randomgenerator.cpp(24): warning C4552: '<<': result of expression not used
+  NormalRoom.cpp
+  ShowCommandsCommand.cpp
+  ShowMapCommand.cpp
+  ExitCommand.cpp
+  UpStaircaseRoom.cpp
+  Generating Code...
+  Kerkers.vcxproj -> D:\Dropbox\2. HBO - Informatica\Leerjaar 4\Cpp\cpp1-assessment\src\x64\Debug\Kerkers.exe
