@@ -5,19 +5,27 @@
 
 const int MAXLINE = 256;
 
-void MonsterFileParser::parse(const char path[])
+Monster* MonsterFileParser::parse(const char path[])
 {
     auto *reader = new FileReader();
+    Monster static monsters[14];
+
+//    auto h = (sizeof(monsters)/sizeof(*monsters));
 
     try {
         auto monsterFile = reader->openFile(path);
         delete reader;
 
         char oneLine[MAXLINE];
+        int counter = 0;
         while (monsterFile) {
             monsterFile.getline(oneLine, MAXLINE);
 
-            parseMonster(oneLine);
+            Monster *monster = parseMonster(oneLine);
+            if (monster != nullptr) {
+                monsters[counter] = *monster;
+                counter++;
+            }
         }
 
         monsterFile.close();
@@ -26,6 +34,8 @@ void MonsterFileParser::parse(const char path[])
     } catch (MonsterParsingException e) {
 
     }
+
+    return monsters;
 }
 
 Monster* MonsterFileParser::parseMonster(const char m[])

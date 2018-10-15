@@ -5,12 +5,13 @@
 #include <iostream>
 #include <regex>
 #include "../Monster.h"
+#include "../MonsterList.h"
 
 class MonsterFileParser
 {
 public:
     explicit MonsterFileParser();
-    void parse(const char path[]);
+    Monster* parse(const char path[]);
 private:
     Monster* parseMonster(const char m[]);
     std::regex mRegex;

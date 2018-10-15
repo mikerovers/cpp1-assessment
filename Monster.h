@@ -9,6 +9,12 @@ public:
     Monster(char *name, unsigned int level, unsigned int attackChance, unsigned int attacksPerRound,
                 unsigned int minAmountOfDamage, unsigned int maxAmountOfDamage, unsigned int evasionChance,
                 unsigned int HP);
+    ~Monster();
+
+    Monster&operator=(const Monster& other);
+    Monster(const Monster& other);
+    Monster(Monster&& other) noexcept;
+    Monster&operator=(Monster&& other) noexcept;
 
     unsigned int getAttackChance() const;
     void setAttackChance(unsigned int attackChance);
