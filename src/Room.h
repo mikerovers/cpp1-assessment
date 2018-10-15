@@ -5,14 +5,14 @@ private:
 	Room* _eastNeighBour;
 	Room* _southNeighBour;
 	Room* _westNeighBour;
-	int _displayValue;
+	char _displayValue;
 
 public:
 	Room();
 	~Room();
 
 	char GetDisplayValue();
-	void SetDisplayValue(int value);
+
 
 	Room* GetNorthNeighbour();
 	void SetNorthNeighbour(Room* room);

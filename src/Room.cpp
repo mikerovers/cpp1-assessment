@@ -1,16 +1,13 @@
 #include "pch.h"
 #include "Room.h"
+#include "Output.h"
 
 Room::Room() {
-	Room::_displayValue = 3;
+	Room::_displayValue = 'N';
 }
 
 char Room::GetDisplayValue() {
 	return _displayValue;
-}
-
-void Room::SetDisplayValue(int const value) {
-	Room::_displayValue = value;
 }
 
 Room* Room::GetNorthNeighbour() {

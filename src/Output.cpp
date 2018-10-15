@@ -52,7 +52,8 @@ void Output::ShowMap(Dungeon* const dungeon) const {
 	{
 		for (int w = 0; w < width; w++)
 		{
-			printf("%i ", grid[h][w].GetDisplayValue());
+			std::cout << grid[h][w].GetDisplayValue() << " ";
+
 		}
 		printf("\n");
 	}
