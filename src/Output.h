@@ -7,6 +7,14 @@ class Output {
 public:
 	Output();
 	~Output();
+	void ShowIntroduction() const;
 	void ShowMap(Dungeon* dungeon) const;
 	void ShowNeighbours(Dungeon* dungeon) const;
+	void ShowFalseCommand() const;
+	void ClearScreen() const;
+	void ShowCommands() const;
+	void AskForDungeonWidth() const;
+	void AskForDungeonHeight() const;
+	void AskForDungeonDepth() const;
+	void ShowGameStarted() const;
 };

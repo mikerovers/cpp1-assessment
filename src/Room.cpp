@@ -2,7 +2,7 @@
 #include "Room.h"
 
 Room::Room() {
-	_displayValue = 3;
+	Room::_displayValue = 3;
 }
 
 char Room::GetDisplayValue() {
@@ -10,7 +10,7 @@ char Room::GetDisplayValue() {
 }
 
 void Room::SetDisplayValue(int const value) {
-	_displayValue = value;
+	Room::_displayValue = value;
 }
 
 Room* Room::GetNorthNeighbour() {
@@ -18,7 +18,7 @@ Room* Room::GetNorthNeighbour() {
 }
 
 void Room::SetNorthNeighbour(Room* const room) {
-	_northNeighBour = room;
+	Room::_northNeighBour = room;
 }
 
 Room* Room::GetEastNeighbour() {
@@ -26,7 +26,7 @@ Room* Room::GetEastNeighbour() {
 }
 
 void Room::SetEastNeighbour(Room* const room) {
-	_eastNeighBour = room;
+	Room::_eastNeighBour = room;
 }
 
 Room* Room::GetSouthNeighbour() {
@@ -34,7 +34,7 @@ Room* Room::GetSouthNeighbour() {
 }
 
 void Room::SetSouthNeighbour(Room* const room) {
-	_southNeighBour = room;
+	Room::_southNeighBour = room;
 }
 
 Room* Room::GetWestNeighbour() {
@@ -42,9 +42,10 @@ Room* Room::GetWestNeighbour() {
 }
 
 void Room::SetWestNeighbour(Room* const room) {
-	_westNeighBour = room;
+	Room::_westNeighBour = room;
 }
 
 Room::~Room() {
 	delete &_displayValue;
+	delete _northNeighBour, _eastNeighBour, _southNeighBour, _westNeighBour;
 }

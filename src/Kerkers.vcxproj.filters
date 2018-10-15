@@ -37,6 +37,18 @@
     <Filter Include="Source Files\IO">
       <UniqueIdentifier>{dbe52c72-9c42-4cc2-b085-adcf5e1cb2a6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Commands">
+      <UniqueIdentifier>{51bd1e06-7a50-4126-895c-b095f370a1af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Commands">
+      <UniqueIdentifier>{1b440ec3-280f-4bad-b5c9-ba1173e17b3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Util">
+      <UniqueIdentifier>{290858c7-566e-4c25-a60b-a6007589ddf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Util">
+      <UniqueIdentifier>{69b3ddac-3524-4a18-a131-84942766d342}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -56,6 +68,30 @@
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Header Files\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandFactory.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="ICommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CharArrayComparator.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="NullCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowMapCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="ExitCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowCommandsCommand.h">
+      <Filter>Header Files\Commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +115,30 @@
     </ClCompile>
     <ClCompile Include="Output.cpp">
       <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandFactory.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="ICommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CharArrayComparator.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="NullCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowMapCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="ExitCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowCommandsCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
