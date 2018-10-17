@@ -1,0 +1,16 @@
+﻿  CheckInventoryCommand.cpp
+  CheckStatsCommand.cpp
+  CommandFactory.cpp
+  FightCommand.cpp
+  FlightCommand.cpp
+  Game.cpp
+  ICommand.cpp
+  Kerkers.cpp
+  NullCommand.cpp
+  PickUpCommand.cpp
+  RestCommand.cpp
+  ShowCommandsCommand.cpp
+  ShowMapCommand.cpp
+  ExitCommand.cpp
+  Generating Code...
+  Kerkers.vcxproj -> D:\Dropbox\2. HBO - Informatica\Leerjaar 4\Cpp\cpp1-assessment\src\x64\Debug\Kerkers.exe

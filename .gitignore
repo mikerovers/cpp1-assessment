@@ -30,5 +30,5 @@
 .idea/
 cmake-build-debug/
 cmake-build-release/
-
+src/.vs
 .DS_Store
