@@ -56,7 +56,7 @@ void Game::Start()
 		std::cin >> line;
 		_output->ClearScreen();
 		command = commandFactory->RetrieveCommand(line);
-		command->Execute(this, _state);
+		command->Execute(this);
 	}
 }
 
