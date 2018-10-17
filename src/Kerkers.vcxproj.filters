@@ -58,6 +58,12 @@
     <Filter Include="Header Files\Enums">
       <UniqueIdentifier>{e6cdb545-ef14-4a78-a08a-ebbe34f13b74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Models\Items">
+      <UniqueIdentifier>{e6e00c2d-a615-483d-95e0-75d5bbc2f037}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Models\Items">
+      <UniqueIdentifier>{fbe795b7-0822-4d90-b936-250186f4a5cb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -144,6 +150,18 @@
     <ClInclude Include="State.h">
       <Filter>Header Files\Enums</Filter>
     </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="NullItem.h">
+      <Filter>Header Files\Models\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Potion.h">
+      <Filter>Source Files\Models\Items</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -229,6 +247,18 @@
     </ClCompile>
     <ClCompile Include="RestCommand.cpp">
       <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="NullItem.cpp">
+      <Filter>Source Files\Models\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Potion.cpp">
+      <Filter>Source Files\Models\Items</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
