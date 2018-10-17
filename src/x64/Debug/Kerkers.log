@@ -1,8 +1,10 @@
 ﻿  BaseRoom.cpp
+  BaseStaircaseRoom.cpp
   CharArrayComparator.cpp
   CommandFactory.cpp
+  DownStaircaseRoom.cpp
   Dungeon.cpp
-  DungeonBuilder.cpp
+  EndBossRoom.cpp
   ExitCommand.cpp
   Game.cpp
   ICommand.cpp
@@ -13,5 +15,6 @@
   RandomGenerator.cpp
   ShowCommandsCommand.cpp
   ShowMapCommand.cpp
+  UpStaircaseRoom.cpp
   Generating Code...
   Kerkers.vcxproj -> D:\Dropbox\2. HBO - Informatica\Leerjaar 4\Cpp\cpp1-assessment\src\x64\Debug\Kerkers.exe

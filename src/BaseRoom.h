@@ -1,4 +1,5 @@
 #pragma once
+#include "Player.h"
 class BaseRoom
 {
 private:
@@ -8,17 +9,18 @@ private:
 	BaseRoom* _westNeighBour;
 
 	bool _hasPlayer = false;
+	Player* _player = nullptr;
 	bool _visited = false;
 protected:
 	char _displayValue;
 public:
 	BaseRoom();
 	~BaseRoom();
-	BaseRoom(const BaseRoom &obj);
 
 	char GetDisplayValue();
-	bool HasPlayer();
-	void SetHasPlayer(bool hasPlayer);
+	Player* GetPlayer();
+
+	void SetPlayer(Player* player);
 
 	BaseRoom* GetNorthNeighbour();
 	void SetNorthNeighbour(BaseRoom* room);

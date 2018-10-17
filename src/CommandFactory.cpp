@@ -16,7 +16,7 @@ ICommand* CommandFactory::RetrieveCommand(char command[]) {
 	else if (comparator->Compare("exit", command, 4)) {
 		return new ExitCommand();
 	}
-	else if (comparator->Compare("commands", command, 4)) {
+	else if (comparator->Compare("commands", command, 8)) {
 		return new ShowCommandsCommand();
 	}
 	else {

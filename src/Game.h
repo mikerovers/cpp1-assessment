@@ -5,8 +5,10 @@
 class Game {
 private:
 	class Dungeon* _dungeon;
+	class Player* _player;
 	class Output* _output;
 	class Input* _input;
+	int _state;
 	bool _running;
 	int _currentLevel;
 public:

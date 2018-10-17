@@ -154,33 +154,45 @@
     <ClInclude Include="BaseRoom.h" />
     <ClInclude Include="BaseStaircaseRoom.h" />
     <ClInclude Include="CharArrayComparator.h" />
+    <ClInclude Include="CheckInventoryCommand.h" />
+    <ClInclude Include="CheckStatsCommand.h" />
     <ClInclude Include="CommandFactory.h" />
     <ClInclude Include="DownStaircaseRoom.h" />
     <ClInclude Include="Dungeon.h" />
     <ClInclude Include="DungeonBuilder.h" />
     <ClInclude Include="EndBossRoom.h" />
+    <ClInclude Include="FightCommand.h" />
+    <ClInclude Include="FlightCommand.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="NullCommand.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PickUpCommand.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="RandomGenerator.h" />
     <ClInclude Include="NormalRoom.h" />
+    <ClInclude Include="RestCommand.h" />
     <ClInclude Include="ShowCommandsCommand.h" />
     <ClInclude Include="ShowMapCommand.h" />
     <ClInclude Include="ExitCommand.h" />
+    <ClInclude Include="State.h" />
     <ClInclude Include="UpStaircaseRoom.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseRoom.cpp" />
     <ClCompile Include="BaseStaircaseRoom.cpp" />
     <ClCompile Include="CharArrayComparator.cpp" />
+    <ClCompile Include="CheckInventoryCommand.cpp" />
+    <ClCompile Include="CheckStatsCommand.cpp" />
     <ClCompile Include="CommandFactory.cpp" />
     <ClCompile Include="DownStaircaseRoom.cpp" />
     <ClCompile Include="Dungeon.cpp" />
     <ClCompile Include="DungeonBuilder.cpp" />
     <ClCompile Include="EndBossRoom.cpp" />
+    <ClCompile Include="FightCommand.cpp" />
+    <ClCompile Include="FlightCommand.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="ICommand.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -193,8 +205,11 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="PickUpCommand.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="RandomGenerator.cpp" />
     <ClCompile Include="NormalRoom.cpp" />
+    <ClCompile Include="RestCommand.cpp" />
     <ClCompile Include="ShowCommandsCommand.cpp" />
     <ClCompile Include="ShowMapCommand.cpp" />
     <ClCompile Include="ExitCommand.cpp" />

@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "Player.h"
 class Dungeon {
 private:
 	class BaseRoom*** _levels;
@@ -11,7 +12,7 @@ public:
 	~Dungeon();
 	void GenerateGrid();
 	void SetNeighbours();
-	void AddPlayer() const;
+	void AddPlayer(Player* player) const;
 	void AddStairs() const;
 	void AddEndBoss() const;
 	class BaseRoom** GetGrid(int const level) const;

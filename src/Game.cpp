@@ -6,6 +6,7 @@
 #include "Output.h"
 #include "Input.h"
 #include "CommandFactory.h"
+#include "State.h"
 
 
 void Game::Init()
@@ -35,8 +36,11 @@ void Game::Setup() {
 		depth = _input->GetIntInput();
 	}
 	_currentLevel = depth - 1;
+	
+	_player = new Player();
+
 	DungeonBuilder* builder = new DungeonBuilder();
-	_dungeon = builder->BuildDungeon(width, height, depth);
+	_dungeon = builder->BuildDungeon(_player, width, height, depth);
 }
 
 void Game::Start() 
@@ -52,7 +56,7 @@ void Game::Start()
 		std::cin >> line;
 		_output->ClearScreen();
 		command = commandFactory->RetrieveCommand(line);
-		command->Execute(this);
+		command->Execute(this, _state);
 	}
 }
 

@@ -5,6 +5,7 @@
 #include "UpStaircaseRoom.h"
 #include "EndBossRoom.h"
 #include "RandomGenerator.h"
+#include "Player.h"
 
 // TODO random generation
 Dungeon::Dungeon(int const width, int const height, int const depth) {
@@ -44,7 +45,6 @@ void Dungeon::GenerateGrid()
 		for (int h = 0; h < _height; h++) {
 			_levels[d][h] = new NormalRoom[_width];
 		}
-		//_levels[d] = _grid;
 	}
 }
 
@@ -64,12 +64,12 @@ void Dungeon::SetNeighbours()
 	}
 }
 
-void Dungeon::AddPlayer() const {
+void Dungeon::AddPlayer(Player* player) const {
 	RandomGenerator* random = new RandomGenerator();
 	int width = random->Generate(0, _width - 1);
 	int height = random->Generate(0, _height - 1);
 	delete random;
-	_levels[_depth - 1][height][width].SetHasPlayer(true);
+	_levels[_depth - 1][height][width].SetPlayer(player);
 }
 
 void Dungeon::AddStairs() const {
@@ -117,7 +117,7 @@ void Dungeon::AddEndBoss() const {
 			break;
 		}
 	}
-
+	delete random;
 	_levels[0][height][width] = EndBossRoom();
 }
 

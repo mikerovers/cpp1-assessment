@@ -12,7 +12,7 @@ BaseRoom::~BaseRoom()
 
 char BaseRoom::GetDisplayValue()
 {
-	if (_hasPlayer) {
+	if (BaseRoom::GetPlayer()) {
 		return 'S';
 	}
 	if (!_visited) {
@@ -21,14 +21,13 @@ char BaseRoom::GetDisplayValue()
 	return _displayValue;
 }
 
-bool BaseRoom::HasPlayer()
-{
-	return _hasPlayer;
+void BaseRoom::SetPlayer(Player* player) {
+	_player = player;
 }
 
-void BaseRoom::SetHasPlayer(bool hasPlayer)
+Player* BaseRoom::GetPlayer()
 {
-	_hasPlayer = hasPlayer;
+	return _player;
 }
 
 BaseRoom * BaseRoom::GetNorthNeighbour()
