@@ -4,6 +4,7 @@
 
 DownStaircaseRoom::DownStaircaseRoom()
 {
+	_displayValue = 'L';
 }
 
 

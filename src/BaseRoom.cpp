@@ -1,10 +1,8 @@
 #include "pch.h"
 #include "BaseRoom.h"
 
-
 BaseRoom::BaseRoom()
 {
-	_displayValue = '.';
 }
 
 
@@ -16,6 +14,9 @@ char BaseRoom::GetDisplayValue()
 {
 	if (_hasPlayer) {
 		return 'S';
+	}
+	if (!_visited) {
+		return '.';
 	}
 	return _displayValue;
 }

@@ -6,12 +6,15 @@ private:
 	BaseRoom* _eastNeighBour;
 	BaseRoom* _southNeighBour;
 	BaseRoom* _westNeighBour;
-	char _displayValue;
-	bool _hasPlayer = false;
 
+	bool _hasPlayer = false;
+	bool _visited = false;
+protected:
+	char _displayValue;
 public:
 	BaseRoom();
 	~BaseRoom();
+	BaseRoom(const BaseRoom &obj);
 
 	char GetDisplayValue();
 	bool HasPlayer();

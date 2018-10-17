@@ -14,13 +14,10 @@ RandomGenerator::~RandomGenerator()
 {
 }
 
-unsigned int RandomGenerator::Generate(int const first, int const second) { // TODO: returning a streamed value does not work like this
-	std::default_random_engine generator;
-	generator.seed(time(0));
+unsigned int RandomGenerator::Generate(int const first, int const second) const{ 
+	std::random_device mch;
+	std::default_random_engine generator(mch());
 
-	//voorbeeld 1
-	std::uniform_int_distribution<int> distribution1(1, 10);
-	int result = 0;
-	result << distribution1(generator);
-	return result;
+	std::uniform_int_distribution<int> distribution1(first, second);
+	return distribution1(generator);;
 }

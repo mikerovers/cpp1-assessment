@@ -2,7 +2,6 @@
 #include <iostream>
 class Dungeon {
 private:
-	class BaseRoom** _grid;
 	class BaseRoom*** _levels;
 	int _height;
 	int _width;
@@ -12,9 +11,10 @@ public:
 	~Dungeon();
 	void GenerateGrid();
 	void SetNeighbours();
-	void AddPlayer();
-	void AddSpecialRooms();
-	class BaseRoom** GetGrid(int const level);
-	int GetHeight();
-	int GetWidth();
+	void AddPlayer() const;
+	void AddStairs() const;
+	void AddEndBoss() const;
+	class BaseRoom** GetGrid(int const level) const;
+	int GetHeight() const;
+	int GetWidth() const;
 };

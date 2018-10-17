@@ -4,6 +4,7 @@
 
 UpStaircaseRoom::UpStaircaseRoom()
 {
+	_displayValue = 'H';
 }
 
 

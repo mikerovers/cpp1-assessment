@@ -3,9 +3,12 @@
 #include "Output.h"
 
 NormalRoom::NormalRoom() {
-
+	_displayValue = 'N';
 }
 
 NormalRoom::~NormalRoom() {
 
 }
+
+
+

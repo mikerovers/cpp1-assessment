@@ -34,7 +34,7 @@ void Game::Setup() {
 		_output->AskForDungeonDepth();
 		depth = _input->GetIntInput();
 	}
-	_currentLevel = 0;
+	_currentLevel = depth - 1;
 	DungeonBuilder* builder = new DungeonBuilder();
 	_dungeon = builder->BuildDungeon(width, height, depth);
 }
@@ -45,7 +45,7 @@ void Game::Start()
 	CommandFactory* commandFactory = new CommandFactory();
 	ICommand* command;
 
-	//_output->ClearScreen();
+	_output->ClearScreen();
 	_output->ShowGameStarted();
 	while (Game::_running) {
 		char line[50];
