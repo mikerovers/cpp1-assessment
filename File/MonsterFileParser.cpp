@@ -26,6 +26,10 @@ Monster* MonsterFileParser::parse(const char path[])
                 monsters[counter] = *monster;
                 counter++;
             }
+
+            if (counter >= 14) {
+                break;
+            }
         }
 
         monsterFile.close();
