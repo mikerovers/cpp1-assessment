@@ -1,16 +1,7 @@
-﻿  CheckInventoryCommand.cpp
-  CheckStatsCommand.cpp
-  CommandFactory.cpp
-  FightCommand.cpp
-  FlightCommand.cpp
-  Game.cpp
-  ICommand.cpp
-  Kerkers.cpp
-  NullCommand.cpp
-  PickUpCommand.cpp
-  RestCommand.cpp
-  ShowCommandsCommand.cpp
-  ShowMapCommand.cpp
-  ExitCommand.cpp
+﻿  Kerkers.cpp
+  Monster.cpp
+  MonsterFileParser.cpp
+c:\users\miker\code_avans\cpp1-assessment\src\monsterfileparser.cpp(70): warning C4101: 'e': unreferenced local variable
   Generating Code...
-  Kerkers.vcxproj -> D:\Dropbox\2. HBO - Informatica\Leerjaar 4\Cpp\cpp1-assessment\src\x64\Debug\Kerkers.exe
+c:\users\miker\code_avans\cpp1-assessment\src\monsterfileparser.cpp(45): warning C4172: returning address of local variable or temporary: monsters
+  Kerkers.vcxproj -> C:\Users\miker\code_avans\cpp1-assessment\src\x64\Debug\Kerkers.exe

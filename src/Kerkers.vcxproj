@@ -162,10 +162,15 @@
     <ClInclude Include="DungeonBuilder.h" />
     <ClInclude Include="EndBossRoom.h" />
     <ClInclude Include="FightCommand.h" />
+    <ClInclude Include="FileNotOpenedException.h" />
+    <ClInclude Include="FileReader.h" />
     <ClInclude Include="FlightCommand.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Monster.h" />
+    <ClInclude Include="MonsterFileParser.h" />
+    <ClInclude Include="MonsterParsingException.h" />
     <ClInclude Include="NullCommand.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="pch.h" />
@@ -192,11 +197,16 @@
     <ClCompile Include="DungeonBuilder.cpp" />
     <ClCompile Include="EndBossRoom.cpp" />
     <ClCompile Include="FightCommand.cpp" />
+    <ClCompile Include="FileNotOpenedException.cpp" />
+    <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="FlightCommand.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="ICommand.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Kerkers.cpp" />
+    <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="MonsterFileParser.cpp" />
+    <ClCompile Include="MonsterParsingException.cpp" />
     <ClCompile Include="NullCommand.cpp" />
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="pch.cpp">
@@ -214,6 +224,10 @@
     <ClCompile Include="ShowMapCommand.cpp" />
     <ClCompile Include="ExitCommand.cpp" />
     <ClCompile Include="UpStaircaseRoom.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\Documents\cpp1-assessment-feature-files\cpp1-assessment-feature-files\assets\monsters.txt" />
+    <Text Include="monsters.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
