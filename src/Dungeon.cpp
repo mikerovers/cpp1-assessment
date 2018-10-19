@@ -20,7 +20,7 @@ Dungeon::~Dungeon() {
 		{
 			delete[] _levels[d][h];
 		}
-		delete _levels[d];
+		delete[] _levels[d];
 	}
 	delete[] _levels;
 }
@@ -39,11 +39,11 @@ int Dungeon::GetHeight() const {
 
 void Dungeon::GenerateGrid()
 {
-	_levels = new BaseRoom**[_depth];
+	_levels = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) BaseRoom**[_depth];
 	for (int d = 0; d < _depth; d++) {
-		_levels[d] = new BaseRoom*[_height];
+		_levels[d] = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) BaseRoom*[_height];
 		for (int h = 0; h < _height; h++) {
-			_levels[d][h] = new NormalRoom[_width];
+			_levels[d][h] = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) NormalRoom[_width];
 		}
 	}
 }
@@ -65,7 +65,7 @@ void Dungeon::SetNeighbours()
 }
 
 void Dungeon::AddPlayer(Player* player) const {
-	RandomGenerator* random = new RandomGenerator();
+	RandomGenerator* random = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) RandomGenerator();
 	int width = random->Generate(0, _width - 1);
 	int height = random->Generate(0, _height - 1);
 	delete random;
@@ -77,7 +77,7 @@ void Dungeon::AddStairs() const {
 		return;
 	}
 
-	RandomGenerator* random = new RandomGenerator();
+	RandomGenerator* random = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) RandomGenerator();
 	int widthLastUp, heightLastUp;
 	for (int d = 0; d < _depth; d++) {
 		int width, height;
@@ -104,10 +104,11 @@ void Dungeon::AddStairs() const {
 			_levels[d][height][width] = UpStaircaseRoom();
 		}
 	}
+	delete random;
 }
 
 void Dungeon::AddEndBoss() const {
-	RandomGenerator* random = new RandomGenerator();
+	RandomGenerator* random = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) RandomGenerator();
 	int width, height;
 
 	while (true) {

@@ -11,8 +11,8 @@
 
 void Game::Init()
 {
-	_output = new Output();
-	_input = new Input();
+	_output = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Output();
+	_input = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Input();
 	_output->ShowIntroduction();
 }
 
@@ -37,16 +37,16 @@ void Game::Setup() {
 	}
 	_currentLevel = depth - 1;
 	
-	_player = new Player();
-
-	DungeonBuilder* builder = new DungeonBuilder();
+	_player = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Player();
+	DungeonBuilder* builder = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) DungeonBuilder();
 	_dungeon = builder->BuildDungeon(_player, width, height, depth);
+	delete builder;
 }
 
 void Game::Start() 
 {
 	_running = true;
-	CommandFactory* commandFactory = new CommandFactory();
+	CommandFactory* commandFactory = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) CommandFactory();
 	ICommand* command;
 
 	_output->ClearScreen();
@@ -57,7 +57,13 @@ void Game::Start()
 		_output->ClearScreen();
 		command = commandFactory->RetrieveCommand(line);
 		command->Execute(this);
+		delete command;
 	}
+
+	delete _input;
+	delete _output;
+	delete _dungeon;
+	delete commandFactory;
 }
 
 Dungeon * Game::GetDungeon() const
@@ -82,7 +88,5 @@ void Game::SetRunning(bool const running)
 
 Game::~Game()
 {
-	delete _dungeon;
-	delete _output;
-	delete _input;
+
 }
