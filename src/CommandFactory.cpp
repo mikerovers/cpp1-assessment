@@ -9,17 +9,21 @@
 #include "Output.h"
 
 ICommand* CommandFactory::RetrieveCommand(char command[]) {
-	CharArrayComparator *comparator = new CharArrayComparator();
+	CharArrayComparator *comparator = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) CharArrayComparator();
+	ICommand* returnCommand;
 	if (comparator->Compare("kaart", command, 5)) {
-		return new ShowMapCommand();
+		returnCommand = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) ShowMapCommand();
 	}
 	else if (comparator->Compare("exit", command, 4)) {
-		return new ExitCommand();
+		returnCommand = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) ExitCommand();
 	}
 	else if (comparator->Compare("commands", command, 8)) {
-		return new ShowCommandsCommand();
+		returnCommand = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) ShowCommandsCommand();
 	}
 	else {
-		return new NullCommand();
+		returnCommand = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) NullCommand();
 	}
+	delete comparator;
+	return returnCommand;
+
 }
