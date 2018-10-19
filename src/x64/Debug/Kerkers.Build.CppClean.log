@@ -1,7 +1,5 @@
-d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\kerkers.pch
 d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\vc141.pdb
 d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\vc141.idb
-d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\pch.obj
 d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\upstaircaseroom.obj
 d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\exitcommand.obj
 d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\showmapcommand.obj
@@ -22,6 +20,17 @@ d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\com
 d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\chararraycomparator.obj
 d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\basestaircaseroom.obj
 d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\baseroom.obj
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\player.obj
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\restcommand.obj
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\pickupcommand.obj
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\flightcommand.obj
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\fightcommand.obj
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\checkstatscommand.obj
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\checkinventorycommand.obj
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\kerkers.pch
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\pch.obj
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\kerkers.ilk
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\kerkers.pdb
 d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\kerkers.exe
 d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\kerkers.tlog\cl.command.1.tlog
 d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\x64\debug\kerkers.tlog\cl.read.1.tlog
