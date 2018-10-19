@@ -7,12 +7,14 @@
 #include "Input.h"
 #include "CommandFactory.h"
 #include "State.h"
+#include "Inventory.h"
 
 
 void Game::Init()
 {
 	_output = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Output();
 	_input = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Input();
+	_inventory = new (_NORMAL_BLOCK, __FILE__, __LINE__) Inventory(5);
 	_output->ShowIntroduction();
 }
 
@@ -62,6 +64,7 @@ void Game::Start()
 
 	delete _input;
 	delete _output;
+	delete _inventory;
 	delete _dungeon;
 	delete commandFactory;
 }

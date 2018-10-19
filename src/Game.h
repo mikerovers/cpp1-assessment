@@ -8,6 +8,7 @@ private:
 	class Player* _player;
 	class Output* _output;
 	class Input* _input;
+	class Inventory* _inventory;
 	int _state;
 	bool _running;
 	int _currentLevel;
