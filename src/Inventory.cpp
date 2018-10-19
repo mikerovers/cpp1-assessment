@@ -18,21 +18,6 @@ Inventory::~Inventory()
 	}
 }
 
-void Inventory::PrintInventory()
-{
-	std::cout << "Inventory:" << "\n";
-	for (auto i = 0; i < size; i++) {
-		if (typeid(items[i]) != typeid(NullItem)) {
-			if (i == 0 || i == size - 1) {
-				std::cout << items[i]->GetName();
-			}
-			else {
-				std::cout << " - " << items[i]->GetName() << " - ";
-			}
-		}
-	}
-}
-
 bool Inventory::SetItem(Item *item)
 {
 	for (auto i = 0; i < size; i++) {
@@ -54,8 +39,8 @@ bool Inventory::SetItemInSpot(Item *item, const int index)
 	if (items[index] == nullptr) {
 		items[index] = item;
 
-		return true;
 	}
+		return true;
 
 	return false;
 }

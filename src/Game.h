@@ -18,6 +18,7 @@ public:
 	void Start();
 	class Dungeon* GetDungeon() const;
 	class Output* GetOutput() const;
+	class Inventory* GetInventory() const;
 	int GetCurrentLevel() const;
 	void SetRunning(bool running);
 	Game();

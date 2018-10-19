@@ -8,7 +8,6 @@ public:
 	~Inventory();
 
 	const int size;
-	void PrintInventory();
 	bool SetItem(Item* item);
 	bool SetItemInSpot(Item* item, const int index);
 	bool UseItem(const int index);

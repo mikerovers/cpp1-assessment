@@ -7,6 +7,7 @@
 #include "ExitCommand.h"
 #include "CharArrayComparator.h"
 #include "Output.h"
+#include "CheckInventoryCommand.h"
 
 ICommand* CommandFactory::RetrieveCommand(char command[]) {
 	CharArrayComparator *comparator = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) CharArrayComparator();
@@ -19,6 +20,10 @@ ICommand* CommandFactory::RetrieveCommand(char command[]) {
 	}
 	else if (comparator->Compare("commands", command, 8)) {
 		returnCommand = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) ShowCommandsCommand();
+	}
+	else if (comparator->Compare("inventory", command, 9))
+	{
+		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) CheckInventoryCommand();
 	}
 	else {
 		returnCommand = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) NullCommand();

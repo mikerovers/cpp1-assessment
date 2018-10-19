@@ -79,6 +79,11 @@ Output * Game::GetOutput() const
 	return _output;
 }
 
+Inventory* Game::GetInventory() const
+{
+	return _inventory;
+}
+
 int Game::GetCurrentLevel() const
 {
 	return _currentLevel;
