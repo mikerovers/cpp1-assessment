@@ -2,6 +2,7 @@
 #include <iostream>
 #include "BaseRoom.h"
 #include "Dungeon.h"
+#include "Inventory.h"
 
 class Output {
 public:
@@ -17,4 +18,6 @@ public:
 	void AskForDungeonHeight() const;
 	void AskForDungeonDepth() const;
 	void ShowGameStarted() const;
+	void PrintInventory(Inventory* const inventory) const;
+	void PrintItemUsed(Item* const item) const;
 };
