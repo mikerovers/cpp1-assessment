@@ -33,7 +33,7 @@ void Output::ShowGameStarted() const {
 	printf("Het spel is gestart. Voer \"commands\" in voor beschikbare commando's.\n");
 }
 
-void Output::PrintInventory(Inventory* inventory) const
+void Output::PrintInventory(Inventory* const inventory) const
 {
 	printf("Inventory:\n");
 	for (auto i = 0; i < inventory->size; i++) {
@@ -47,6 +47,17 @@ void Output::PrintInventory(Inventory* inventory) const
 		}
 	}
 	printf("\n");
+}
+
+void Output::PrintItemUsed(Item* const item) const
+{
+	if (typeid(*item) == typeid(NullItem))
+	{
+		printf("Nothing happened\n");
+	} else
+	{
+		printf("You used %s!\n", item->GetName());
+	}
 }
 
 void Output::ShowCommands() const {

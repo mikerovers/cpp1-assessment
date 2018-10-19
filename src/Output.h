@@ -18,5 +18,6 @@ public:
 	void AskForDungeonHeight() const;
 	void AskForDungeonDepth() const;
 	void ShowGameStarted() const;
-	void PrintInventory(Inventory* inventory) const;
+	void PrintInventory(Inventory* const inventory) const;
+	void PrintItemUsed(Item* const item) const;
 };

@@ -9,10 +9,9 @@ NullItem::NullItem() : Item(const_cast<char *>("*"))
 
 NullItem::~NullItem()
 {
-
 }
 
 void NullItem::Use()
 {
-	std::cout << "Nothing happened." << "\n";
+
 }

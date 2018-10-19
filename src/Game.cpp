@@ -8,6 +8,7 @@
 #include "CommandFactory.h"
 #include "State.h"
 #include "Inventory.h"
+#include "Potion.h"
 
 
 void Game::Init()
