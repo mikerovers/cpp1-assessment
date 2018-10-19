@@ -46,6 +46,7 @@ void Output::PrintInventory(Inventory* inventory) const
 			}
 		}
 	}
+	printf("\n");
 }
 
 void Output::ShowCommands() const {

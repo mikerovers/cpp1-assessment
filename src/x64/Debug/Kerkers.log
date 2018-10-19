@@ -1,19 +1,2 @@
-﻿  CheckInventoryCommand.cpp
-  CheckStatsCommand.cpp
-  CommandFactory.cpp
-  ExitCommand.cpp
-  FightCommand.cpp
-  FlightCommand.cpp
-  Game.cpp
-  ICommand.cpp
-  Kerkers.cpp
-c:\users\miker\code_avans\cpp1-assessment\src\kerkers.cpp(4): warning C4603: '_CRTDBG_MAP_ALLOC': macro is not defined or definition is different after precompiled header use
-  c:\users\miker\code_avans\cpp1-assessment\src\kerkers.cpp(4): note: Add macro to precompiled header instead of defining here
-  c:\users\miker\code_avans\cpp1-assessment\src\kerkers.cpp(5): note: use of precompiled header
-  NullCommand.cpp
-  Output.cpp
-  PickUpCommand.cpp
-  ShowCommandsCommand.cpp
-  ShowMapCommand.cpp
-  Generating Code...
+﻿  CommandFactory.cpp
   Kerkers.vcxproj -> C:\Users\miker\code_avans\cpp1-assessment\src\x64\Debug\Kerkers.exe
