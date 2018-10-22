@@ -3,7 +3,7 @@
 #include "NullItem.h"
 #include <iostream>
 
-Inventory::Inventory(int size) : size(size)
+Inventory::Inventory(int const size) : size(size)
 {
 	for (auto i = 0; i < size; i++) {
 		items[i] = new NullItem();
@@ -27,20 +27,14 @@ bool Inventory::SetItem(Item *item)
 			delete items[i];
 			items[i] = item;
 
+			if (i > 0)
+			{
+				items[i - 1]->SetNext(items[i]);
+			}
+
 			return true;
 		}
 	}
-
-	return false;
-}
-
-bool Inventory::SetItemInSpot(Item *item, const int index)
-{
-	if (items[index] == nullptr) {
-		items[index] = item;
-
-	}
-		return true;
 
 	return false;
 }
@@ -59,7 +53,12 @@ bool Inventory::UseItem(const int index)
 	return false;
 }
 
-Item *Inventory::GetItem(const int index)
+Item *Inventory::GetItem(const int index) const
 {
 	return items[index];
+}
+
+Stat* Inventory::GetStat() const
+{
+	return items[0]->Handle(new Stat);
 }

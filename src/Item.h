@@ -1,6 +1,7 @@
 ﻿#pragma once
+#include "AbstractStatHandler.h"
 
-class Item
+class Item : public AbstractStatHandler
 {
 public:
 	explicit Item(char *name);

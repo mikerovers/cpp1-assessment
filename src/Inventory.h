@@ -4,14 +4,14 @@
 class Inventory
 {
 public:
-	explicit Inventory(int size);
+	explicit Inventory(int const size);
 	~Inventory();
 
 	const int size;
 	bool SetItem(Item* item);
-	bool SetItemInSpot(Item* item, const int index);
 	bool UseItem(const int index);
-	Item* GetItem(const int index);
+	Item* GetItem(const int index) const;
+	Stat* GetStat() const;
 private:
-	Item* items[5];
+	Item* items[5]{};
 };
