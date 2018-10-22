@@ -9,6 +9,8 @@
 #include "State.h"
 #include "Inventory.h"
 #include "Potion.h"
+#include "BroadSword.h"
+#include "Shield.h"
 
 
 void Game::Init()
@@ -16,6 +18,12 @@ void Game::Init()
 	_output = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Output();
 	_input = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Input();
 	_inventory = new (_NORMAL_BLOCK, __FILE__, __LINE__) Inventory(5);
+
+	_inventory->SetItem(new BroadSword());
+	_inventory->SetItem(new Potion(const_cast<char*>("Weird looking potion")));
+	_inventory->SetItem(new BroadSword());
+	_inventory->SetItem(new Shield);
+
 	_output->ShowIntroduction();
 }
 

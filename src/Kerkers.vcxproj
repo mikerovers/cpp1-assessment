@@ -151,8 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractStatHandler.h" />
     <ClInclude Include="BaseRoom.h" />
     <ClInclude Include="BaseStaircaseRoom.h" />
+    <ClInclude Include="BroadSword.h" />
+    <ClInclude Include="CanAttackWith.h" />
     <ClInclude Include="CharArrayComparator.h" />
     <ClInclude Include="CheckInventoryCommand.h" />
     <ClInclude Include="CheckStatsCommand.h" />
@@ -178,15 +181,20 @@
     <ClInclude Include="RandomGenerator.h" />
     <ClInclude Include="NormalRoom.h" />
     <ClInclude Include="RestCommand.h" />
+    <ClInclude Include="Shield.h" />
     <ClInclude Include="ShowCommandsCommand.h" />
     <ClInclude Include="ShowMapCommand.h" />
     <ClInclude Include="ExitCommand.h" />
+    <ClInclude Include="Stat.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="UpStaircaseRoom.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractStatHandler.cpp" />
     <ClCompile Include="BaseRoom.cpp" />
     <ClCompile Include="BaseStaircaseRoom.cpp" />
+    <ClCompile Include="BroadSword.cpp" />
+    <ClCompile Include="CanAttackWith.cpp" />
     <ClCompile Include="CharArrayComparator.cpp" />
     <ClCompile Include="CheckInventoryCommand.cpp" />
     <ClCompile Include="CheckStatsCommand.cpp" />
@@ -218,9 +226,11 @@
     <ClCompile Include="RandomGenerator.cpp" />
     <ClCompile Include="NormalRoom.cpp" />
     <ClCompile Include="RestCommand.cpp" />
+    <ClCompile Include="Shield.cpp" />
     <ClCompile Include="ShowCommandsCommand.cpp" />
     <ClCompile Include="ShowMapCommand.cpp" />
     <ClCompile Include="ExitCommand.cpp" />
+    <ClCompile Include="Stat.cpp" />
     <ClCompile Include="UpStaircaseRoom.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

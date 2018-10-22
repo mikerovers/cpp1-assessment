@@ -64,6 +64,12 @@
     <Filter Include="Header Files\Models\Items">
       <UniqueIdentifier>{fbe795b7-0822-4d90-b936-250186f4a5cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Controllers\Combat">
+      <UniqueIdentifier>{ea8606ee-ebe7-4acc-8419-6d9024148c97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controllers\Combat">
+      <UniqueIdentifier>{d375f99f-484c-43a9-880d-3c0f7a36f052}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -162,6 +168,21 @@
     <ClInclude Include="Potion.h">
       <Filter>Header Files\Models\Items</Filter>
     </ClInclude>
+    <ClInclude Include="BroadSword.h">
+      <Filter>Header Files\Models\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="CanAttackWith.h">
+      <Filter>Source Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractStatHandler.h">
+      <Filter>Header Files\Controllers\Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="Stat.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Shield.h">
+      <Filter>Header Files\Models\Items</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -258,6 +279,21 @@
       <Filter>Source Files\Models\Items</Filter>
     </ClCompile>
     <ClCompile Include="Potion.cpp">
+      <Filter>Source Files\Models\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="BroadSword.cpp">
+      <Filter>Source Files\Models\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="CanAttackWith.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractStatHandler.cpp">
+      <Filter>Source Files\Controllers\Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="Stat.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Shield.cpp">
       <Filter>Source Files\Models\Items</Filter>
     </ClCompile>
   </ItemGroup>
