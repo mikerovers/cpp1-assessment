@@ -9,7 +9,6 @@ private:
 	class Output* _output;
 	class MonsterHolder* _monsterHolder;
 	class Input* _input;
-	class Inventory* _inventory;
 	int _state;
 	bool _running;
 	int _currentLevel;
@@ -19,7 +18,6 @@ public:
 	void Start();
 	class Dungeon* GetDungeon() const;
 	class Output* GetOutput() const;
-	class Inventory* GetInventory() const;
 	int GetCurrentLevel() const;
 	void SetRunning(bool running);
 	Game();

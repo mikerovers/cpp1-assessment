@@ -7,28 +7,19 @@
 #include "ExitCommand.h"
 #include "CharArrayComparator.h"
 #include "Output.h"
-#include "CheckInventoryCommand.h"
 
 ICommand* CommandFactory::RetrieveCommand(char command[]) {
-	CharArrayComparator *comparator = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) CharArrayComparator();
-	ICommand* returnCommand;
+	CharArrayComparator *comparator = new CharArrayComparator();
 	if (comparator->Compare("kaart", command, 5)) {
-		returnCommand = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) ShowMapCommand();
+		return new ShowMapCommand();
 	}
 	else if (comparator->Compare("exit", command, 4)) {
-		returnCommand = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) ExitCommand();
+		return new ExitCommand();
 	}
 	else if (comparator->Compare("commands", command, 8)) {
-		returnCommand = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) ShowCommandsCommand();
-	}
-	else if (comparator->Compare("inventory", command, 9))
-	{
-		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) CheckInventoryCommand();
+		return new ShowCommandsCommand();
 	}
 	else {
-		returnCommand = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) NullCommand();
+		return new NullCommand();
 	}
-	delete comparator;
-	return returnCommand;
-
 }
