@@ -170,6 +170,7 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="MonsterFileParser.h" />
+    <ClInclude Include="MonsterHolder.h" />
     <ClInclude Include="MonsterParsingException.h" />
     <ClInclude Include="NullCommand.h" />
     <ClInclude Include="Output.h" />
@@ -206,6 +207,7 @@
     <ClCompile Include="Kerkers.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="MonsterFileParser.cpp" />
+    <ClCompile Include="MonsterHolder.cpp" />
     <ClCompile Include="MonsterParsingException.cpp" />
     <ClCompile Include="NullCommand.cpp" />
     <ClCompile Include="Output.cpp" />

@@ -1,7 +1,8 @@
-﻿  Kerkers.cpp
-  Monster.cpp
+﻿  Game.cpp
+  Kerkers.cpp
   MonsterFileParser.cpp
-c:\users\miker\code_avans\cpp1-assessment\src\monsterfileparser.cpp(70): warning C4101: 'e': unreferenced local variable
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\monsterfileparser.cpp(13): warning C4101: 'monsters': unreferenced local variable
+d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\monsterfileparser.cpp(73): warning C4101: 'e': unreferenced local variable
+  MonsterHolder.cpp
   Generating Code...
-c:\users\miker\code_avans\cpp1-assessment\src\monsterfileparser.cpp(45): warning C4172: returning address of local variable or temporary: monsters
-  Kerkers.vcxproj -> C:\Users\miker\code_avans\cpp1-assessment\src\x64\Debug\Kerkers.exe
+  Kerkers.vcxproj -> D:\Dropbox\2. HBO - Informatica\Leerjaar 4\Cpp\cpp1-assessment\src\x64\Debug\Kerkers.exe

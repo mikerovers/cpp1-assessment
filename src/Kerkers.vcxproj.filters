@@ -168,6 +168,9 @@
     <ClInclude Include="MonsterFileParser.h">
       <Filter>Header Files\Builders</Filter>
     </ClInclude>
+    <ClInclude Include="MonsterHolder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -268,6 +271,9 @@
     </ClCompile>
     <ClCompile Include="MonsterFileParser.cpp">
       <Filter>Source Files\Builders</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterHolder.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -8,12 +8,33 @@
 #include "CommandFactory.h"
 #include "State.h"
 
+#include "MonsterHolder.h"
+#include "MonsterFileParser.h"
+#include "MonsterParsingException.h"
+
+
 
 void Game::Init()
 {
 	_output = new Output();
 	_input = new Input();
 	_output->ShowIntroduction();
+	_monsterHolder = new MonsterHolder();
+
+
+
+	try {
+		auto *monsterParser = new MonsterFileParser;
+		monsterParser->parse("monsters.txt", _monsterHolder);
+		//auto* monsters = monsterParser->parse("monsters.txt");
+
+		for (int i = 0; i < 14; ++i) { // Waarom is monsters niet gelijk aan dit?
+			std::cout << _monsterHolder->GetMonsters()[i]->getName() << "\n";
+		}
+	}
+	catch (MonsterParsingException& e) {
+		std::cerr << e.what() << "\n";
+	}
 }
 
 Game::Game()

@@ -1,4 +1,5 @@
 ﻿#include "pch.h"
+#include "MonsterHolder.h"
 #include "MonsterFileParser.h"
 #include "MonsterParsingException.h"
 #include "FileReader.h"
@@ -6,7 +7,7 @@
 
 const int MAXLINE = 256;
 
-Monster** MonsterFileParser::parse(const char path[])
+void MonsterFileParser::parse(const char path[], MonsterHolder* monsterHolder )
 {
 	auto *reader = new FileReader();
 	Monster* monsters[14];
@@ -24,7 +25,8 @@ Monster** MonsterFileParser::parse(const char path[])
 
 			Monster *monster = parseMonster(oneLine);
 			if (monster != nullptr) {
-				monsters[counter] = monster;
+				monsterHolder->AddMonster(monster, counter);
+				//monsters[counter] = monster;
 				counter++;
 			}
 
@@ -42,17 +44,18 @@ Monster** MonsterFileParser::parse(const char path[])
 
 	}
 
-	return monsters;
+	//return monsters;
 }
+
 
 Monster* MonsterFileParser::parseMonster(const char m[])
 {
 	std::cmatch matches;
 
-	if (std::regex_search(m, matches, mRegex)) {
+	if (std::regex_search(m, matches, mRegex)) {	
 		try {
 			auto m = matches[1].str();
-			auto p = m.c_str();
+			const char * p = _strdup(m.c_str());
 
 			auto* monster = new Monster(
 				p,

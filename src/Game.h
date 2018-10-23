@@ -7,6 +7,7 @@ private:
 	class Dungeon* _dungeon;
 	class Player* _player;
 	class Output* _output;
+	class MonsterHolder* _monsterHolder;
 	class Input* _input;
 	int _state;
 	bool _running;
