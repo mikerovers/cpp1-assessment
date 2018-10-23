@@ -1,6 +1,7 @@
 #pragma once
 #include "Dungeon.h"
 #include "BaseRoom.h"
+#include "MonsterHolder.h"
 
 class Game {
 private:
@@ -9,6 +10,7 @@ private:
 	class Output* _output;
 	class Input* _input;
 	class Inventory* _inventory;
+	class MonsterHolder* _monsterHolder;
 	int _state;
 	bool _running;
 	int _currentLevel;
