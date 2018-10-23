@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Dungeon.h"
 #include "NormalRoom.h"
+#include "StartRoom.h"
 #include "DownStaircaseRoom.h"
 #include "UpStaircaseRoom.h"
 #include "EndBossRoom.h"
@@ -69,6 +70,8 @@ void Dungeon::AddPlayer(Player* player) const {
 	int width = random->Generate(0, _width - 1);
 	int height = random->Generate(0, _height - 1);
 	delete random;
+	_levels[_depth - 1][height][width] = StartRoom();
+	_levels[_depth - 1][height][width].SetVisited();
 	_levels[_depth - 1][height][width].SetPlayer(player);
 }
 

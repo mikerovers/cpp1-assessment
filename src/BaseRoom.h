@@ -8,9 +8,13 @@ private:
 	BaseRoom* _southNeighBour;
 	BaseRoom* _westNeighBour;
 
+	char* _description;
+
 	bool _hasPlayer = false;
 	Player* _player = nullptr;
 	bool _visited = false;
+
+	void setRandomContent();
 protected:
 	char _displayValue;
 public:
@@ -20,6 +24,9 @@ public:
 	char GetDisplayValue();
 	Player* GetPlayer();
 
+	char* GetDescription();
+
+	void SetVisited();
 	void SetPlayer(Player* player);
 
 	BaseRoom* GetNorthNeighbour();

@@ -160,6 +160,7 @@
     <ClInclude Include="CheckInventoryCommand.h" />
     <ClInclude Include="CheckStatsCommand.h" />
     <ClInclude Include="CommandFactory.h" />
+    <ClInclude Include="ContentTranslator.h" />
     <ClInclude Include="DownStaircaseRoom.h" />
     <ClInclude Include="Dungeon.h" />
     <ClInclude Include="DungeonBuilder.h" />
@@ -185,6 +186,7 @@
     <ClInclude Include="ShowCommandsCommand.h" />
     <ClInclude Include="ShowMapCommand.h" />
     <ClInclude Include="ExitCommand.h" />
+    <ClInclude Include="StartRoom.h" />
     <ClInclude Include="Stat.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="UpStaircaseRoom.h" />
@@ -199,6 +201,7 @@
     <ClCompile Include="CheckInventoryCommand.cpp" />
     <ClCompile Include="CheckStatsCommand.cpp" />
     <ClCompile Include="CommandFactory.cpp" />
+    <ClCompile Include="ContentTranslator.cpp" />
     <ClCompile Include="DownStaircaseRoom.cpp" />
     <ClCompile Include="Dungeon.cpp" />
     <ClCompile Include="DungeonBuilder.cpp" />
@@ -230,6 +233,7 @@
     <ClCompile Include="ShowCommandsCommand.cpp" />
     <ClCompile Include="ShowMapCommand.cpp" />
     <ClCompile Include="ExitCommand.cpp" />
+    <ClCompile Include="StartRoom.cpp" />
     <ClCompile Include="Stat.cpp" />
     <ClCompile Include="UpStaircaseRoom.cpp" />
   </ItemGroup>
