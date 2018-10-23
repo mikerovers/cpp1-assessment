@@ -1,8 +1,0 @@
-﻿  Game.cpp
-  Kerkers.cpp
-  MonsterFileParser.cpp
-d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\monsterfileparser.cpp(13): warning C4101: 'monsters': unreferenced local variable
-d:\dropbox\2. hbo - informatica\leerjaar 4\cpp\cpp1-assessment\src\monsterfileparser.cpp(73): warning C4101: 'e': unreferenced local variable
-  MonsterHolder.cpp
-  Generating Code...
-  Kerkers.vcxproj -> D:\Dropbox\2. HBO - Informatica\Leerjaar 4\Cpp\cpp1-assessment\src\x64\Debug\Kerkers.exe
