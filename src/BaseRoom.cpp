@@ -8,7 +8,6 @@ BaseRoom::BaseRoom()
 
 BaseRoom::~BaseRoom()
 {
-	delete _player;
 }
 
 char BaseRoom::GetDisplayValue()

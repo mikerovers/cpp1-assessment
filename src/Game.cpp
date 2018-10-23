@@ -7,10 +7,6 @@
 #include "Input.h"
 #include "CommandFactory.h"
 #include "State.h"
-#include "Inventory.h"
-#include "Potion.h"
-#include "BroadSword.h"
-#include "Shield.h"
 
 #include "MonsterHolder.h"
 #include "MonsterFileParser.h"
@@ -20,9 +16,8 @@
 
 void Game::Init()
 {
-	_output = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Output();
-	_input = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Input();
-
+	_output = new Output();
+	_input = new Input();
 	_output->ShowIntroduction();
 	_monsterHolder = new MonsterHolder();
 
@@ -63,17 +58,16 @@ void Game::Setup() {
 	}
 	_currentLevel = depth - 1;
 	
-	_player = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Player();
-	_inventory = new (_NORMAL_BLOCK, __FILE__, __LINE__) Inventory(5);
-	DungeonBuilder* builder = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) DungeonBuilder();
+	_player = new Player();
+
+	DungeonBuilder* builder = new DungeonBuilder();
 	_dungeon = builder->BuildDungeon(_player, width, height, depth);
-	delete builder;
 }
 
 void Game::Start() 
 {
 	_running = true;
-	CommandFactory* commandFactory = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) CommandFactory();
+	CommandFactory* commandFactory = new CommandFactory();
 	ICommand* command;
 
 	_output->ClearScreen();
@@ -84,14 +78,7 @@ void Game::Start()
 		_output->ClearScreen();
 		command = commandFactory->RetrieveCommand(line);
 		command->Execute(this);
-		delete command;
 	}
-
-	delete _input;
-	delete _output;
-	delete _inventory;
-	delete _dungeon;
-	delete commandFactory;
 }
 
 Dungeon * Game::GetDungeon() const
@@ -102,11 +89,6 @@ Dungeon * Game::GetDungeon() const
 Output * Game::GetOutput() const
 {
 	return _output;
-}
-
-Inventory* Game::GetInventory() const
-{
-	return _inventory;
 }
 
 int Game::GetCurrentLevel() const
@@ -121,5 +103,7 @@ void Game::SetRunning(bool const running)
 
 Game::~Game()
 {
-
+	delete _dungeon;
+	delete _output;
+	delete _input;
 }
