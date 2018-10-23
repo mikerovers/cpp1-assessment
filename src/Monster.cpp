@@ -161,6 +161,6 @@ Monster &Monster::operator=(Monster &&other) noexcept
 
 Monster::~Monster()
 {
-	delete name;
-
+	delete[] name;
+	name = nullptr	;
 }

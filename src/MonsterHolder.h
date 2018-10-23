@@ -1,8 +1,10 @@
 #pragma once
+#include "Monster.h";
+
 class MonsterHolder
 {
 private:
-	class Monster** _monsters;
+	Monster** _monsters;
 public:
 	MonsterHolder();
 	~MonsterHolder();
