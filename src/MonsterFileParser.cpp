@@ -57,7 +57,7 @@ Monster* MonsterFileParser::parseMonster(const char m[])
 			auto m = matches[1].str();
 			const char * p = _strdup(m.c_str());
 
-			auto* monster = new Monster(
+			auto* monster = new (_NORMAL_BLOCK, __FILE__, __LINE__) Monster(
 				p,
 				static_cast<unsigned int>(atoi(matches[2].str().c_str())),
 				static_cast<unsigned int>(atoi(matches[3].str().c_str())),

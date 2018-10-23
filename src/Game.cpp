@@ -23,16 +23,17 @@ void Game::Init()
 
 	_output->ShowIntroduction();
 
-	_monsterHolder = new MonsterHolder();
+	_monsterHolder = new (_NORMAL_BLOCK, __FILE__, __LINE__) MonsterHolder();
 
 	try {
-		auto *monsterParser = new MonsterFileParser;
+		auto *monsterParser = new (_NORMAL_BLOCK, __FILE__, __LINE__) MonsterFileParser;
 		monsterParser->parse("monsters.txt", _monsterHolder);
 		//auto* monsters = monsterParser->parse("monsters.txt");
 
 		for (int i = 0; i < 14; ++i) { // Waarom is monsters niet gelijk aan dit?
 			std::cout << _monsterHolder->GetMonsters()[i]->getName() << "\n";
 		}
+		delete monsterParser;
 	}
 	catch (MonsterParsingException& e) {
 		std::cerr << e.what() << "\n";
@@ -88,6 +89,7 @@ void Game::Start()
 	delete _output;
 	delete _inventory;
 	delete _dungeon;
+	delete _monsterHolder;
 	delete commandFactory;
 }
 

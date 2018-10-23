@@ -10,6 +10,10 @@ MonsterHolder::MonsterHolder()
 
 MonsterHolder::~MonsterHolder()
 {
+	for (int i = 0; i < 14; i++) {
+		delete _monsters[i];
+	}
+	delete _monsters;
 }
 
 void MonsterHolder::Init()

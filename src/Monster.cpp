@@ -162,4 +162,5 @@ Monster &Monster::operator=(Monster &&other) noexcept
 Monster::~Monster()
 {
 	delete name;
+
 }
