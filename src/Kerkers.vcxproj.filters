@@ -58,6 +58,7 @@
     <Filter Include="Header Files\Enums">
       <UniqueIdentifier>{e6cdb545-ef14-4a78-a08a-ebbe34f13b74}</UniqueIdentifier>
     </Filter>
+<<<<<<< HEAD
     <Filter Include="Source Files\Exception">
       <UniqueIdentifier>{f81f6878-abd4-4e15-8d4e-1e5f7f66689d}</UniqueIdentifier>
     </Filter>
@@ -66,6 +67,19 @@
     </Filter>
     <Filter Include="Resource Files\assets">
       <UniqueIdentifier>{643c5048-bd13-437c-bd42-5627b6aff6c5}</UniqueIdentifier>
+=======
+    <Filter Include="Source Files\Models\Items">
+      <UniqueIdentifier>{e6e00c2d-a615-483d-95e0-75d5bbc2f037}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Models\Items">
+      <UniqueIdentifier>{fbe795b7-0822-4d90-b936-250186f4a5cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controllers\Combat">
+      <UniqueIdentifier>{ea8606ee-ebe7-4acc-8419-6d9024148c97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controllers\Combat">
+      <UniqueIdentifier>{d375f99f-484c-43a9-880d-3c0f7a36f052}</UniqueIdentifier>
+>>>>>>> master
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +167,7 @@
     <ClInclude Include="State.h">
       <Filter>Header Files\Enums</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Monster.h">
       <Filter>Header Files\Models</Filter>
     </ClInclude>
@@ -170,6 +185,34 @@
     </ClInclude>
     <ClInclude Include="MonsterHolder.h">
       <Filter>Header Files</Filter>
+=======
+    <ClInclude Include="Inventory.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="NullItem.h">
+      <Filter>Header Files\Models\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Potion.h">
+      <Filter>Header Files\Models\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="BroadSword.h">
+      <Filter>Header Files\Models\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="CanAttackWith.h">
+      <Filter>Source Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractStatHandler.h">
+      <Filter>Header Files\Controllers\Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="Stat.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Shield.h">
+      <Filter>Header Files\Models\Items</Filter>
+>>>>>>> master
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -257,6 +300,7 @@
     <ClCompile Include="RestCommand.cpp">
       <Filter>Source Files\Commands</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Monster.cpp">
       <Filter>Source Files\Models</Filter>
     </ClCompile>
@@ -281,5 +325,34 @@
       <Filter>Resource Files\assets</Filter>
     </Text>
     <Text Include="..\..\..\Documents\cpp1-assessment-feature-files\cpp1-assessment-feature-files\assets\monsters.txt" />
+=======
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="NullItem.cpp">
+      <Filter>Source Files\Models\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Potion.cpp">
+      <Filter>Source Files\Models\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="BroadSword.cpp">
+      <Filter>Source Files\Models\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="CanAttackWith.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractStatHandler.cpp">
+      <Filter>Source Files\Controllers\Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="Stat.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Shield.cpp">
+      <Filter>Source Files\Models\Items</Filter>
+    </ClCompile>
+>>>>>>> master
   </ItemGroup>
 </Project>
