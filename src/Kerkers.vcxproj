@@ -165,12 +165,18 @@
     <ClInclude Include="DungeonBuilder.h" />
     <ClInclude Include="EndBossRoom.h" />
     <ClInclude Include="FightCommand.h" />
+    <ClInclude Include="FileNotOpenedException.h" />
+    <ClInclude Include="FileReader.h" />
     <ClInclude Include="FlightCommand.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="Monster.h" />
+    <ClInclude Include="MonsterFileParser.h" />
+    <ClInclude Include="MonsterHolder.h" />
+    <ClInclude Include="MonsterParsingException.h" />
     <ClInclude Include="NullCommand.h" />
     <ClInclude Include="NullItem.h" />
     <ClInclude Include="Output.h" />
@@ -204,6 +210,8 @@
     <ClCompile Include="DungeonBuilder.cpp" />
     <ClCompile Include="EndBossRoom.cpp" />
     <ClCompile Include="FightCommand.cpp" />
+    <ClCompile Include="FileNotOpenedException.cpp" />
+    <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="FlightCommand.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="ICommand.cpp" />
@@ -211,6 +219,10 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Kerkers.cpp" />
+    <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="MonsterFileParser.cpp" />
+    <ClCompile Include="MonsterHolder.cpp" />
+    <ClCompile Include="MonsterParsingException.cpp" />
     <ClCompile Include="NullCommand.cpp" />
     <ClCompile Include="NullItem.cpp" />
     <ClCompile Include="Output.cpp" />
@@ -232,6 +244,9 @@
     <ClCompile Include="ExitCommand.cpp" />
     <ClCompile Include="Stat.cpp" />
     <ClCompile Include="UpStaircaseRoom.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="monsters.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
