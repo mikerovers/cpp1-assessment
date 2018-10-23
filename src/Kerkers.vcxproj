@@ -151,8 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractStatHandler.h" />
     <ClInclude Include="BaseRoom.h" />
     <ClInclude Include="BaseStaircaseRoom.h" />
+    <ClInclude Include="BroadSword.h" />
+    <ClInclude Include="CanAttackWith.h" />
     <ClInclude Include="CharArrayComparator.h" />
     <ClInclude Include="CheckInventoryCommand.h" />
     <ClInclude Include="CheckStatsCommand.h" />
@@ -168,27 +171,39 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="Input.h" />
+<<<<<<< HEAD
     <ClInclude Include="Monster.h" />
     <ClInclude Include="MonsterFileParser.h" />
     <ClInclude Include="MonsterHolder.h" />
     <ClInclude Include="MonsterParsingException.h" />
+=======
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Item.h" />
+>>>>>>> master
     <ClInclude Include="NullCommand.h" />
+    <ClInclude Include="NullItem.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PickUpCommand.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Potion.h" />
     <ClInclude Include="RandomGenerator.h" />
     <ClInclude Include="NormalRoom.h" />
     <ClInclude Include="RestCommand.h" />
+    <ClInclude Include="Shield.h" />
     <ClInclude Include="ShowCommandsCommand.h" />
     <ClInclude Include="ShowMapCommand.h" />
     <ClInclude Include="ExitCommand.h" />
+    <ClInclude Include="Stat.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="UpStaircaseRoom.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractStatHandler.cpp" />
     <ClCompile Include="BaseRoom.cpp" />
     <ClCompile Include="BaseStaircaseRoom.cpp" />
+    <ClCompile Include="BroadSword.cpp" />
+    <ClCompile Include="CanAttackWith.cpp" />
     <ClCompile Include="CharArrayComparator.cpp" />
     <ClCompile Include="CheckInventoryCommand.cpp" />
     <ClCompile Include="CheckStatsCommand.cpp" />
@@ -204,12 +219,15 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="ICommand.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Kerkers.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="MonsterFileParser.cpp" />
     <ClCompile Include="MonsterHolder.cpp" />
     <ClCompile Include="MonsterParsingException.cpp" />
     <ClCompile Include="NullCommand.cpp" />
+    <ClCompile Include="NullItem.cpp" />
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -219,12 +237,15 @@
     </ClCompile>
     <ClCompile Include="PickUpCommand.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Potion.cpp" />
     <ClCompile Include="RandomGenerator.cpp" />
     <ClCompile Include="NormalRoom.cpp" />
     <ClCompile Include="RestCommand.cpp" />
+    <ClCompile Include="Shield.cpp" />
     <ClCompile Include="ShowCommandsCommand.cpp" />
     <ClCompile Include="ShowMapCommand.cpp" />
     <ClCompile Include="ExitCommand.cpp" />
+    <ClCompile Include="Stat.cpp" />
     <ClCompile Include="UpStaircaseRoom.cpp" />
   </ItemGroup>
   <ItemGroup>

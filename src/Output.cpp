@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Output.h"
 #include "Dungeon.h"
+#include "NullItem.h"
 
 Output::Output() {
 
@@ -30,6 +31,33 @@ void Output::AskForDungeonDepth() const {
 
 void Output::ShowGameStarted() const {
 	printf("Het spel is gestart. Voer \"commands\" in voor beschikbare commando's.\n");
+}
+
+void Output::PrintInventory(Inventory* const inventory) const
+{
+	printf("Inventory:\n");
+	for (auto i = 0; i < inventory->size; i++) {
+		if (typeid(inventory->GetItem(i)) != typeid(NullItem)) {
+			if (i == 0 || i == inventory->size - 1) {
+				std::cout << inventory->GetItem(i)->GetName();
+			}
+			else {
+				std::cout << " - " << inventory->GetItem(i)->GetName() << " - ";
+			}
+		}
+	}
+	printf("\n");
+}
+
+void Output::PrintItemUsed(Item* const item) const
+{
+	if (typeid(*item) == typeid(NullItem))
+	{
+		printf("Nothing happened\n");
+	} else
+	{
+		printf("You used %s!\n", item->GetName());
+	}
 }
 
 void Output::ShowCommands() const {
