@@ -1,5 +1,6 @@
 ﻿#include "pch.h"
 #include "BroadSword.h"
+#include "Output.h"
 
 BroadSword::BroadSword(): Item(const_cast<char*>("Broadsword"))
 {
@@ -17,4 +18,8 @@ Stat* BroadSword::Handle(Stat* stat) const
 
 void BroadSword::Use()
 {
+	auto* output = new Output();
+	output->PrintNothinigHappened(this);
+	delete output;
 }
+

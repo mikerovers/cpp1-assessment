@@ -194,6 +194,7 @@
     <ClInclude Include="Stat.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="UpStaircaseRoom.h" />
+    <ClInclude Include="UseItemCommand.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AbstractStatHandler.cpp" />
@@ -244,6 +245,7 @@
     <ClCompile Include="ExitCommand.cpp" />
     <ClCompile Include="Stat.cpp" />
     <ClCompile Include="UpStaircaseRoom.cpp" />
+    <ClCompile Include="UseItemCommand.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="monsters.txt" />

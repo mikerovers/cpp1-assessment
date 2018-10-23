@@ -207,6 +207,9 @@
     <ClInclude Include="MonsterHolder.h">
       <Filter>Header Files\Models</Filter>
     </ClInclude>
+    <ClInclude Include="UseItemCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -337,6 +340,9 @@
     </ClCompile>
     <ClCompile Include="MonsterHolder.cpp">
       <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="UseItemCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
