@@ -20,7 +20,7 @@ public:
 	void ShowGameStarted() const;
 	void PrintInventory(Inventory* const inventory) const;
 	void PrintItemUsed(Item* const item) const;
-	void PrintNothinigHappened(const Item* item) const;
+	void PrintNothingHappened(const Item* item) const;
 	void AskForItem() const;
 	void PrintHealthIncrease(const int amount) const;
 };

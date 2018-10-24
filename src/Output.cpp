@@ -54,7 +54,7 @@ void Output::PrintItemUsed(Item* const item) const
 	printf("You used %s!\n", item->GetName());
 }
 
-void Output::PrintNothinigHappened(const Item* item) const
+void Output::PrintNothingHappened(const Item* item) const
 {
 	printf("Nothing happened with %s \n", item->GetName());
 }
