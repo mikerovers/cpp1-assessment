@@ -72,6 +72,8 @@ void Output::PrintHealthIncrease(const int amount) const
 void Output::ShowCommands() const {
 	printf("\"Commands\":		Toont de commando's\n");
 	printf("\"Kaart\":		Toont de kaart van de kerker\n");
+	printf("\"Inventory\":			Laat de inventory zien\n");
+	printf("\"Item\":			Gebruik item uit inventory\n");
 	printf("\"Exit\":			Sluit de applicatie\n");
 }
 
