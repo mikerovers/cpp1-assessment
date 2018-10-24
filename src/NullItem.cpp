@@ -15,6 +15,6 @@ NullItem::~NullItem()
 void NullItem::Use()
 {
 	auto* output = new Output();
-	output->PrintNothinigHappened(this);
+	output->PrintNothingHappened(this);
 	delete output;
 }

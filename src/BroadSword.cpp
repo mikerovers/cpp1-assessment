@@ -19,7 +19,7 @@ Stat* BroadSword::Handle(Stat* stat) const
 void BroadSword::Use()
 {
 	auto* output = new Output();
-	output->PrintNothinigHappened(this);
+	output->PrintNothingHappened(this);
 	delete output;
 }
 

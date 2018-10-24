@@ -17,6 +17,6 @@ Stat* Shield::Handle(Stat* stat) const
 void Shield::Use()
 {
 	auto* output = new Output();
-	output->PrintNothinigHappened(this);
+	output->PrintNothingHappened(this);
 	delete output;
 }

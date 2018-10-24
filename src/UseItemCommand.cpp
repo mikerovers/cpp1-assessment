@@ -20,7 +20,7 @@ void UseItemCommand::Execute(Game* game)
 	{
 		auto* inventory = game->GetInventory();
 		_output->PrintItemUsed(inventory->GetItem(input));
-		inventory->GetItem(input)->Use();
+		inventory->UseItem(input);
 	}
 
 	delete _input;
