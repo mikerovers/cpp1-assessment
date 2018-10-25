@@ -22,7 +22,6 @@ void FlightCommand::Execute(Game* game)
 	CharArrayComparator *comparator = new (_NORMAL_BLOCK, __FILE__, __LINE__) CharArrayComparator();
 	bool valid = false;
 	const char* command = nullptr;
-	
 
 	while (!command)
 	{
@@ -32,22 +31,19 @@ void FlightCommand::Execute(Game* game)
 
 		if (comparator->Compare("north", array, 5) && player->GetCurrentRoom()->GetNorthNeighbour()) {
 			player->MoveTo(player->GetCurrentRoom()->GetNorthNeighbour());
-			std::cout << "go north";
 		}
 		else if (comparator->Compare("east", array, 4) && player->GetCurrentRoom()->GetEastNeighbour()) {
 			player->MoveTo(player->GetCurrentRoom()->GetEastNeighbour());
-			std::cout << "go east";
 		}
 		else if (comparator->Compare("south", array, 5) && player->GetCurrentRoom()->GetSouthNeighbour()) {
 			player->MoveTo(player->GetCurrentRoom()->GetSouthNeighbour());
-			std::cout << "go south";
 		}
 		else if (comparator->Compare("west", array, 4) && player->GetCurrentRoom()->GetWestNeighbour()) {
 			player->MoveTo(player->GetCurrentRoom()->GetWestNeighbour());
-			std::cout << "go west";
 		}
 		else {
 			command = nullptr;
 		}
 	}
+	delete comparator;
 }

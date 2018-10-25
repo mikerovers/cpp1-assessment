@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "BaseRoom.h"
 #include <cstring>
+#include "Output.h"
 
 BaseRoom::BaseRoom()
 {
@@ -19,6 +20,15 @@ BaseRoom & BaseRoom::operator=(const BaseRoom & other)
 	}
 
 	return *this;
+}
+
+void BaseRoom::PlayerEnters()
+{
+	Output* output = new Output();
+
+	output->ShowRoomDescription(this);
+	delete output;
+	// TODO 
 }
 
 char BaseRoom::GetDisplayValue()

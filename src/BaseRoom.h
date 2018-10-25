@@ -18,6 +18,8 @@ public:
 	~BaseRoom();
 	BaseRoom&operator=(const BaseRoom& other);
 
+
+	void PlayerEnters();
 	char GetDisplayValue();
 	Player* GetPlayer();
 
