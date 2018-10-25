@@ -21,6 +21,7 @@ public:
 	class Dungeon* GetDungeon() const;
 	class Output* GetOutput() const;
 	class Inventory* GetInventory() const;
+	class Player* GetPlayer() const;
 	int GetCurrentLevel() const;
 	void SetRunning(bool running);
 	Game();

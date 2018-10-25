@@ -69,6 +69,24 @@ void Output::PrintHealthIncrease(const int amount) const
 	printf("Your health has increased with %d points.\n", amount);
 }
 
+void Output::ShowDirections(Player* player) const
+{
+	printf("Which way do you want to flee?\n");
+
+	if (player->GetCurrentRoom()->GetNorthNeighbour()) {
+		printf("north\n");
+	}
+	if (player->GetCurrentRoom()->GetEastNeighbour()) {
+		printf("east\n");
+	}
+	if (player->GetCurrentRoom()->GetSouthNeighbour()) {
+		printf("south\n");
+	}
+	if (player->GetCurrentRoom()->GetWestNeighbour()) {
+		printf("west\n");
+	}
+}
+
 void Output::ShowCommands() const {
 	printf("\"Commands\":		Toont de commando's\n");
 	printf("\"Kaart\":		Toont de kaart van de kerker\n");

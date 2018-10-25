@@ -16,10 +16,12 @@ protected:
 public:
 	BaseRoom();
 	~BaseRoom();
+	BaseRoom&operator=(const BaseRoom& other);
 
 	char GetDisplayValue();
 	Player* GetPlayer();
 
+	void SetVisited();
 	void SetPlayer(Player* player);
 
 	BaseRoom* GetNorthNeighbour();

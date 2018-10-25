@@ -23,4 +23,5 @@ public:
 	void PrintNothingHappened(const Item* item) const;
 	void AskForItem() const;
 	void PrintHealthIncrease(const int amount) const;
+	void ShowDirections(Player* player) const;
 };

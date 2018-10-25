@@ -108,6 +108,11 @@ Inventory* Game::GetInventory() const
 	return _inventory;
 }
 
+Player * Game::GetPlayer() const
+{
+	return _player;
+}
+
 int Game::GetCurrentLevel() const
 {
 	return _currentLevel;

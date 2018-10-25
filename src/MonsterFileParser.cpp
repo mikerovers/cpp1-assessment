@@ -12,8 +12,6 @@ void MonsterFileParser::parse(const char path[], MonsterHolder* monsterHolder)
 	auto *reader = new FileReader();
 	Monster* monsters[14];
 
-	//    auto h = (sizeof(monsters)/sizeof(*monsters));
-
 	try {
 		auto monsterFile = reader->openFile(path);
 		delete reader;
@@ -26,7 +24,6 @@ void MonsterFileParser::parse(const char path[], MonsterHolder* monsterHolder)
 			Monster *monster = parseMonster(oneLine);
 			if (monster != nullptr) {
 				monsterHolder->AddMonster(monster, counter);
-				//monsters[counter] = monster;
 				counter++;
 			}
 
@@ -44,7 +41,6 @@ void MonsterFileParser::parse(const char path[], MonsterHolder* monsterHolder)
 
 	}
 
-	//return monsters;
 }
 
 

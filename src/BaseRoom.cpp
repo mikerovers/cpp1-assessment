@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "BaseRoom.h"
+#include <cstring>
 
 BaseRoom::BaseRoom()
 {
@@ -11,6 +12,15 @@ BaseRoom::~BaseRoom()
 	delete _player;
 }
 
+BaseRoom & BaseRoom::operator=(const BaseRoom & other)
+{
+	if (this != &other) {
+
+	}
+
+	return *this;
+}
+
 char BaseRoom::GetDisplayValue()
 {
 	if (BaseRoom::GetPlayer()) {
@@ -20,6 +30,11 @@ char BaseRoom::GetDisplayValue()
 		return '.';
 	}
 	return _displayValue;
+}
+
+void BaseRoom::SetVisited()
+{
+	_visited = true;
 }
 
 void BaseRoom::SetPlayer(Player* player) {

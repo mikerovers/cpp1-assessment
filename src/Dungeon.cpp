@@ -4,6 +4,7 @@
 #include "DownStaircaseRoom.h"
 #include "UpStaircaseRoom.h"
 #include "EndBossRoom.h"
+#include "StartRoom.h"
 #include "RandomGenerator.h"
 #include "Player.h"
 
@@ -69,7 +70,11 @@ void Dungeon::AddPlayer(Player* player) const {
 	int width = random->Generate(0, _width - 1);
 	int height = random->Generate(0, _height - 1);
 	delete random;
+	BaseRoom* room = &_levels[_depth - 1][height][width];
+	_levels[_depth - 1][height][width] = StartRoom();
+	_levels[_depth - 1][height][width].SetVisited();
 	_levels[_depth - 1][height][width].SetPlayer(player);
+	player->SetCurrentRoom(&_levels[_depth - 1][height][width]);
 }
 
 void Dungeon::AddStairs() const {
