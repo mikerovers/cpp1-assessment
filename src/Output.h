@@ -24,4 +24,6 @@ public:
 	void AskForItem() const;
 	void PrintHealthIncrease(const int amount) const;
 	void ShowDirections(Player* player) const;
+	void AskDirections() const;
+	void ShowRoomDescription(BaseRoom* room) const;
 };

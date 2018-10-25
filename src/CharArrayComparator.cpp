@@ -20,3 +20,5 @@ bool CharArrayComparator::Compare(char const array1[], char const array2[], int 
 	}
 	return true;
 }
+
+

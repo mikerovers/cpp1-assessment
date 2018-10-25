@@ -20,6 +20,7 @@ public:
 	void Start();
 	class Dungeon* GetDungeon() const;
 	class Output* GetOutput() const;
+	class Input* GetInput() const;
 	class Inventory* GetInventory() const;
 	class Player* GetPlayer() const;
 	int GetCurrentLevel() const;

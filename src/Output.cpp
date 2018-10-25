@@ -87,6 +87,15 @@ void Output::ShowDirections(Player* player) const
 	}
 }
 
+void Output::AskDirections() const
+{
+}
+
+void Output::ShowRoomDescription(BaseRoom * room) const
+{
+	printf("Entering room TODO");
+}
+
 void Output::ShowCommands() const {
 	printf("\"Commands\":		Toont de commando's\n");
 	printf("\"Kaart\":		Toont de kaart van de kerker\n");

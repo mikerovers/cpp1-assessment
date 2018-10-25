@@ -26,3 +26,10 @@ int Input::GetIntInput() const
 	}
 	return number;
 }
+
+char* Input::GetInput() const
+{
+	char line[50];
+	std::cin >> line;
+	return line;
+}

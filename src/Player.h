@@ -12,6 +12,8 @@ public:
 	void SetCurrentRoom(class BaseRoom* room);
 
 	class BaseRoom* GetCurrentRoom();
+
+	void MoveTo(class BaseRoom* room);
 private:
 	Stat* stat;
 	class BaseRoom* _currentRoom;
