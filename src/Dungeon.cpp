@@ -56,9 +56,9 @@ void Dungeon::SetNeighbours()
 		for (int h = 0; h < _height; h++) {
 			for (int w = 0; w < _width; w++)
 			{
-				_levels[d][h][w].SetNorthNeighbour(h < (_height - 1) ? &_levels[d][h + 1][w] : nullptr); // + 1
+				_levels[d][h][w].SetNorthNeighbour(h > 0 ? &_levels[d][h - 1][w] : nullptr); // + 1
 				_levels[d][h][w].SetEastNeighbour(w < (_width - 1) ? &_levels[d][h][w + 1] : nullptr); // + 1
-				_levels[d][h][w].SetSouthNeighbour(h > 0 ? &_levels[d][h - 1][w] : nullptr); // - 1
+				_levels[d][h][w].SetSouthNeighbour(h < (_height - 1) ? &_levels[d][h + 1][w] : nullptr); // - 1
 				_levels[d][h][w].SetWestNeighbour(w > 0 ? &_levels[d][h][w - 1] : nullptr); // - 1
 			}
 		}
