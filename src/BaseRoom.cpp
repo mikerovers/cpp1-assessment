@@ -1,7 +1,24 @@
 #include "pch.h"
 #include "BaseRoom.h"
-#include <cstring>
 #include "Output.h"
+#include "RandomGenerator.h"
+
+void BaseRoom::setMonster(MonsterHolder* monsterHolder)
+{
+	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
+	int chance = random->Generate(1, 100);
+	if (chance >= 50) {
+		_monster = monsterHolder->GetRandomMonsterByLevelRange(_minMonsterLevel, _maxMonsterLevel);
+	}
+	else {
+		_monster = nullptr;
+	}
+	delete random;
+}
+
+void BaseRoom::setItem()
+{
+}
 
 BaseRoom::BaseRoom()
 {
@@ -22,13 +39,40 @@ BaseRoom & BaseRoom::operator=(const BaseRoom & other)
 	return *this;
 }
 
-void BaseRoom::PlayerEnters()
+Monster * BaseRoom::GetMonster()
 {
-	Output* output = new Output();
+	return _monster;
+}
 
+Item * BaseRoom::GetItem()
+{
+	return _item;
+}
+
+void BaseRoom::SetMonsterLevels(int min, int max)
+{
+	_minMonsterLevel = min;
+	_maxMonsterLevel = max;
+}
+
+void BaseRoom::PlayerEnters(MonsterHolder* monsterHolder)
+{
+	setMonster(monsterHolder);
+	Output* output = new Output();
+	output->ClearScreen();
 	output->ShowRoomDescription(this);
-	delete output;
-	// TODO 
+	output->BlankLine();
+	output->ShowExits(this);
+	output->BlankLine();
+	output->ShowEnemies(_monster);
+	output->BlankLine();
+	output->ShowOptions();
+	delete output; 
+}
+
+void BaseRoom::PlayerLeaves() {
+	_player = nullptr;
+	_monster = nullptr;
 }
 
 char BaseRoom::GetDisplayValue()

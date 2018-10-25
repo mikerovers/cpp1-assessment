@@ -1,16 +1,19 @@
 #pragma once
-#include "Monster.h";
+#include "Monster.h"
 
 class MonsterHolder
 {
 private:
 	Monster** _monsters;
+	int _size;
 public:
-	MonsterHolder();
+	MonsterHolder(int monsterCount);
 	~MonsterHolder();
 
 	void Init();
 	void AddMonster(Monster* monster, int index);
+
 	class Monster** GetMonsters();
+	class Monster* GetRandomMonsterByLevelRange(int min, int max);
 };
 

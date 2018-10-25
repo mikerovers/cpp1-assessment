@@ -1,6 +1,6 @@
 #pragma once
 #include "Stat.h"
-
+#include "MonsterHolder.h"
 
 class Player
 {
@@ -13,7 +13,7 @@ public:
 
 	class BaseRoom* GetCurrentRoom();
 
-	void MoveTo(class BaseRoom* room);
+	void MoveTo(MonsterHolder* monsterHolder, class BaseRoom* room);
 private:
 	Stat* stat;
 	class BaseRoom* _currentRoom;
