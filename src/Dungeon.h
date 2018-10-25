@@ -15,6 +15,7 @@ public:
 	void AddPlayer(Player* player) const;
 	void AddStairs() const;
 	void AddEndBoss() const;
+	void AddDescription() const;
 	class BaseRoom** GetGrid(int const level) const;
 	int GetHeight() const;
 	int GetWidth() const;

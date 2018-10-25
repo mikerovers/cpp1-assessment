@@ -5,7 +5,7 @@
 #include <iostream>
 
 
-void BaseRoom::setRandomContent()
+void BaseRoom::SetRandomContent()
 {
 	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
 	int roomSize = random->Generate(0, 2);
@@ -15,18 +15,25 @@ void BaseRoom::setRandomContent()
 
 	ContentTranslator* translator = new (_NORMAL_BLOCK, __FILE__, __LINE__) ContentTranslator();
 	_description = translator->GetDescription(roomSize, tidyness, layout);
+	delete translator;
 }
 
 
 BaseRoom::BaseRoom()
 {
-	setRandomContent();
-	std::cout << GetDescription();
+	//std::cout << GetDescription();
 }
 
 
 BaseRoom::~BaseRoom()
 {
+
+	//delete _description;
+	if (_description) {
+		delete[] _description;
+	}
+
+	_description = nullptr;
 	delete _player;
 }
 
