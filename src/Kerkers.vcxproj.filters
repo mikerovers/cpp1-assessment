@@ -70,6 +70,12 @@
     <Filter Include="Header Files\Controllers\Combat">
       <UniqueIdentifier>{d375f99f-484c-43a9-880d-3c0f7a36f052}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Exceptions">
+      <UniqueIdentifier>{fefedaf7-9234-4e5a-abab-ad146cf5f937}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Exceptions">
+      <UniqueIdentifier>{e8860cba-6a1e-4c04-8c43-8bd3e3c16a4a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -188,6 +194,26 @@
     </ClInclude>
     <ClInclude Include="ContentTranslator.h">
       <Filter>Header Files\Util</Filter>
+    <ClInclude Include="MonsterParsingException.h">
+      <Filter>Header Files\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="FileNotOpenedException.h">
+      <Filter>Header Files\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="FileReader.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterFileParser.h">
+      <Filter>Header Files\Builders</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterHolder.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="UseItemCommand.h">
+      <Filter>Header Files\Commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -308,5 +334,29 @@
     <ClCompile Include="ContentTranslator.cpp">
       <Filter>Source Files\Util</Filter>
     </ClCompile>
+    <ClCompile Include="FileNotOpenedException.cpp">
+      <Filter>Source Files\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterParsingException.cpp">
+      <Filter>Source Files\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="FileReader.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterFileParser.cpp">
+      <Filter>Source Files\Builders</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterHolder.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="UseItemCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="monsters.txt" />
   </ItemGroup>
 </Project>
