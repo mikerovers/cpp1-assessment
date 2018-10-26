@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Dungeon.h"
 #include "NormalRoom.h"
+#include "StartRoom.h"
 #include "DownStaircaseRoom.h"
 #include "UpStaircaseRoom.h"
 #include "EndBossRoom.h"
@@ -63,6 +64,17 @@ void Dungeon::SetRoomCharacteristics()
 	}
 }
 
+void Dungeon::AddDescription() const {
+	for (int d = 0; d < _depth; d++) {
+		for (int h = 0; h < _height; h++) {
+			for (int w = 0; w < _width; w++)
+			{
+				//_levels[d][h][w].SetRandomContent();
+			}
+		}
+	}
+}
+
 void Dungeon::setNeighbours(int d, int h, int w)
 {
 	_levels[d][h][w].SetNorthNeighbour(h > 0 ? &_levels[d][h - 1][w] : nullptr); // + 1
@@ -98,8 +110,6 @@ void Dungeon::setMonsterLevel(int d, int h, int w)
 		_levels[d][h][w].SetMonsterLevels(minLevel, maxLevel);
 	}
 }
-
-
 
 void Dungeon::AddPlayer(Player* player) const {
 	RandomGenerator* random = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) RandomGenerator();

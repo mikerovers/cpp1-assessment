@@ -189,6 +189,11 @@
     <ClInclude Include="Shield.h">
       <Filter>Header Files\Models\Items</Filter>
     </ClInclude>
+    <ClInclude Include="StartRoom.h">
+      <Filter>Header Files\Models\Rooms</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentTranslator.h">
+      <Filter>Header Files\Util</Filter>
     <ClInclude Include="MonsterParsingException.h">
       <Filter>Header Files\Exceptions</Filter>
     </ClInclude>
@@ -325,6 +330,12 @@
     </ClCompile>
     <ClCompile Include="Shield.cpp">
       <Filter>Source Files\Models\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="StartRoom.cpp">
+      <Filter>Source Files\Models\Rooms</Filter>
+    </ClCompile>
+    <ClCompile Include="ContentTranslator.cpp">
+      <Filter>Source Files\Util</Filter>
     </ClCompile>
     <ClCompile Include="FileNotOpenedException.cpp">
       <Filter>Source Files\Exceptions</Filter>

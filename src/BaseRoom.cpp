@@ -1,7 +1,22 @@
 #include "pch.h"
 #include "BaseRoom.h"
-#include "Output.h"
 #include "RandomGenerator.h"
+#include "ContentTranslator.h"
+#include <iostream>
+
+
+void BaseRoom::SetRandomContent()
+{
+	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
+	int roomSize = random->Generate(0, 2);
+	int tidyness = random->Generate(0, 1);
+	int layout = random->Generate(0, 2);
+	delete random;
+
+	ContentTranslator* translator = new (_NORMAL_BLOCK, __FILE__, __LINE__) ContentTranslator();
+	_description = translator->GetDescription(roomSize, tidyness, layout);
+	delete translator;
+}
 
 void BaseRoom::setMonster(MonsterHolder* monsterHolder)
 {
@@ -22,11 +37,19 @@ void BaseRoom::setItem()
 
 BaseRoom::BaseRoom()
 {
+	//std::cout << GetDescription();
 }
 
 
 BaseRoom::~BaseRoom()
 {
+
+	//delete _description;
+	if (_description) {
+		delete[] _description;
+	}
+
+	_description = nullptr;
 	delete _player;
 }
 
@@ -77,9 +100,6 @@ void BaseRoom::PlayerLeaves() {
 
 char BaseRoom::GetDisplayValue()
 {
-	if (BaseRoom::GetPlayer()) {
-		return 'S';
-	}
 	if (!_visited) {
 		return '.';
 	}
@@ -98,6 +118,11 @@ void BaseRoom::SetPlayer(Player* player) {
 Player* BaseRoom::GetPlayer()
 {
 	return _player;
+}
+
+char * BaseRoom::GetDescription()
+{
+	return _description;
 }
 
 BaseRoom * BaseRoom::GetNorthNeighbour()

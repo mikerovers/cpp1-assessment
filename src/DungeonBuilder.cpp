@@ -17,5 +17,6 @@ Dungeon* DungeonBuilder::BuildDungeon(Player* player, int const width, int const
 	dungeon->AddPlayer(player);
 	dungeon->AddStairs();
 	dungeon->AddEndBoss();
+	dungeon->AddDescription();
 	return dungeon;
 }

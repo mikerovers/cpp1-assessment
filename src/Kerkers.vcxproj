@@ -160,6 +160,7 @@
     <ClInclude Include="CheckInventoryCommand.h" />
     <ClInclude Include="CheckStatsCommand.h" />
     <ClInclude Include="CommandFactory.h" />
+    <ClInclude Include="ContentTranslator.h" />
     <ClInclude Include="DownStaircaseRoom.h" />
     <ClInclude Include="Dungeon.h" />
     <ClInclude Include="DungeonBuilder.h" />
@@ -207,6 +208,7 @@
     <ClCompile Include="CheckInventoryCommand.cpp" />
     <ClCompile Include="CheckStatsCommand.cpp" />
     <ClCompile Include="CommandFactory.cpp" />
+    <ClCompile Include="ContentTranslator.cpp" />
     <ClCompile Include="DownStaircaseRoom.cpp" />
     <ClCompile Include="Dungeon.cpp" />
     <ClCompile Include="DungeonBuilder.cpp" />

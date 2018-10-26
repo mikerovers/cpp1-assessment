@@ -10,6 +10,8 @@ private:
 	BaseRoom* _southNeighBour;
 	BaseRoom* _westNeighBour;
 
+	char* _description = nullptr;
+
 	class Player* _player = nullptr;
 	bool _visited = false;
 
@@ -21,6 +23,7 @@ private:
 
 	int _minMonsterLevel;
 	int _maxMonsterLevel;
+  
 protected:
 	char _displayValue;
 public:
@@ -37,10 +40,14 @@ public:
 
 	void SetMonsterLevels(int min, int max);
 
-	void PlayerEnters(MonsterHolder* monsterHolder);
-	void PlayerLeaves();
+	void SetRandomContent();
 	char GetDisplayValue();
 	Player* GetPlayer();
+
+	char* GetDescription();
+
+	void PlayerEnters(MonsterHolder* monsterHolder);
+	void PlayerLeaves();
 
 	void SetVisited();
 	void SetPlayer(Player* player);
