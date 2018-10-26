@@ -23,4 +23,10 @@ public:
 	void PrintNothingHappened(const Item* item) const;
 	void AskForItem() const;
 	void PrintHealthIncrease(const int amount) const;
+	void AskDirections() const;
+	void ShowRoomDescription(BaseRoom* room) const;
+	void ShowExits(BaseRoom* room) const;
+	void ShowEnemies(Monster* monster) const;
+	void BlankLine() const;
+	void ShowOptions() const;
 };

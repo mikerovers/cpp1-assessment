@@ -7,4 +7,3 @@ public:
 	StartRoom();
 	~StartRoom();
 };
-

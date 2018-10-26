@@ -215,6 +215,9 @@
     <ClInclude Include="UseItemCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
+    <ClInclude Include="StartRoom.h">
+      <Filter>Header Files\Models\Rooms</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -354,6 +357,9 @@
     </ClCompile>
     <ClCompile Include="UseItemCommand.cpp">
       <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="StartRoom.cpp">
+      <Filter>Source Files\Models\Rooms</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

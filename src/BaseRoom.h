@@ -1,5 +1,7 @@
 #pragma once
-#include "Player.h"
+
+#include "Item.h"
+#include "MonsterHolder.h"
 class BaseRoom
 {
 private:
@@ -10,22 +12,42 @@ private:
 
 	char* _description = nullptr;
 
-	bool _hasPlayer = false;
-	Player* _player = nullptr;
+	class Player* _player = nullptr;
 	bool _visited = false;
 
+	class Monster* _monster;
+	Item* _item;
 
+	void setMonster(class MonsterHolder* monsterHolder);
+	void setItem();
+
+	int _minMonsterLevel;
+	int _maxMonsterLevel;
+  
 protected:
 	char _displayValue;
 public:
 	BaseRoom();
 	~BaseRoom();
+	BaseRoom&operator=(const BaseRoom& other);
+
+	Monster* GetMonster();
+
+	Item* GetItem();
+
+
+
+
+	void SetMonsterLevels(int min, int max);
 
 	void SetRandomContent();
 	char GetDisplayValue();
 	Player* GetPlayer();
 
 	char* GetDescription();
+
+	void PlayerEnters(MonsterHolder* monsterHolder);
+	void PlayerLeaves();
 
 	void SetVisited();
 	void SetPlayer(Player* player);

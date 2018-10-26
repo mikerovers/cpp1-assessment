@@ -18,21 +18,22 @@
 
 void Game::Init()
 {
+	int monsterCount = 14;
 	_output = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Output();
 	_input = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Input();
 
 	_output->ShowIntroduction();
 
-	_monsterHolder = new (_NORMAL_BLOCK, __FILE__, __LINE__) MonsterHolder();
+	_monsterHolder = new (_NORMAL_BLOCK, __FILE__, __LINE__) MonsterHolder(monsterCount);
 
 	try {
 		auto *monsterParser = new (_NORMAL_BLOCK, __FILE__, __LINE__) MonsterFileParser;
 		monsterParser->parse("monsters.txt", _monsterHolder);
 		//auto* monsters = monsterParser->parse("monsters.txt");
 
-		for (int i = 0; i < 14; ++i) { // Waarom is monsters niet gelijk aan dit?
-			std::cout << _monsterHolder->GetMonsters()[i]->getName() << "\n";
-		}
+		//for (int i = 0; i < monsterCount; ++i) { // Waarom is monsters niet gelijk aan dit?
+		//	std::cout << _monsterHolder->GetMonsters()[i]->getName() << "\n";
+		//}
 		delete monsterParser;
 	}
 	catch (MonsterParsingException& e) {
@@ -103,9 +104,24 @@ Output * Game::GetOutput() const
 	return _output;
 }
 
+Input * Game::GetInput() const
+{
+	return _input;
+}
+
 Inventory* Game::GetInventory() const
 {
 	return _inventory;
+}
+
+Player * Game::GetPlayer() const
+{
+	return _player;
+}
+
+MonsterHolder * Game::GetMonsterHolder() const
+{
+	return _monsterHolder;
 }
 
 int Game::GetCurrentLevel() const
