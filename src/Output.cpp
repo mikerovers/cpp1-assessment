@@ -51,18 +51,29 @@ void Output::PrintInventory(Inventory* const inventory) const
 
 void Output::PrintItemUsed(Item* const item) const
 {
-	if (typeid(*item) == typeid(NullItem))
-	{
-		printf("Nothing happened\n");
-	} else
-	{
-		printf("You used %s!\n", item->GetName());
-	}
+	printf("You used %s!\n", item->GetName());
+}
+
+void Output::PrintNothingHappened(const Item* item) const
+{
+	printf("Nothing happened with %s \n", item->GetName());
+}
+
+void Output::AskForItem() const
+{
+	printf("Which item do you want to use (0 - 4)? \n");
+}
+
+void Output::PrintHealthIncrease(const int amount) const
+{
+	printf("Your health has increased with %d points.\n", amount);
 }
 
 void Output::ShowCommands() const {
 	printf("\"Commands\":		Toont de commando's\n");
 	printf("\"Kaart\":		Toont de kaart van de kerker\n");
+	printf("\"Inventory\":		Laat de inventory zien\n");
+	printf("\"Item\":			Gebruik item uit inventory\n");
 	printf("\"Exit\":			Sluit de applicatie\n");
 }
 
