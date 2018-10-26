@@ -5,5 +5,6 @@ public:
 	Input();
 	~Input();
 	int GetIntInput() const;
+	char* GetInput() const;
 };
 

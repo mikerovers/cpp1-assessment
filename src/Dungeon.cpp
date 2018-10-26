@@ -4,6 +4,7 @@
 #include "DownStaircaseRoom.h"
 #include "UpStaircaseRoom.h"
 #include "EndBossRoom.h"
+#include "StartRoom.h"
 #include "RandomGenerator.h"
 #include "Player.h"
 
@@ -55,9 +56,9 @@ void Dungeon::SetNeighbours()
 		for (int h = 0; h < _height; h++) {
 			for (int w = 0; w < _width; w++)
 			{
-				_levels[d][h][w].SetNorthNeighbour(h < (_height - 1) ? &_levels[d][h + 1][w] : nullptr); // + 1
+				_levels[d][h][w].SetNorthNeighbour(h > 0 ? &_levels[d][h - 1][w] : nullptr); // + 1
 				_levels[d][h][w].SetEastNeighbour(w < (_width - 1) ? &_levels[d][h][w + 1] : nullptr); // + 1
-				_levels[d][h][w].SetSouthNeighbour(h > 0 ? &_levels[d][h - 1][w] : nullptr); // - 1
+				_levels[d][h][w].SetSouthNeighbour(h < (_height - 1) ? &_levels[d][h + 1][w] : nullptr); // - 1
 				_levels[d][h][w].SetWestNeighbour(w > 0 ? &_levels[d][h][w - 1] : nullptr); // - 1
 			}
 		}
@@ -69,7 +70,11 @@ void Dungeon::AddPlayer(Player* player) const {
 	int width = random->Generate(0, _width - 1);
 	int height = random->Generate(0, _height - 1);
 	delete random;
+	BaseRoom* room = &_levels[_depth - 1][height][width];
+	_levels[_depth - 1][height][width] = StartRoom();
+	_levels[_depth - 1][height][width].SetVisited();
 	_levels[_depth - 1][height][width].SetPlayer(player);
+	player->SetCurrentRoom(&_levels[_depth - 1][height][width]);
 }
 
 void Dungeon::AddStairs() const {
