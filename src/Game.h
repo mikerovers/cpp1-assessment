@@ -23,6 +23,7 @@ public:
 	class Input* GetInput() const;
 	class Inventory* GetInventory() const;
 	class Player* GetPlayer() const;
+	class MonsterHolder* GetMonsterHolder() const;
 	int GetCurrentLevel() const;
 	void SetRunning(bool running);
 	Game();

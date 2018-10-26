@@ -1,12 +1,14 @@
 #include "pch.h"
 #include "MonsterHolder.h"
+#include "RandomGenerator.h"
+#include <iostream>
 
 
-MonsterHolder::MonsterHolder()
+MonsterHolder::MonsterHolder(int monsterCount)
 {
+	_size = monsterCount;
 	Init();
 }
-
 
 MonsterHolder::~MonsterHolder()
 {
@@ -29,4 +31,22 @@ void MonsterHolder::AddMonster(Monster * monster, int index)
 Monster ** MonsterHolder::GetMonsters()
 {
 	return _monsters;
+}
+
+Monster * MonsterHolder::GetRandomMonsterByLevelRange(int min, int max)
+{
+	Monster* monsters[14];
+	int counter = 0;
+	for (int i = 1; i < _size; i++) {
+		Monster* monster = _monsters[i];
+		int monsterLevel = GetMonsters()[i]->getLevel();
+		if (monsterLevel >= min && monsterLevel <= max) {
+			monsters[counter] = _monsters[i];
+			counter++;
+		}
+	}
+	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
+	int chosenIndex = random->Generate(0, counter);
+	delete random;
+	return monsters[chosenIndex]; 
 }

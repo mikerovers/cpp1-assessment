@@ -22,14 +22,14 @@ BaseRoom * Player::GetCurrentRoom()
 	return _currentRoom;
 }
 
-void Player::MoveTo(BaseRoom * room)
+void Player::MoveTo(MonsterHolder* monsterHolder, BaseRoom * room)
 {
-	_currentRoom->SetPlayer(nullptr);
+	_currentRoom->PlayerLeaves();
 	SetCurrentRoom(room);
 
 	room->SetPlayer(this);
 	room->SetVisited();
-	room->PlayerEnters();
+	room->PlayerEnters(monsterHolder);
 }
 
 void Player::SetStat(Stat* const newStat)

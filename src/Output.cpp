@@ -69,39 +69,63 @@ void Output::PrintHealthIncrease(const int amount) const
 	printf("Your health has increased with %d points.\n", amount);
 }
 
-void Output::ShowDirections(Player* player) const
-{
-	printf("Which way do you want to flee?\n");
-
-	if (player->GetCurrentRoom()->GetNorthNeighbour()) {
-		printf("north\n");
-	}
-	if (player->GetCurrentRoom()->GetEastNeighbour()) {
-		printf("east\n");
-	}
-	if (player->GetCurrentRoom()->GetSouthNeighbour()) {
-		printf("south\n");
-	}
-	if (player->GetCurrentRoom()->GetWestNeighbour()) {
-		printf("west\n");
-	}
-}
-
 void Output::AskDirections() const
 {
 }
 
+
+
 void Output::ShowRoomDescription(BaseRoom * room) const
 {
-	printf("Entering room TODO");
+	printf("Entering room TODO\n");
+}
+
+void Output::ShowExits(BaseRoom * room) const
+{
+	printf("The following exists are available\n");
+
+	if (room->GetNorthNeighbour()) {
+		printf("north\n");
+	}
+	if (room->GetEastNeighbour()) {
+		printf("east\n");
+	}
+	if (room->GetSouthNeighbour()) {
+		printf("south\n");
+	}
+	if (room->GetWestNeighbour()) {
+		printf("west\n");
+	}
+}
+
+void Output::ShowEnemies(Monster * monster) const
+{
+	if (monster) {
+		printf("Monster has spawned: %s\n", monster->getName());
+	}
+	else {
+		printf("This room is clear of monsters\n");
+	}
+}
+
+
+void Output::BlankLine() const
+{
+	printf("\n");
+}
+
+void Output::ShowOptions() const
+{
+	printf("What do you want to do?\n");
+	printf("[fight|flight|search|rest|inventory|map]\n");
 }
 
 void Output::ShowCommands() const {
-	printf("\"Commands\":		Toont de commando's\n");
-	printf("\"Kaart\":		Toont de kaart van de kerker\n");
-	printf("\"Inventory\":		Laat de inventory zien\n");
-	printf("\"Item\":			Gebruik item uit inventory\n");
-	printf("\"Exit\":			Sluit de applicatie\n");
+	printf("\"Commands\":		Show the commands\n");
+	printf("\"Map\":			Show the map\n");
+	printf("\"Inventory\":		Show the inventory\n");
+	printf("\"Item\":			Use item from inventory\n");
+	printf("\"Exit\":			Exit the game\n");
 }
 
 void Output::ClearScreen() const {
@@ -113,7 +137,7 @@ void Output::ShowMap(Dungeon* const dungeon, int level) const {
 	int width = dungeon->GetWidth();
 	int height = dungeon->GetHeight();
 
-	printf("Kerker kaart: \n");
+	printf("Dungeon map: \n");
 	for (int h = 0; h < height; h++)
 	{
 		for (int w = 0; w < width; w++)
@@ -124,7 +148,7 @@ void Output::ShowMap(Dungeon* const dungeon, int level) const {
 		printf("\n");
 	}
 
-	printf("Legenda:\n"); 
+	printf("Legenda:\n");
 	printf("|- : Gangen \n");
 	printf("S  : Start locatie \n");
 	printf("E  : Eind vijand\n");
