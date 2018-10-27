@@ -18,7 +18,7 @@ public:
 	void AskForDungeonHeight() const;
 	void AskForDungeonDepth() const;
 	void ShowGameStarted() const;
-	void PrintInventory(Inventory* const inventory) const;
+	void PrintInventory(const Inventory* inventory) const;
 	void PrintItemUsed(Item* const item) const;
 	void PrintNothingHappened(const Item* item) const;
 	void AskForItem() const;
@@ -29,4 +29,7 @@ public:
 	void ShowEnemies(Monster* monster) const;
 	void BlankLine() const;
 	void ShowOptions() const;
+	void PrintPlayerDeath(const Monster* monster, const Inventory* inventory) const;
+	void PrintStartCombat(const Monster* monster) const;
+	void PrintVictory(const Player* player, const Monster* monster) const;
 };

@@ -77,7 +77,7 @@ unsigned int Monster::getHP() const
 	return HP;
 }
 
-void Monster::setHP(unsigned int HP)
+void Monster::setHP(const unsigned int HP)
 {
 	Monster::HP = HP;
 }

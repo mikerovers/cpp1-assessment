@@ -14,9 +14,11 @@ public:
 	class BaseRoom* GetCurrentRoom();
 
 	void MoveTo(MonsterHolder* monsterHolder, class BaseRoom* room);
+	int GetHealth() const;
+	int SetHealth(const int amount);
 private:
 	Stat* stat;
 	class BaseRoom* _currentRoom;
-
+	int health;
 };
 

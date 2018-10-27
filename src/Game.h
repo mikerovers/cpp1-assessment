@@ -11,6 +11,7 @@ private:
 	class Input* _input;
 	class Inventory* _inventory;
 	class MonsterHolder* _monsterHolder;
+	class CombatController* _combatController;
 	int _state;
 	bool _running;
 	int _currentLevel;

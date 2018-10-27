@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "ShowCommandsCommand.h"
-
+#include "Output.h"
 
 ShowCommandsCommand::ShowCommandsCommand()
 {

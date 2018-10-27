@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "ShowMapCommand.h"
-
+#include "Output.h"
 
 ShowMapCommand::ShowMapCommand()
 {

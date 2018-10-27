@@ -2,6 +2,7 @@
 #include "FlightCommand.h"
 #include "Input.h"
 #include "CharArrayComparator.h"
+#include "Output.h"
 
 FlightCommand::FlightCommand()
 {

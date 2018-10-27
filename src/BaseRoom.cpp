@@ -3,6 +3,7 @@
 #include "RandomGenerator.h"
 #include "ContentTranslator.h"
 #include <iostream>
+#include "Output.h"
 
 
 void BaseRoom::SetRandomContent()
