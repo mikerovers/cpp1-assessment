@@ -2,6 +2,7 @@
 #include "BaseRoom.h"
 #include "RandomGenerator.h"
 #include "ContentTranslator.h"
+#include "Output.h"
 #include <iostream>
 #include "Output.h"
 
@@ -21,31 +22,55 @@ void BaseRoom::SetRandomContent()
 
 void BaseRoom::setMonster(MonsterHolder* monsterHolder)
 {
-	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
-	int chance = random->Generate(1, 100);
-	if (chance >= 50) {
-		_monster = monsterHolder->GetRandomMonsterByLevelRange(_minMonsterLevel, _maxMonsterLevel);
+	if (_displayValue == 'E') {
+		_monster = monsterHolder->GetRandomBoss();
 	}
 	else {
-		_monster = nullptr;
+		RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
+		int chance = random->Generate(1, 100);
+		if (chance >= 50) {
+			_monster = monsterHolder->GetRandomMonsterByLevelRange(_minMonsterLevel, _maxMonsterLevel);
+		}
+		else {
+			_monster = nullptr;
+		}
+		delete random;
 	}
-	delete random;
 }
 
 void BaseRoom::setItem()
 {
 }
 
+void BaseRoom::SetUpStairsRoom(BaseRoom* room)
+{
+	_upStairsRoom = room;
+}
+
+BaseRoom * BaseRoom::GetUpStairsRoom()
+{
+	return _upStairsRoom;
+}
+
+void BaseRoom::SetDownStairsRoom(BaseRoom* room)
+{
+	_downStairsRoom = room;
+}
+
+BaseRoom * BaseRoom::GetDownStairsRoom()
+{
+	return _downStairsRoom;
+}
+
+
 BaseRoom::BaseRoom()
 {
-	//std::cout << GetDescription();
+
 }
 
 
 BaseRoom::~BaseRoom()
 {
-
-	//delete _description;
 	if (_description) {
 		delete[] _description;
 	}
@@ -58,6 +83,7 @@ BaseRoom & BaseRoom::operator=(const BaseRoom & other)
 {
 	if (this != &other) {
 
+		_displayValue = other._displayValue;
 	}
 
 	return *this;
@@ -79,8 +105,18 @@ void BaseRoom::SetMonsterLevels(int min, int max)
 	_maxMonsterLevel = max;
 }
 
-void BaseRoom::PlayerEnters(MonsterHolder* monsterHolder)
+void BaseRoom::PlayerEnters(MonsterHolder * monsterHolder, BaseRoom* lastRoom)
 {
+	if (_upStairsRoom) {
+		if (_upStairsRoom != lastRoom) {
+			_player->MoveTo(monsterHolder, _upStairsRoom);
+		}
+	}
+	else if (_downStairsRoom) {
+		if (_downStairsRoom != lastRoom) {
+			_player->MoveTo(monsterHolder, _downStairsRoom);
+		}
+	}
 	setMonster(monsterHolder);
 	Output* output = new Output();
 	output->ClearScreen();
@@ -91,7 +127,7 @@ void BaseRoom::PlayerEnters(MonsterHolder* monsterHolder)
 	output->ShowEnemies(_monster);
 	output->BlankLine();
 	output->ShowOptions();
-	delete output; 
+	delete output;
 }
 
 void BaseRoom::PlayerLeaves() {
@@ -101,8 +137,8 @@ void BaseRoom::PlayerLeaves() {
 
 char BaseRoom::GetDisplayValue()
 {
-	if (!_visited) {
-		return '.';
+	if (_player != nullptr) {
+		return 'P';
 	}
 	return _displayValue;
 }

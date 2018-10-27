@@ -50,3 +50,11 @@ Monster * MonsterHolder::GetRandomMonsterByLevelRange(int min, int max)
 	delete random;
 	return monsters[chosenIndex]; 
 }
+
+Monster * MonsterHolder::GetRandomBoss()
+{
+	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
+	int chosenIndex = random->Generate(12, 13);
+	delete random;
+	return _monsters[chosenIndex];
+}

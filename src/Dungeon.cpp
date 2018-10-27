@@ -69,7 +69,7 @@ void Dungeon::AddDescription() const {
 		for (int h = 0; h < _height; h++) {
 			for (int w = 0; w < _width; w++)
 			{
-				//_levels[d][h][w].SetRandomContent();
+				_levels[d][h][w].SetRandomContent();
 			}
 		}
 	}
@@ -135,9 +135,15 @@ void Dungeon::AddStairs() const {
 		while (true) {
 			width = random->Generate(0, _width - 1);
 			height = random->Generate(0, _height - 1);
-			if (typeid(_levels[d][height][width]) == typeid(BaseRoom)) {
+			if (_levels[d][height][width].GetDisplayValue() == 'N') {
 				break;
 			}
+		}
+
+		if (d < _depth - 1) {
+			_levels[d][height][width].SetUpStairsRoom(&_levels[d + 1][height][width]);
+			_levels[d + 1][height][width].SetDownStairsRoom(&_levels[d][height][width]);
+
 		}
 
 		if (d == 0) {//only stairs up
@@ -165,7 +171,7 @@ void Dungeon::AddEndBoss() const {
 	while (true) {
 		width = random->Generate(0, _width - 1);
 		height = random->Generate(0, _height - 1);
-		if (typeid(_levels[0][height][width]) == typeid(BaseRoom)) {
+		if (_levels[0][height][width].GetDisplayValue() == 'N') {
 			break;
 		}
 	}

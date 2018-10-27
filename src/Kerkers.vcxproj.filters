@@ -234,6 +234,16 @@
     <ClInclude Include="Item.h">
       <Filter>Header Files\Models\Items</Filter>
     </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Header Files\Models\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="UseItemCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowMapCommand.h">
     <ClInclude Include="UseItemCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
@@ -246,8 +256,20 @@
     <ClInclude Include="RestCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
+    <ClInclude Include="ShowCommandsCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="RestCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
     <ClInclude Include="PickUpCommand.h">
       <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="UpStaircaseRoom.h">
+      <Filter>Header Files\Models\Rooms</Filter>
+    </ClInclude>
+    <ClInclude Include="StartRoom.h">
+      <Filter>Header Files\Models\Rooms</Filter>
     </ClInclude>
     <ClInclude Include="UpStaircaseRoom.h">
       <Filter>Header Files\Models\Rooms</Filter>
@@ -287,6 +309,9 @@
     </ClInclude>
     <ClInclude Include="RandomGenerator.h">
       <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Output.h">
+      <Filter>Header Files\IO</Filter>
     </ClInclude>
     <ClInclude Include="Output.h">
       <Filter>Header Files\IO</Filter>

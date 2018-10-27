@@ -25,6 +25,7 @@ void FlightCommand::Execute(Game* game)
 	bool valid = false;
 	const char* command = nullptr;
 
+	BaseRoom* roomToGo = nullptr;
 	while (!command)
 	{
 		command = input->GetInput();
@@ -32,20 +33,28 @@ void FlightCommand::Execute(Game* game)
 		strcpy_s(array, 10, command);
 
 		if (comparator->Compare("north", array, 5) && player->GetCurrentRoom()->GetNorthNeighbour()) {
-			player->MoveTo(monsterHolder, player->GetCurrentRoom()->GetNorthNeighbour());
+			roomToGo = player->GetCurrentRoom()->GetNorthNeighbour();
 		}
 		else if (comparator->Compare("east", array, 4) && player->GetCurrentRoom()->GetEastNeighbour()) {
-			player->MoveTo(monsterHolder, player->GetCurrentRoom()->GetEastNeighbour());
+			roomToGo = player->GetCurrentRoom()->GetEastNeighbour();
+
 		}
 		else if (comparator->Compare("south", array, 5) && player->GetCurrentRoom()->GetSouthNeighbour()) {
-			player->MoveTo(monsterHolder, player->GetCurrentRoom()->GetSouthNeighbour());
+			roomToGo = player->GetCurrentRoom()->GetSouthNeighbour();
 		}
 		else if (comparator->Compare("west", array, 4) && player->GetCurrentRoom()->GetWestNeighbour()) {
-			player->MoveTo(monsterHolder, player->GetCurrentRoom()->GetWestNeighbour());
+			roomToGo = player->GetCurrentRoom()->GetWestNeighbour();
 		}
 		else {
 			command = nullptr;
 		}
 	}
+	player->MoveTo(monsterHolder, roomToGo);
+	if (roomToGo->GetUpStairsRoom()) {
+		game->SetCurrentLevel(game->GetCurrentLevel() + 1);
+	} else if (roomToGo->GetDownStairsRoom()) {
+		game->SetCurrentLevel(game->GetCurrentLevel() - 1);
+	}
+
 	delete comparator;
 }

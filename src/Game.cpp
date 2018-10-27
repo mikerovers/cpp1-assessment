@@ -124,6 +124,11 @@ int Game::GetCurrentLevel() const
 	return _currentLevel;
 }
 
+void Game::SetCurrentLevel(int level)
+{
+	_currentLevel = level;
+}
+
 void Game::SetRunning(bool const running)
 {
 	_running = running;
