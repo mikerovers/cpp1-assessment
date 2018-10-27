@@ -11,3 +11,7 @@ UpStaircaseRoom::UpStaircaseRoom()
 UpStaircaseRoom::~UpStaircaseRoom()
 {
 }
+
+void UpStaircaseRoom::PlayerEnters(MonsterHolder* monsterHolder)
+{
+}

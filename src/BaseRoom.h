@@ -33,7 +33,7 @@ protected:
 
 public:
 	BaseRoom();
-	~BaseRoom();
+	virtual ~BaseRoom();
 	BaseRoom&operator=(const BaseRoom& other);
 
 	Monster* GetMonster();

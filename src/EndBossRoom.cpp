@@ -11,3 +11,8 @@ EndBossRoom::EndBossRoom()
 EndBossRoom::~EndBossRoom()
 {
 }
+
+bool EndBossRoom::CanOverwriteRoom()
+{
+	return false;
+}
