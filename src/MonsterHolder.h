@@ -13,8 +13,8 @@ public:
 	void Init();
 	void AddMonster(Monster* monster, int index);
 
-	class Monster** GetMonsters();
-	class Monster* GetRandomMonsterByLevelRange(int min, int max);
-	class Monster* GetRandomBoss();
+	Monster** GetMonsters();
+	Monster* GetRandomMonsterByLevelRange(int min, int max);
+	Monster* GetRandomBoss();
 };
 
