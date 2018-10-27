@@ -77,7 +77,7 @@ void Output::AskDirections() const
 
 void Output::ShowRoomDescription(BaseRoom * room) const
 {
-	printf("Entering room TODO\n");
+	printf(room->GetDescription());
 }
 
 void Output::ShowExits(BaseRoom * room) const
@@ -149,13 +149,13 @@ void Output::ShowMap(Dungeon* const dungeon, int level) const {
 	}
 
 	printf("Legenda:\n");
-	printf("|- : Gangen \n");
-	printf("S  : Start locatie \n");
-	printf("E  : Eind vijand\n");
-	printf("N  : Normale ruimte \n");
-	printf("L  : Trap omlaag \n");
-	printf("H  : Trap omhoog \n");
-	printf(".  : Niet bezocht \n");
+	printf("P  : Player \n");
+	printf("S  : Start location \n");
+	printf("E  : End boss\n");
+	printf("N  : Normal room\n");
+	printf("L  : Stairs down\n");
+	printf("H  : Stairs up \n");
+	printf(".  : Not yet visited \n");
 }
 
 

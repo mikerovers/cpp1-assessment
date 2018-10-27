@@ -69,7 +69,7 @@ void Dungeon::AddDescription() const {
 		for (int h = 0; h < _height; h++) {
 			for (int w = 0; w < _width; w++)
 			{
-				//_levels[d][h][w].SetRandomContent();
+				_levels[d][h][w].SetRandomContent();
 			}
 		}
 	}

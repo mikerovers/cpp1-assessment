@@ -2,6 +2,7 @@
 #include "BaseRoom.h"
 #include "RandomGenerator.h"
 #include "ContentTranslator.h"
+#include "Output.h"
 #include <iostream>
 
 
@@ -37,14 +38,12 @@ void BaseRoom::setItem()
 
 BaseRoom::BaseRoom()
 {
-	//std::cout << GetDescription();
+
 }
 
 
 BaseRoom::~BaseRoom()
 {
-
-	//delete _description;
 	if (_description) {
 		delete[] _description;
 	}
@@ -57,6 +56,7 @@ BaseRoom & BaseRoom::operator=(const BaseRoom & other)
 {
 	if (this != &other) {
 
+		_displayValue = other._displayValue;
 	}
 
 	return *this;
@@ -102,6 +102,9 @@ char BaseRoom::GetDisplayValue()
 {
 	if (!_visited) {
 		return '.';
+	}
+	if (_player != nullptr) {
+		return 'P';
 	}
 	return _displayValue;
 }
