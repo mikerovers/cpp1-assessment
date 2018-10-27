@@ -15,5 +15,6 @@ public:
 
 	class Monster** GetMonsters();
 	class Monster* GetRandomMonsterByLevelRange(int min, int max);
+	class Monster* GetRandomBoss();
 };
 

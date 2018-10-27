@@ -6,5 +6,8 @@ class EndBossRoom :
 public:
 	EndBossRoom();
 	~EndBossRoom();
+	void PlayerEnters(MonsterHolder* monsterHolder);
+	bool CanOverwriteRoom();
+
 };
 

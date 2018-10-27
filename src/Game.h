@@ -25,6 +25,7 @@ public:
 	class Player* GetPlayer() const;
 	class MonsterHolder* GetMonsterHolder() const;
 	int GetCurrentLevel() const;
+	void SetCurrentLevel(int level);
 	void SetRunning(bool running);
 	Game();
 	~Game();

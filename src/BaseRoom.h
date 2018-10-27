@@ -10,15 +10,14 @@ private:
 	BaseRoom* _southNeighBour;
 	BaseRoom* _westNeighBour;
 
+
 	char* _description = nullptr;
 
-	class Player* _player = nullptr;
+
 	bool _visited = false;
 
-	class Monster* _monster;
 	Item* _item;
 
-	void setMonster(class MonsterHolder* monsterHolder);
 	void setItem();
 
 	int _minMonsterLevel;
@@ -26,6 +25,12 @@ private:
   
 protected:
 	char _displayValue;
+	void setMonster(class MonsterHolder* monsterHolder);
+	class Monster* _monster;
+	class Player* _player = nullptr;
+	BaseRoom* _upStairsRoom = nullptr;
+	BaseRoom* _downStairsRoom = nullptr;
+
 public:
 	BaseRoom();
 	~BaseRoom();
@@ -36,7 +41,10 @@ public:
 	Item* GetItem();
 
 
-
+	void SetUpStairsRoom(BaseRoom * room);
+	BaseRoom * GetUpStairsRoom();
+	void SetDownStairsRoom(BaseRoom * room);
+	BaseRoom * GetDownStairsRoom();
 
 	void SetMonsterLevels(int min, int max);
 
@@ -46,7 +54,8 @@ public:
 
 	char* GetDescription();
 
-	void PlayerEnters(MonsterHolder* monsterHolder);
+	virtual bool CanOverwriteRoom() = 0;
+	void PlayerEnters(MonsterHolder* monsterHolder, BaseRoom* lastRoom);
 	void PlayerLeaves();
 
 	void SetVisited();

@@ -4,6 +4,7 @@
 
 EndBossRoom::EndBossRoom()
 {
+	_displayValue = 'E';
 }
 
 
