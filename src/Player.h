@@ -18,6 +18,7 @@ public:
 	int SetHealth(const int amount);
 	int GetBaseAttack() const;
 	int GetBaseDefence() const;
+	bool GetDefence() const;
 private:
 	Stat* stat;
 	class BaseRoom* _currentRoom;

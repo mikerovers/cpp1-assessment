@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "Player.h"
 #include "BaseRoom.h"
+#include <random>
+#include <ctime>
 
 Player::Player(): stat(new Stat), health(100), baseAttack(20), baseDefence(20)
 {
@@ -51,7 +53,23 @@ int Player::GetBaseAttack() const
 
 int Player::GetBaseDefence() const
 {
+	if (baseDefence > 100)
+	{
+		return 100;
+	}
+
 	return baseDefence;
+}
+
+bool Player::GetDefence() const
+{
+	std::default_random_engine generator;
+	generator.seed(time(nullptr));
+
+	std::uniform_int_distribution<int> attackChangeDistribution(0, 100);
+	int randomChange = attackChangeDistribution(generator);
+
+	return randomChange > GetBaseDefence();
 }
 
 void Player::SetStat(Stat* const newStat)

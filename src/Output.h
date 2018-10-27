@@ -35,4 +35,6 @@ public:
 	void PrintAttackEvaded(const Monster* monster) const;
 	void PrintSuccessfullAttack(const Monster* monster, const int damage) const;
 	void PrintMonsterAttack(const Monster* monster, const int damage);
+	void PrintPlayerEvaded(const Monster* monster) const;
+	void PrintPlayerInfo(const Player* player) const;
 };

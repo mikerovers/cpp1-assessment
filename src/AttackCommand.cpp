@@ -30,16 +30,19 @@ void AttackCommand::Execute(Game* game, Monster* monster)
 		auto playerDamage = stat->attack + player->GetBaseAttack();
 		game->GetOutput()->PrintSuccessfullAttack(monster, playerDamage);
 		monster->setHP(monster->getHP() - playerDamage);
+
 	}
 
 	if (monster->getHP() > 0) {
 		// Monster attack.
-		int damage = monster->getDamage() - (stat->defense + player->GetBaseDefence());
-		if (damage < 0)
+		int damage = monster->getDamage();
+		const auto playerEvaded = player->GetDefence();
+		if (playerEvaded) {
+			player->SetHealth(-damage);
+			game->GetOutput()->PrintMonsterAttack(monster, damage);
+		} else
 		{
-			damage = 0;
+			game->GetOutput()->PrintPlayerEvaded(monster);
 		}
-		player->SetHealth(damage);
-		game->GetOutput()->PrintMonsterAttack(monster, damage);
 	}
 }

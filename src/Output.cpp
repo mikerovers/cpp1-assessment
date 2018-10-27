@@ -152,6 +152,16 @@ void Output::PrintMonsterAttack(const Monster* monster, const int damage)
 	printf("%s attacked you for %d of your health points.\n", monster->getName(), damage);
 }
 
+void Output::PrintPlayerEvaded(const Monster* monster) const
+{
+	printf("You evaded the attack from %s.", monster->getName());
+}
+
+void Output::PrintPlayerInfo(const Player* player) const
+{
+	printf("You have %d health left.", player->GetHealth());
+}
+
 void Output::ShowCommands() const {
 	printf("\"Commands\":		Show the commands\n");
 	printf("\"Map\":			Show the map\n");
