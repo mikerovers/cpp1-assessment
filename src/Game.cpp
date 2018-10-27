@@ -57,7 +57,7 @@ void Game::Setup() {
 	_player = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Player();
 	_inventory = new (_NORMAL_BLOCK, __FILE__, __LINE__) Inventory(5);
 	_combatController = new (_NORMAL_BLOCK, __FILE__, __LINE__) CombatController(_inventory, _player);
-	_combatController->Start(_monsterHolder->GetRandomMonsterByLevelRange(1, 10), this);
+	// _combatController->Start(_monsterHolder->GetRandomMonsterByLevelRange(1, 10), this);
 	DungeonBuilder* builder = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) DungeonBuilder();
 	_dungeon = builder->BuildDungeon(_player, width, height, depth);
 	delete builder;
