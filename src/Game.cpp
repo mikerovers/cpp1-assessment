@@ -67,10 +67,12 @@ void Game::Setup() {
 			loadCommand->Execute(this);
 		} catch (FileNotOpenedException& e)
 		{
+			_output->ClearScreen();
 			_output->PrintLoadingError();
 			SetupPlayer(nullptr);
 		} catch (std::exception& e)
 		{
+			_output->ClearScreen();
 			_output->PrintLoadingError();
 			SetupPlayer(nullptr);
 		}
@@ -84,6 +86,7 @@ void Game::Setup() {
 	_combatController = new (_NORMAL_BLOCK, __FILE__, __LINE__) CombatController(_inventory, _player);
 	DungeonBuilder* builder = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) DungeonBuilder();
 	_dungeon = builder->BuildDungeon(_player, width, height, depth);
+
 	delete builder;
 }
 
@@ -93,7 +96,6 @@ void Game::Start()
 	CommandFactory* commandFactory = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) CommandFactory();
 	ICommand* command;
 
-	_output->ClearScreen();
 	_output->ShowGameStarted();
 	while (Game::_running) {
 		char line[50];

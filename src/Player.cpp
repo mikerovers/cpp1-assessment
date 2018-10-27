@@ -3,7 +3,7 @@
 #include "BaseRoom.h"
 #include <fstream>
 
-Player::Player(): stat(new Stat), health(100)
+Player::Player(): stat(new Stat), health(200)
 {
 	_inventory = new (_NORMAL_BLOCK, __FILE__, __LINE__) Inventory(5);
 }

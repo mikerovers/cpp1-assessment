@@ -144,7 +144,7 @@ void Output::AskLoadPlayer()
 
 void Output::PrintLoadingError()
 {
-	printf("Error loading characters, starting with a new one. Did you save one? /n");
+	printf("Error loading characters, starting with a new one. Did you save one? \n\n");
 }
 
 void Output::ShowCommands() const {
