@@ -10,18 +10,3 @@ NormalRoom::NormalRoom() {
 NormalRoom::~NormalRoom() {
 
 }
-
-
-
-void NormalRoom::PlayerEnters(MonsterHolder * monsterHolder)
-{
-
-}
-
-bool NormalRoom::CanOverwriteRoom()
-{
-	return true;
-}
-
-
-

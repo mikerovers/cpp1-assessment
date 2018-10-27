@@ -29,4 +29,6 @@ public:
 	void ShowEnemies(Monster* monster) const;
 	void BlankLine() const;
 	void ShowOptions() const;
+	void ShowItem(Item* item) const;
+	void ShowPickedUpItem(Item* item) const;
 };

@@ -6,7 +6,4 @@ class StartRoom :
 public:
 	StartRoom();
 	~StartRoom();
-	void PlayerEnters(MonsterHolder* monsterHolder);
-	bool CanOverwriteRoom();
-
 };

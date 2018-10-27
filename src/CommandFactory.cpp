@@ -5,6 +5,7 @@
 #include "ShowMapCommand.h"
 #include "ShowCommandsCommand.h"
 #include "ExitCommand.h"
+#include "PickUpCommand.h"
 #include "CharArrayComparator.h"
 #include "Output.h"
 #include "CheckInventoryCommand.h"
@@ -25,6 +26,9 @@ ICommand* CommandFactory::RetrieveCommand(char command[]) {
 	}
 	else if (comparator->Compare("flight", command, 6)) {
 		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) FlightCommand();
+	}
+	else if (comparator->Compare("pickup", command, 6)) {
+		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) PickUpCommand();
 	}
 	else if (comparator->Compare("inventory", command, 9))
 	{

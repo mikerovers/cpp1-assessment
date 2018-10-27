@@ -22,6 +22,15 @@ BaseRoom * Player::GetCurrentRoom()
 	return _currentRoom;
 }
 
+Item* Player::PickUpitem(Inventory* inventory)
+{
+	Item* item = _currentRoom->GetItem();
+	if (item != nullptr) {
+		inventory->SetItem(item);
+	}
+	return item;
+}
+
 void Player::MoveTo(MonsterHolder* monsterHolder, BaseRoom * room)
 {
 	BaseRoom* temp = _currentRoom;
@@ -30,8 +39,8 @@ void Player::MoveTo(MonsterHolder* monsterHolder, BaseRoom * room)
 	SetCurrentRoom(room);
 
 	room->SetPlayer(this);
-	room->SetVisited();
 	room->PlayerEnters(monsterHolder, temp);
+	room->SetVisited();
 }
 
 void Player::SetStat(Stat* const newStat)

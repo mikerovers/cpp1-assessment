@@ -4,6 +4,10 @@
 #include "ContentTranslator.h"
 #include "Output.h"
 #include <iostream>
+#include "Item.h"
+#include "BroadSword.h"
+#include "Potion.h"
+#include "Shield.h"
 
 
 void BaseRoom::SetRandomContent()
@@ -39,6 +43,24 @@ void BaseRoom::setMonster(MonsterHolder* monsterHolder)
 
 void BaseRoom::setItem()
 {
+	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
+	int chance = random->Generate(1, 100);
+	if (chance < 20) {
+		_item = new BroadSword();
+	}
+	else if (chance < 40) {
+		char tmp[15];
+		char *temp;
+		temp = &tmp[0];
+		_item = new Potion(temp);
+	}
+	else if (chance < 60) {
+		_item = new Shield();
+	}
+	else {
+		_item = nullptr;
+	}
+
 }
 
 void BaseRoom::SetUpStairsRoom(BaseRoom* room)
@@ -76,6 +98,8 @@ BaseRoom::~BaseRoom()
 
 	_description = nullptr;
 	delete _player;
+	delete _monster;
+	delete _item;
 }
 
 BaseRoom & BaseRoom::operator=(const BaseRoom & other)
@@ -106,6 +130,9 @@ void BaseRoom::SetMonsterLevels(int min, int max)
 
 void BaseRoom::PlayerEnters(MonsterHolder * monsterHolder, BaseRoom* lastRoom)
 {
+	if (!_visited) {
+		setItem();
+	}
 	if (_upStairsRoom) {
 		if (_upStairsRoom != lastRoom) {
 			_player->MoveTo(monsterHolder, _upStairsRoom);
@@ -121,6 +148,8 @@ void BaseRoom::PlayerEnters(MonsterHolder * monsterHolder, BaseRoom* lastRoom)
 	output->ClearScreen();
 	output->ShowRoomDescription(this);
 	output->BlankLine();
+	output->ShowItem(_item);
+	output->BlankLine();
 	output->ShowExits(this);
 	output->BlankLine();
 	output->ShowEnemies(_monster);
@@ -132,6 +161,7 @@ void BaseRoom::PlayerEnters(MonsterHolder * monsterHolder, BaseRoom* lastRoom)
 void BaseRoom::PlayerLeaves() {
 	_player = nullptr;
 	_monster = nullptr;
+	_item = nullptr;
 }
 
 char BaseRoom::GetDisplayValue()

@@ -117,7 +117,22 @@ void Output::BlankLine() const
 void Output::ShowOptions() const
 {
 	printf("What do you want to do?\n");
-	printf("[fight|flight|search|rest|inventory|map]\n");
+	printf("[fight|flight|pickup|rest|inventory|map]\n");
+}
+
+void Output::ShowItem(Item* item) const
+{
+	if (item != nullptr) {
+		printf("You have found %i in the room", item->GetName());
+	}
+	else {
+		printf("There are no items in this room.");
+	}
+}
+
+void Output::ShowPickedUpItem(Item * item) const
+{
+	printf("Picked up item %i", item->GetName());
 }
 
 void Output::ShowCommands() const {
