@@ -139,18 +139,6 @@
     <ClCompile Include="RandomGenerator.cpp">
       <Filter>Source Files\Util</Filter>
     </ClCompile>
-    <ClCompile Include="CombatController.cpp">
-      <Filter>Source Files\Controllers\Combat</Filter>
-    </ClCompile>
-    <ClCompile Include="ICommandFactory.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="AttackCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="CombatCommandFactory.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -234,26 +222,10 @@
     <ClInclude Include="Item.h">
       <Filter>Header Files\Models\Items</Filter>
     </ClInclude>
-    <ClInclude Include="Inventory.h">
-      <Filter>Header Files\Models</Filter>
-    </ClInclude>
-    <ClInclude Include="Item.h">
-      <Filter>Header Files\Models\Items</Filter>
-    </ClInclude>
     <ClInclude Include="UseItemCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
     <ClInclude Include="ShowMapCommand.h">
-    <ClInclude Include="UseItemCommand.h">
-      <Filter>Header Files\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="ShowMapCommand.h">
-      <Filter>Header Files\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="ShowCommandsCommand.h">
-      <Filter>Header Files\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="RestCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
     <ClInclude Include="ShowCommandsCommand.h">
@@ -264,12 +236,6 @@
     </ClInclude>
     <ClInclude Include="PickUpCommand.h">
       <Filter>Header Files\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="UpStaircaseRoom.h">
-      <Filter>Header Files\Models\Rooms</Filter>
-    </ClInclude>
-    <ClInclude Include="StartRoom.h">
-      <Filter>Header Files\Models\Rooms</Filter>
     </ClInclude>
     <ClInclude Include="UpStaircaseRoom.h">
       <Filter>Header Files\Models\Rooms</Filter>
@@ -312,21 +278,6 @@
     </ClInclude>
     <ClInclude Include="Output.h">
       <Filter>Header Files\IO</Filter>
-    </ClInclude>
-    <ClInclude Include="Output.h">
-      <Filter>Header Files\IO</Filter>
-    </ClInclude>
-    <ClInclude Include="CombatController.h">
-      <Filter>Header Files\Controllers\Combat</Filter>
-    </ClInclude>
-    <ClInclude Include="ICommandFactory.h">
-      <Filter>Header Files\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackCommand.h">
-      <Filter>Header Files\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="CombatCommandFactory.h">
-      <Filter>Header Files\Commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
