@@ -1,16 +1,12 @@
 #include "pch.h"
 
-
 #include "Game.h"
 #include "DungeonBuilder.h"
 #include "Output.h"
 #include "Input.h"
 #include "CommandFactory.h"
-#include "State.h"
+#include "CombatController.h"
 #include "Inventory.h"
-#include "Potion.h"
-#include "BroadSword.h"
-#include "Shield.h"
 #include "MonsterHolder.h"
 #include "MonsterFileParser.h"
 #include "MonsterParsingException.h"
@@ -29,11 +25,7 @@ void Game::Init()
 	try {
 		auto *monsterParser = new (_NORMAL_BLOCK, __FILE__, __LINE__) MonsterFileParser;
 		monsterParser->parse("monsters.txt", _monsterHolder);
-		//auto* monsters = monsterParser->parse("monsters.txt");
 
-		//for (int i = 0; i < monsterCount; ++i) { // Waarom is monsters niet gelijk aan dit?
-		//	std::cout << _monsterHolder->GetMonsters()[i]->getName() << "\n";
-		//}
 		delete monsterParser;
 	}
 	catch (MonsterParsingException& e) {
@@ -64,6 +56,8 @@ void Game::Setup() {
 	
 	_player = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Player();
 	_inventory = new (_NORMAL_BLOCK, __FILE__, __LINE__) Inventory(5);
+	_combatController = new (_NORMAL_BLOCK, __FILE__, __LINE__) CombatController(_inventory, _player);
+	_combatController->Start(_monsterHolder->GetRandomMonsterByLevelRange(3, 4), this);
 	DungeonBuilder* builder = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) DungeonBuilder();
 	_dungeon = builder->BuildDungeon(_player, width, height, depth);
 	delete builder;
@@ -91,6 +85,7 @@ void Game::Start()
 	delete _inventory;
 	delete _dungeon;
 	delete _monsterHolder;
+	delete _combatController;
 	delete commandFactory;
 }
 

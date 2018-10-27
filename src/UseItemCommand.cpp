@@ -1,6 +1,7 @@
 ﻿#include "pch.h"
 #include "UseItemCommand.h"
 #include "Input.h"
+#include "Output.h"
 
 void UseItemCommand::Execute(Game* game)
 {

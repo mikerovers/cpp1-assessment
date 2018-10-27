@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "CheckInventoryCommand.h"
-
+#include "Output.h"
 
 CheckInventoryCommand::CheckInventoryCommand()
 {

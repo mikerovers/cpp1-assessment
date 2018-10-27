@@ -29,7 +29,7 @@ public:
 	const char* getName() const;
 	void setName(const char* nam);
 	unsigned int getHP() const;
-	void setHP(unsigned int HP);
+	void setHP(const unsigned int HP);
 private:
 	unsigned int attackChance;
 	unsigned int attacksPerRound;

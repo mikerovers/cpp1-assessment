@@ -1,7 +1,9 @@
 #pragma once
 #include "ICommand.h"
-class CommandFactory {
+#include "ICommandFactory.h"
 
+class CommandFactory : public ICommandFactory
+{
 public:
-	class ICommand* RetrieveCommand(char command[]);
+	virtual ICommand* RetrieveCommand(char command[]) const;
 };

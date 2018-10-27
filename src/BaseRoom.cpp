@@ -4,6 +4,7 @@
 #include "ContentTranslator.h"
 #include "Output.h"
 #include <iostream>
+#include "Output.h"
 
 
 void BaseRoom::SetRandomContent()

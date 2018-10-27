@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "NullCommand.h"
-
+#include "Output.h"
 
 NullCommand::NullCommand()
 {

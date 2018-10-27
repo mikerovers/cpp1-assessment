@@ -33,9 +33,8 @@ void Output::ShowGameStarted() const {
 	printf("Het spel is gestart. Voer \"commands\" in voor beschikbare commando's.\n");
 }
 
-void Output::PrintInventory(Inventory* const inventory) const
+void Output::PrintInventory(const Inventory* inventory) const
 {
-	printf("Inventory:\n");
 	for (auto i = 0; i < inventory->size; i++) {
 		if (typeid(inventory->GetItem(i)) != typeid(NullItem)) {
 			if (i == 0 || i == inventory->size - 1) {
@@ -118,6 +117,24 @@ void Output::ShowOptions() const
 {
 	printf("What do you want to do?\n");
 	printf("[fight|flight|search|rest|inventory|map]\n");
+}
+
+void Output::PrintPlayerDeath(const Monster* monster, const Inventory* inventory) const
+{
+	printf("You died by the claws of %s.", monster->getName());
+	printf("You had the following items on you when you died: \n");
+	PrintInventory(inventory);
+}
+
+void Output::PrintStartCombat(const Monster* monster) const
+{
+	printf("A wild %s appeared! Looks like it is level %u! \n", monster->getName(), monster->getLevel());
+}
+
+void Output::PrintVictory(const Player* player, const Monster* monster) const
+{
+	printf("You achieved victory over %s!\n", monster->getName());
+	printf("Your remaining health is %d.\n", player->GetHealth());
 }
 
 void Output::ShowCommands() const {

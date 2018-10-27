@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "BaseRoom.h"
 
-Player::Player(): stat(new Stat)
+Player::Player(): stat(new Stat), health(100)
 {
 }
 
@@ -32,6 +32,16 @@ void Player::MoveTo(MonsterHolder* monsterHolder, BaseRoom * room)
 	room->SetPlayer(this);
 	room->SetVisited();
 	room->PlayerEnters(monsterHolder, temp);
+}
+
+int Player::GetHealth() const
+{
+	return health;
+}
+
+int Player::SetHealth(const int amount)
+{
+	return health += amount;
 }
 
 void Player::SetStat(Stat* const newStat)
