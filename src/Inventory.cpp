@@ -41,7 +41,7 @@ bool Inventory::SetItem(Item *item)
 
 bool Inventory::UseItem(const int index)
 {
-	if (index < size)
+	if (index < size && index > -1)
 	{
 		items[index]->Use();
 		delete items[index];

@@ -28,6 +28,10 @@ ICommand* CommandFactory::RetrieveCommand(char command[]) const {
 	{
 		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) CheckInventoryCommand();
 	}
+	else if (comparator->Compare("item", command, 4))
+	{
+		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) UseItemCommand();
+	}
 	else if (comparator->Compare("save", command, 4))
 	{
 		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) SaveCommand();

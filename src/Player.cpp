@@ -1,10 +1,15 @@
 #include "pch.h"
 #include "Player.h"
 #include "BaseRoom.h"
+#include <fstream>
 
 Player::Player(): stat(new Stat), health(100)
 {
 	_inventory = new (_NORMAL_BLOCK, __FILE__, __LINE__) Inventory(5);
+}
+
+Player::Player(const int health): health(health)
+{
 }
 
 
@@ -44,6 +49,11 @@ int Player::GetHealth() const
 int Player::SetHealth(const int amount)
 {
 	return health += amount;
+}
+
+int Player::SetHealthConst(const int amount)
+{
+	return health = amount;
 }
 
 Inventory* Player::GetInventory() const

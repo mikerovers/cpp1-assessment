@@ -10,6 +10,8 @@
 #include "MonsterHolder.h"
 #include "MonsterFileParser.h"
 #include "MonsterParsingException.h"
+#include "LoadCommand.h"
+#include "FileNotOpenedException.h"
 
 
 void Game::Init()
@@ -53,8 +55,32 @@ void Game::Setup() {
 		depth = _input->GetIntInput();
 	}
 	_currentLevel = depth - 1;
+
+	_output->AskLoadPlayer();
+	char load = ' ';
+	std::cin >> load;
 	
-	_player = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Player();
+	if (load == 'y')
+	{
+		auto* loadCommand = new LoadCommand();
+		try {
+			loadCommand->Execute(this);
+		} catch (FileNotOpenedException& e)
+		{
+			_output->PrintLoadingError();
+			SetupPlayer(nullptr);
+		} catch (std::exception& e)
+		{
+			_output->PrintLoadingError();
+			SetupPlayer(nullptr);
+		}
+		delete loadCommand;
+	}
+	else
+	{
+		SetupPlayer(nullptr);
+	}
+
 	_combatController = new (_NORMAL_BLOCK, __FILE__, __LINE__) CombatController(_inventory, _player);
 	DungeonBuilder* builder = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) DungeonBuilder();
 	_dungeon = builder->BuildDungeon(_player, width, height, depth);
@@ -80,7 +106,6 @@ void Game::Start()
 
 	delete _input;
 	delete _output;
-	delete _inventory;
 	delete _dungeon;
 	delete _monsterHolder;
 	delete _combatController;
@@ -130,6 +155,17 @@ void Game::SetCurrentLevel(int level)
 void Game::SetRunning(bool const running)
 {
 	_running = running;
+}
+
+void Game::SetupPlayer(Player* player)
+{
+	if (player == nullptr)
+	{
+		_player = new (_NORMAL_BLOCK, __FILE__, __LINE__) Player();
+	} else
+	{
+		_player = player;
+	}
 }
 
 Game::~Game()

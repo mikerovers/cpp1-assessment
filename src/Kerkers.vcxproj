@@ -178,6 +178,7 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="LoadCommand.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="MonsterFileParser.h" />
     <ClInclude Include="MonsterHolder.h" />
@@ -232,6 +233,7 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Kerkers.cpp" />
+    <ClCompile Include="LoadCommand.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="MonsterFileParser.cpp" />
     <ClCompile Include="MonsterHolder.cpp" />

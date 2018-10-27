@@ -8,6 +8,7 @@ class Player
 {
 public:
 	Player();
+	Player(const int health);
 	~Player();
 
 	void SetStat(Stat* const newStat);
@@ -18,6 +19,7 @@ public:
 	void MoveTo(MonsterHolder* monsterHolder, class BaseRoom* room);
 	int GetHealth() const;
 	int SetHealth(const int amount);
+	int SetHealthConst(const int amount);
 	Inventory* GetInventory() const;
 
 	friend std::ostream& operator<<(std::ostream& os, const Player& pl);

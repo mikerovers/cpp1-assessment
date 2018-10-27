@@ -137,6 +137,16 @@ void Output::PrintVictory(const Player* player, const Monster* monster) const
 	printf("Your remaining health is %d.\n", player->GetHealth());
 }
 
+void Output::AskLoadPlayer()
+{
+	printf("Do you want to load a saved character (y)?\n");
+}
+
+void Output::PrintLoadingError()
+{
+	printf("Error loading characters, starting with a new one. Did you save one? /n");
+}
+
 void Output::ShowCommands() const {
 	printf("\"Commands\":		Show the commands\n");
 	printf("\"Map\":			Show the map\n");
