@@ -25,7 +25,7 @@ void MonsterHolder::Init()
 
 void MonsterHolder::AddMonster(Monster * monster, int index)
 {
-	_monsters[index] = std::move(monster);
+	_monsters[index] = monster;
 }
 
 Monster ** MonsterHolder::GetMonsters()

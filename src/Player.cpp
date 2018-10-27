@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "BaseRoom.h"
 
-Player::Player(): stat(new Stat), health(100)
+Player::Player(): stat(new Stat), health(100), baseAttack(20), baseDefence(20)
 {
 }
 
@@ -42,6 +42,16 @@ int Player::GetHealth() const
 int Player::SetHealth(const int amount)
 {
 	return health += amount;
+}
+
+int Player::GetBaseAttack() const
+{
+	return baseAttack;
+}
+
+int Player::GetBaseDefence() const
+{
+	return baseDefence;
 }
 
 void Player::SetStat(Stat* const newStat)

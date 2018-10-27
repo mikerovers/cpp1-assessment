@@ -2,6 +2,7 @@
 #include "CombatController.h"
 #include "Output.h"
 #include "CombatCommandFactory.h"
+#include "AttackCommand.h"
 
 class Player;
 
@@ -15,12 +16,11 @@ CombatController::~CombatController()
 	delete _combatCommandFactory;
 }
 
-const bool CombatController::Start(const Monster* monster, Game *game) const
+const bool CombatController::Start(Monster* monster, Game *game) const
 {
 	auto* output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
 	auto inCombat = true;
 	auto win = false;
-	ICommand* command;
 
 	output->PrintStartCombat(monster);
 
@@ -29,8 +29,15 @@ const bool CombatController::Start(const Monster* monster, Game *game) const
 		char line[50];
 		std::cin >> line;
 		output->ClearScreen();
-		command = _combatCommandFactory->RetrieveCommand(line);
-		command->Execute(game);
+		ICommand* command = _combatCommandFactory->RetrieveCommand(line);
+		if (typeid(*command) == typeid(AttackCommand))
+		{
+			AttackCommand* aCommand = dynamic_cast<AttackCommand*>(command);
+			aCommand->Execute(game, monster);
+		}
+		else {
+			command->Execute(game);
+		}
 
 		if (_player->GetHealth() <= 0)
 		{
