@@ -192,6 +192,7 @@
     <ClInclude Include="RandomGenerator.h" />
     <ClInclude Include="NormalRoom.h" />
     <ClInclude Include="RestCommand.h" />
+    <ClInclude Include="SaveCommand.h" />
     <ClInclude Include="Shield.h" />
     <ClInclude Include="ShowCommandsCommand.h" />
     <ClInclude Include="ShowMapCommand.h" />
@@ -250,6 +251,7 @@
     <ClCompile Include="RandomGenerator.cpp" />
     <ClCompile Include="NormalRoom.cpp" />
     <ClCompile Include="RestCommand.cpp" />
+    <ClCompile Include="SaveCommand.cpp" />
     <ClCompile Include="Shield.cpp" />
     <ClCompile Include="ShowCommandsCommand.cpp" />
     <ClCompile Include="ShowMapCommand.cpp" />

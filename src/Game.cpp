@@ -55,9 +55,7 @@ void Game::Setup() {
 	_currentLevel = depth - 1;
 	
 	_player = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Player();
-	_inventory = new (_NORMAL_BLOCK, __FILE__, __LINE__) Inventory(5);
 	_combatController = new (_NORMAL_BLOCK, __FILE__, __LINE__) CombatController(_inventory, _player);
-	_combatController->Start(_monsterHolder->GetRandomMonsterByLevelRange(3, 4), this);
 	DungeonBuilder* builder = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) DungeonBuilder();
 	_dungeon = builder->BuildDungeon(_player, width, height, depth);
 	delete builder;
@@ -106,7 +104,7 @@ Input * Game::GetInput() const
 
 Inventory* Game::GetInventory() const
 {
-	return _inventory;
+	return GetPlayer()->GetInventory();
 }
 
 Player * Game::GetPlayer() const

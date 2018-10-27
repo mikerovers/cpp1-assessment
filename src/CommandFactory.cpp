@@ -10,6 +10,7 @@
 #include "CheckInventoryCommand.h"
 #include "FlightCommand.h"
 #include "UseItemCommand.h"
+#include "SaveCommand.h"
 
 ICommand* CommandFactory::RetrieveCommand(char command[]) const {
 	const auto comparator = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) CharArrayComparator();
@@ -26,6 +27,10 @@ ICommand* CommandFactory::RetrieveCommand(char command[]) const {
 	else if (comparator->Compare("inventory", command, 9))
 	{
 		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) CheckInventoryCommand();
+	}
+	else if (comparator->Compare("save", command, 4))
+	{
+		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) SaveCommand();
 	}
 	else {
 		returnCommand = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) NullCommand();

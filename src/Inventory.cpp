@@ -62,3 +62,13 @@ Stat* Inventory::GetStat() const
 {
 	return items[0]->Handle(new Stat);
 }
+
+std::ostream& operator<<(std::ostream& os, const Inventory& pl)
+{
+	for (auto i = 0; i < 5; i++)
+	{
+		os << pl.GetItem(i)->GetName() << "\r\n";
+	}
+
+	return os;
+}
