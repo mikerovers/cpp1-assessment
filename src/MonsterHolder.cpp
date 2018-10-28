@@ -36,6 +36,7 @@ Monster ** MonsterHolder::GetMonsters()
 Monster * MonsterHolder::GetRandomMonsterByLevelRange(int min, int max)
 {
 	Monster* monsters[14];
+
 	int counter = 0;
 	for (int i = 1; i < _size; i++) {
 		Monster* monster = _monsters[i];
@@ -45,10 +46,14 @@ Monster * MonsterHolder::GetRandomMonsterByLevelRange(int min, int max)
 			counter++;
 		}
 	}
+
 	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
 	int chosenIndex = random->Generate(0, counter);
+	Monster* monster = _monsters[chosenIndex];
+
 	delete random;
-	return monsters[chosenIndex]; 
+
+	return monster;
 }
 
 Monster * MonsterHolder::GetRandomBoss()
