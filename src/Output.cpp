@@ -166,7 +166,8 @@ void Output::ShowCommands() const {
 	printf("\"Commands\":		Show the commands\n");
 	printf("\"Map\":			Show the map\n");
 	printf("\"Inventory\":		Show the inventory\n");
-	printf("\"Item\":			Use item from inventory\n");
+	printf("\"Item\":			Use or destroy item from inventory\n");
+	printf("\"Stats\":			Check your current stats \n");
 	printf("\"Exit\":			Exit the game\n");
 }
 
