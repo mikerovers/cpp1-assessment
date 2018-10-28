@@ -2,6 +2,7 @@
 #include "Output.h"
 #include "Dungeon.h"
 #include "NullItem.h"
+#include "Game.h"
 
 Output::Output() {
 
@@ -157,9 +158,13 @@ void Output::PrintPlayerEvaded(const Monster* monster) const
 	printf("You evaded the attack from %s.", monster->getName());
 }
 
-void Output::PrintPlayerInfo(const Player* player) const
+void Output::PrintPlayerInfo(const Game* game) const
 {
-	printf("You have %d health left.", player->GetHealth());
+	printf("You have %d health left. \n", game->GetPlayer()->GetHealth());
+	auto* stat = game->GetInventory()->GetStat();
+	printf("Your current attack power is: %d\n", game->GetPlayer()->GetBaseAttack() + stat->attack);
+	printf("Your current evasion rate is: %d\n", game->GetPlayer()->GetBaseDefence() + stat->defense);
+	delete stat;
 }
 
 void Output::ShowCommands() const {
@@ -167,7 +172,7 @@ void Output::ShowCommands() const {
 	printf("\"Map\":			Show the map\n");
 	printf("\"Inventory\":		Show the inventory\n");
 	printf("\"Item\":			Use or destroy item from inventory\n");
-	printf("\"Stats\":			Check your current stats \n");
+	printf("\"Stats\":		Check your current stats \n");
 	printf("\"Exit\":			Exit the game\n");
 }
 

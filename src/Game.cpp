@@ -10,6 +10,7 @@
 #include "MonsterHolder.h"
 #include "MonsterFileParser.h"
 #include "MonsterParsingException.h"
+#include "BroadSword.h"
 
 
 void Game::Init()

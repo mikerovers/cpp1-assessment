@@ -198,6 +198,7 @@
     <ClInclude Include="ExitCommand.h" />
     <ClInclude Include="StartRoom.h" />
     <ClInclude Include="Stat.h" />
+    <ClInclude Include="StatCommand.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="UpStaircaseRoom.h" />
     <ClInclude Include="UseItemCommand.h" />
@@ -256,6 +257,7 @@
     <ClCompile Include="ExitCommand.cpp" />
     <ClCompile Include="StartRoom.cpp" />
     <ClCompile Include="Stat.cpp" />
+    <ClCompile Include="StatCommand.cpp" />
     <ClCompile Include="UpStaircaseRoom.cpp" />
     <ClCompile Include="UseItemCommand.cpp" />
   </ItemGroup>

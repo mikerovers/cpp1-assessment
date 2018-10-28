@@ -8,6 +8,7 @@
 #include "NullCommand.h"
 #include "AttackCommand.h"
 #include "CheckStatsCommand.h"
+#include "StatCommand.h"
 
 ICommand* CombatCommandFactory::RetrieveCommand(char command[]) const
 {
@@ -31,9 +32,9 @@ ICommand* CombatCommandFactory::RetrieveCommand(char command[]) const
 	{
 		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) UseItemCommand();
 	}
-	else if (comparator->Compare("stats", command, 4))
+	else if (comparator->Compare("stats", command, 5))
 	{
-		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) CheckStatsCommand();
+		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) StatCommand();
 	}
 	else {
 		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) NullCommand();
