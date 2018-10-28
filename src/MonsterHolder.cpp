@@ -48,8 +48,8 @@ Monster * MonsterHolder::GetRandomMonsterByLevelRange(int min, int max)
 	}
 
 	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
-	int chosenIndex = random->Generate(0, counter);
-	Monster* monster = _monsters[chosenIndex];
+	int chosenIndex = random->Generate(0, counter - 1);
+	Monster* monster = monsters[chosenIndex];
 
 	delete random;
 
