@@ -4,7 +4,7 @@
 #include <random>
 #include <ctime>
 
-Player::Player(): stat(new Stat), health(100), baseAttack(20), baseDefence(20)
+Player::Player(): stat(new Stat), health(80), baseAttack(20), baseDefence(20)
 {
 }
 
@@ -44,6 +44,11 @@ int Player::GetHealth() const
 int Player::SetHealth(const int amount)
 {
 	return health += amount;
+}
+
+int Player::SetHealthConst(const int amount)
+{
+	return health = amount;
 }
 
 int Player::GetBaseAttack() const

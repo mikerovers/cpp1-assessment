@@ -167,6 +167,20 @@ void Output::PrintPlayerInfo(const Game* game) const
 	delete stat;
 }
 
+void Output::PrintRestNotAvailable() const
+{
+	printf("You are already rested. \n");
+}
+
+void Output::PrintRest(const int health, const bool attacked) const
+{
+	printf("You have rested. Your health has been recovered to %d\n", health);
+	if (attacked)
+	{
+		printf("But suddenly, you hear something in the distance!\n");
+	}
+}
+
 void Output::ShowCommands() const {
 	printf("\"Commands\":		Show the commands\n");
 	printf("\"Map\":			Show the map\n");

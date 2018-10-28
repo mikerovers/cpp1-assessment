@@ -16,6 +16,7 @@ public:
 	void MoveTo(MonsterHolder* monsterHolder, class BaseRoom* room);
 	int GetHealth() const;
 	int SetHealth(const int amount);
+	int SetHealthConst(const int amount);
 	int GetBaseAttack() const;
 	int GetBaseDefence() const;
 	bool GetDefence() const;

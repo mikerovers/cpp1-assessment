@@ -39,4 +39,6 @@ public:
 	void PrintMonsterAttack(const Monster* monster, const int damage);
 	void PrintPlayerEvaded(const Monster* monster) const;
 	void PrintPlayerInfo(const Game* game) const;
+	void PrintRestNotAvailable() const;
+	void PrintRest(const int health, const bool attacked) const;
 };

@@ -119,6 +119,11 @@ MonsterHolder * Game::GetMonsterHolder() const
 	return _monsterHolder;
 }
 
+CombatController* Game::GetCombatController() const
+{
+	return _combatController;
+}
+
 int Game::GetCurrentLevel() const
 {
 	return _currentLevel;

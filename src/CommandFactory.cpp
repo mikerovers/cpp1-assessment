@@ -12,6 +12,7 @@
 #include "UseItemCommand.h"
 #include "CheckStatsCommand.h"
 #include "StatCommand.h"
+#include "RestCommand.h"
 
 ICommand* CommandFactory::RetrieveCommand(char command[]) const {
 	const auto comparator = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) CharArrayComparator();
@@ -36,6 +37,10 @@ ICommand* CommandFactory::RetrieveCommand(char command[]) const {
 	else if (comparator->Compare("stats", command, 5))
 	{
 		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) StatCommand();
+	}
+	else if (comparator->Compare("rest", command, 4))
+	{
+		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) RestCommand();
 	}
 	else {
 		returnCommand = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) NullCommand();
