@@ -1,7 +1,9 @@
 100
-Broadsword
-Potion
-Broadsword
-Shoes
+5
+2
+*
+*
+*
+*
 *
 

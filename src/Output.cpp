@@ -141,11 +141,14 @@ void Output::ShowPickedUpItem(Item * item) const
 	}
 }
 
-void Output::PrintPlayerDeath(const Monster* monster, const Inventory* inventory) const
+void Output::PrintPlayerDeath(const Monster* monster, const Inventory* inventory, Game* game) const
 {
 	printf("You died by the claws of %s.", monster->getName());
 	printf("You had the following items on you when you died: \n");
 	PrintInventory(inventory);
+	std::cin;
+	game->SetRunning(false);
+
 }
 
 void Output::PrintStartCombat(const Monster* monster) const
@@ -205,6 +208,8 @@ void Output::PrintPlayerInfo(const Game* game) const
 	auto* stat = game->GetInventory()->GetStat();
 	printf("Your current attack power is: %d\n", game->GetPlayer()->GetBaseAttack() + stat->attack);
 	printf("Your current evasion rate is: %d\n", game->GetPlayer()->GetBaseDefence() + stat->defense);
+	printf("You have %i experience points \n", game->GetPlayer()->GetExperience());
+	printf("Your level is %i \n", game->GetPlayer()->GetLevel());
 	delete stat;
 }
 
@@ -225,6 +230,16 @@ void Output::PrintRest(const int health, const bool attacked) const
 void Output::NoMonsterToFight() const
 {
 	printf("There is no monster to fight here\n");
+}
+
+void Output::LevelUp(int level) const
+{
+	printf("You have leveled up. Current level: %i\n", level);
+}
+
+void Output::ShowExperienceGain(int exp) const
+{
+	printf("You have gained %i experience points\n", exp);
 }
 
 void Output::ShowCommands() const {

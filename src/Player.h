@@ -28,12 +28,23 @@ public:
 	int GetBaseAttack() const;
 	int GetBaseDefence() const;
 	bool GetDefence() const;
+
+	void SetExperience(int const experience);
+	void SetLevel(int const level);
+	int GetLevel() const;
+	int GetExperience() const;
+
+	void AddExperience(int const exp);
 private:
 	Stat* stat;
+	int _level = 1;
+	int _experience = 0;
 	class BaseRoom* _currentRoom;
 	int health;
 	Inventory* _inventory;
 	int baseAttack;
 	int baseDefence;
+	void levelUp();
+
 };
 

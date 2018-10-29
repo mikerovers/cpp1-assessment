@@ -4,6 +4,7 @@
 #include <random>
 #include <ctime>
 #include <fstream>
+#include "Output.h"
 
 Player::Player(): stat(new Stat), health(80), baseAttack(20), baseDefence(20)
 {
@@ -101,6 +102,47 @@ bool Player::GetDefence() const
 	return randomChange > GetBaseDefence();
 }
 
+int Player::GetLevel() const
+{
+	return _level;
+}
+
+int Player::GetExperience() const
+{
+	return _experience;
+}
+
+
+
+void Player::AddExperience(const int const exp)
+{
+	Output* output = new Output();
+	output->ShowExperienceGain(exp);
+	_experience += exp;
+	while (_experience >= 15 && _level != 10) {
+		levelUp();
+		output->LevelUp(_level);
+		_experience -= 15;
+	}
+	if (_experience > 15) {
+		_experience = 15;
+	}
+	delete output;
+}
+
+void Player::levelUp() {
+	_level++;
+}
+
+void Player::SetExperience(int const experience)
+{
+	_experience = experience;
+}
+
+void Player::SetLevel(const int const level) {
+	_level = level;
+}
+
 void Player::SetStat(Stat* const newStat)
 {
 	delete stat;
@@ -110,6 +152,8 @@ void Player::SetStat(Stat* const newStat)
 std::ostream& operator<<(std::ostream& os, const Player& pl)
 {
 	os << pl.GetHealth() << "\r\n";
+	os << pl.GetLevel() << "\r\n";
+	os << pl.GetExperience() << "\r\n";
 	os << *pl.GetInventory() << std::endl;
 
 	return os;

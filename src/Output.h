@@ -33,7 +33,7 @@ public:
 	void ShowOptions() const;
 	void ShowItem(Item* item) const;
 	void ShowPickedUpItem(Item* item) const;
-	void PrintPlayerDeath(const Monster* monster, const Inventory* inventory) const;
+	void PrintPlayerDeath(const Monster* monster, const Inventory* inventory, Game* game) const;
 	void PrintStartCombat(const Monster* monster) const;
 	void PrintVictory(const Player* player, const Monster* monster) const;
 	void AskLoadPlayer();
@@ -47,4 +47,6 @@ public:
 	void PrintRestNotAvailable() const;
 	void PrintRest(const int health, const bool attacked) const;
 	void NoMonsterToFight() const;
+	void LevelUp(int level) const;
+	void ShowExperienceGain(int level) const;
 };

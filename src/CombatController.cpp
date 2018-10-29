@@ -47,12 +47,13 @@ const bool CombatController::Start(Monster* monster, Game *game) const
 
 		if (_player->GetHealth() <= 0)
 		{
-			output->PrintPlayerDeath(monster, _inventory);
+			output->PrintPlayerDeath(monster, game->GetPlayer()->GetInventory(), game);
 			inCombat = false;
 		}
 
 		if (monster->getHP() <= 0)
 		{
+			_player->AddExperience(10);
 			output->PrintVictory(_player, monster);
 			inCombat = false;
 			win = true;
