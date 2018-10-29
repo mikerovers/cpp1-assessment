@@ -9,6 +9,9 @@ public:
 		unsigned int HP);
 	~Monster();
 
+	int getDamage() const;
+	bool getDefence() const;
+
 	Monster&operator=(const Monster& other);
 	Monster(const Monster& other);
 	Monster(Monster&& other) noexcept;
@@ -28,8 +31,8 @@ public:
 	void setLevel(unsigned int level);
 	const char* getName() const;
 	void setName(const char* nam);
-	unsigned int getHP() const;
-	void setHP(const unsigned int HP);
+	int getHP() const;
+	void setHP(const int HP);
 private:
 	unsigned int attackChance;
 	unsigned int attacksPerRound;
@@ -37,6 +40,6 @@ private:
 	unsigned int maxAmountOfDamage;
 	unsigned int evasionChance;
 	unsigned int level;
-	unsigned int HP;
+	int HP;
 	const char* name;
 };

@@ -4,6 +4,8 @@
 #include "Dungeon.h"
 #include "Inventory.h"
 
+class Game;
+
 class Output {
 public:
 	Output();
@@ -35,4 +37,11 @@ public:
 	void AskLoadPlayer();
 	void PrintLoadingError();
 	void ShowLoaded(bool newPlayer) const;
+	void PrintAttackEvaded(const Monster* monster) const;
+	void PrintSuccessfullAttack(const Monster* monster, const int damage) const;
+	void PrintMonsterAttack(const Monster* monster, const int damage);
+	void PrintPlayerEvaded(const Monster* monster) const;
+	void PrintPlayerInfo(const Game* game) const;
+	void PrintRestNotAvailable() const;
+	void PrintRest(const int health, const bool attacked) const;
 };

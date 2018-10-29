@@ -11,7 +11,6 @@ Stat* BroadSword::Handle(Stat* stat) const
 {
 	stat->defense += 1;
 	stat->attack += 15;
-	stat->health += 0;
 
 	return AbstractStatHandler::Handle(stat);
 }

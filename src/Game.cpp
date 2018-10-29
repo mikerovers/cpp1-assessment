@@ -12,7 +12,7 @@
 #include "MonsterParsingException.h"
 #include "LoadCommand.h"
 #include "FileNotOpenedException.h"
-
+#include "BroadSword.h"
 
 void Game::Init()
 {
@@ -145,6 +145,11 @@ Player * Game::GetPlayer() const
 MonsterHolder * Game::GetMonsterHolder() const
 {
 	return _monsterHolder;
+}
+
+CombatController* Game::GetCombatController() const
+{
+	return _combatController;
 }
 
 int Game::GetCurrentLevel() const

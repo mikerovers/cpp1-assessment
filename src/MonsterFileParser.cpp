@@ -10,7 +10,6 @@ const int MAXLINE = 256;
 void MonsterFileParser::parse(const char path[], MonsterHolder* monsterHolder)
 {
 	auto *reader = new FileReader();
-	Monster* monsters[14];
 
 	try {
 		auto monsterFile = reader->openFile(path);
@@ -39,8 +38,7 @@ void MonsterFileParser::parse(const char path[], MonsterHolder* monsterHolder)
 	}
 	catch (MonsterParsingException e) {
 
-	}
-
+	} 
 }
 
 

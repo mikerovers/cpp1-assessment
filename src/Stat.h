@@ -7,5 +7,4 @@ public:
 
 	int defense;
 	int attack;
-	int health;
 };
