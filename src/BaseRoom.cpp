@@ -8,6 +8,8 @@
 #include "BroadSword.h"
 #include "Potion.h"
 #include "Shield.h"
+#include "Helmet.h"
+#include "Shoes.h"
 
 void BaseRoom::SetRandomContent()
 {
@@ -45,10 +47,16 @@ void BaseRoom::setItem()
 	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
 	int chance = random->Generate(1, 100);
 	if (chance < 20) {
-		_item = new BroadSword();
+		_item = new Potion();
+	}
+	else if (chance < 30) {
+		_item = new Shoes();
 	}
 	else if (chance < 40) {
-		_item = new Potion();
+		_item = new Helmet();
+	}
+	else if (chance < 50) {
+		_item = new BroadSword();
 	}
 	else if (chance < 60) {
 		_item = new Shield();

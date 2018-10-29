@@ -13,7 +13,6 @@ MonsterHolder::MonsterHolder(int monsterCount)
 MonsterHolder::~MonsterHolder()
 {
 	for (int i = 0; i < 14; i++) {
-		std::cout << i;
 		if (_monsters[i] != NULL)
 		delete _monsters[i];
 	}

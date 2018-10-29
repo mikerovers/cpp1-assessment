@@ -8,6 +8,9 @@
 #include "NullCommand.h"
 #include "NullItem.h"
 #include "BroadSword.h"
+#include "Shield.h"
+#include "Shoes.h"
+#include "Helmet.h"
 
 class CharArrayComparator;
 
@@ -58,10 +61,24 @@ Item* LoadCommand::GetItem(char* description) const
 	if (comparator->Compare("potion", description, 6))
 	{
 		item = new (_NORMAL_BLOCK, __FILE__, __LINE__) Potion();
-	} else if (comparator->Compare("broadsword", description, 10))
+	}
+	else if (comparator->Compare("broadsword", description, 10))
 	{
 		item = new (_NORMAL_BLOCK, __FILE__, __LINE__) BroadSword();
-	} else
+	}
+	else if (comparator->Compare("shield", description, 6))
+	{
+		item = new (_NORMAL_BLOCK, __FILE__, __LINE__) Shield();
+	}
+	else if (comparator->Compare("shoes", description, 5))
+	{
+		item = new (_NORMAL_BLOCK, __FILE__, __LINE__) Shoes();
+	}
+	else if (comparator->Compare("helmet", description, 6))
+	{
+		item = new (_NORMAL_BLOCK, __FILE__, __LINE__) Helmet();
+	}
+	else
 	{
 		item = new (_NORMAL_BLOCK, __FILE__, __LINE__) NullItem();
 	}

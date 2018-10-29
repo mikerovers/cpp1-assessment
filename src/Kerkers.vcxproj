@@ -173,12 +173,14 @@
     <ClInclude Include="FileReader.h" />
     <ClInclude Include="FlightCommand.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Helmet.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="ICommandFactory.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="LoadCommand.h" />
+    <ClInclude Include="Shoes.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="MonsterFileParser.h" />
     <ClInclude Include="MonsterHolder.h" />
@@ -228,6 +230,7 @@
     <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="FlightCommand.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Helmet.cpp" />
     <ClCompile Include="ICommand.cpp" />
     <ClCompile Include="ICommandFactory.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -235,6 +238,7 @@
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Kerkers.cpp" />
     <ClCompile Include="LoadCommand.cpp" />
+    <ClCompile Include="Shoes.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="MonsterFileParser.cpp" />
     <ClCompile Include="MonsterHolder.cpp" />
