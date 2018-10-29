@@ -243,12 +243,25 @@ void Output::ShowExperienceGain(int exp) const
 }
 
 void Output::ShowCommands() const {
+	printf("The following commands can be used out of combat:\n");
 	printf("\"Commands\":		Show the commands\n");
 	printf("\"Map\":			Show the map\n");
 	printf("\"Inventory\":		Show the inventory\n");
 	printf("\"Item\":			Use or destroy item from inventory\n");
 	printf("\"Stats\":		Check your current stats \n");
+	printf("\"Pickup\":		Pickup the item in the room if there is one \n");
+	printf("\"Flight\"		Move the player\n");
+	printf("\"Save\"			Save the game\n");
+	printf("\"Rest\"			Take a nap, but lookout for enemies!\n");
+	printf("\"Stats\"			Show your current stats\n");
 	printf("\"Exit\":			Exit the game\n");
+
+	printf("\n\nThe following commands can be used in combat:\n");
+	printf("\"Commands\":		Show the commands\n");
+	printf("\"Inventory\":		Show the inventory\n");
+	printf("\"Attack\":		Attack the current enemy\n");
+	printf("\"Item\":			Use or destroy item from inventory\n");
+	printf("\"Stats\":		Show your current stats\n");
 }
 
 void Output::ClearScreen() const {
