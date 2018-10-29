@@ -6,5 +6,7 @@ class FightCommand :
 public:
 	FightCommand();
 	~FightCommand();
+	void Execute(Game* game);
+
 };
 

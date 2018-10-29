@@ -9,6 +9,7 @@
 #include "Output.h"
 #include "CheckInventoryCommand.h"
 #include "FlightCommand.h"
+#include "FightCommand.h"
 #include "UseItemCommand.h"
 #include "SaveCommand.h"
 #include "CheckStatsCommand.h"
@@ -30,6 +31,10 @@ ICommand* CommandFactory::RetrieveCommand(char command[]) const {
 	else if (comparator->Compare("flight", command, 6))
 	{
 		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) FlightCommand();
+	}
+	else if (comparator->Compare("fight", command, 5))
+	{
+		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) FightCommand();
 	}
 	else if (comparator->Compare("inventory", command, 9))
 	{

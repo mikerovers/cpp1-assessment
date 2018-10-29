@@ -26,7 +26,7 @@ private:
 protected:
 	char _displayValue;
 	void setMonster(class MonsterHolder* monsterHolder);
-	class Monster* _monster;
+	class Monster* _monster = nullptr;
 	class Player* _player = nullptr;
 	BaseRoom* _upStairsRoom = nullptr;
 	BaseRoom* _downStairsRoom = nullptr;

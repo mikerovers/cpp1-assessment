@@ -44,4 +44,5 @@ public:
 	void PrintPlayerInfo(const Game* game) const;
 	void PrintRestNotAvailable() const;
 	void PrintRest(const int health, const bool attacked) const;
+	void NoMonsterToFight() const;
 };

@@ -201,6 +201,11 @@ void Output::PrintRest(const int health, const bool attacked) const
 	}
 }
 
+void Output::NoMonsterToFight() const
+{
+	printf("There is no monster to fight here\n");
+}
+
 void Output::ShowCommands() const {
 	printf("\"Commands\":		Show the commands\n");
 	printf("\"Map\":			Show the map\n");
