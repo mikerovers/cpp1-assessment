@@ -147,6 +147,12 @@ int Player::IncreaseAttackStat()
 	return baseAttack;
 }
 
+void Player::CheatBaseStats()
+{
+	baseAttack += 1000;
+	baseDefence += 1000;
+}
+
 void Player::levelUp() {
 	_level++;
 	_skillpoints++;

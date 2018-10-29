@@ -38,6 +38,8 @@ public:
 
 	void AddExperience(int const exp);
 	int IncreaseAttackStat();
+
+	void CheatBaseStats();
 private:
 	Stat* stat;
 	int _level = 1;

@@ -158,6 +158,7 @@
     <ClInclude Include="BroadSword.h" />
     <ClInclude Include="CanAttackWith.h" />
     <ClInclude Include="CharArrayComparator.h" />
+    <ClInclude Include="CheatCommand.h" />
     <ClInclude Include="CheckInventoryCommand.h" />
     <ClInclude Include="CheckStatsCommand.h" />
     <ClInclude Include="CombatController.h" />
@@ -216,6 +217,7 @@
     <ClCompile Include="BroadSword.cpp" />
     <ClCompile Include="CanAttackWith.cpp" />
     <ClCompile Include="CharArrayComparator.cpp" />
+    <ClCompile Include="CheatCommand.cpp" />
     <ClCompile Include="CheckInventoryCommand.cpp" />
     <ClCompile Include="CheckStatsCommand.cpp" />
     <ClCompile Include="CombatController.cpp" />
