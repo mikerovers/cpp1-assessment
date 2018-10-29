@@ -6,7 +6,7 @@
 #include <fstream>
 #include "Output.h"
 
-Player::Player(): stat(new Stat), health(80), baseAttack(20), baseDefence(20)
+Player::Player(): stat(new (_NORMAL_BLOCK, __FILE__, __LINE__) Stat), health(80), baseAttack(20), baseDefence(20)
 {
 	_inventory = new (_NORMAL_BLOCK, __FILE__, __LINE__) Inventory(5);
 }
@@ -112,16 +112,21 @@ int Player::GetExperience() const
 	return _experience;
 }
 
+int Player::GetSkillpoints() const
+{
+	return _skillpoints;
+}
+
 
 
 void Player::AddExperience(const int const exp)
 {
-	Output* output = new Output();
+	Output* output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
 	output->ShowExperienceGain(exp);
 	_experience += exp;
 	while (_experience >= 15 && _level != 10) {
 		levelUp();
-		output->LevelUp(_level);
+		output->LevelUp(_level, _skillpoints);
 		_experience -= 15;
 	}
 	if (_experience > 15) {
@@ -130,8 +135,21 @@ void Player::AddExperience(const int const exp)
 	delete output;
 }
 
+int Player::IncreaseAttackStat()
+{
+	if (_skillpoints == 0) {
+		return -1;
+	}
+
+	_skillpoints--;
+	
+	baseAttack += 10;
+	return baseAttack;
+}
+
 void Player::levelUp() {
 	_level++;
+	_skillpoints++;
 }
 
 void Player::SetExperience(int const experience)
@@ -141,6 +159,11 @@ void Player::SetExperience(int const experience)
 
 void Player::SetLevel(const int const level) {
 	_level = level;
+}
+
+void Player::SetSkillpoints(int const skillpoints)
+{
+	_skillpoints = skillpoints;
 }
 
 void Player::SetStat(Stat* const newStat)
@@ -154,6 +177,7 @@ std::ostream& operator<<(std::ostream& os, const Player& pl)
 	os << pl.GetHealth() << "\r\n";
 	os << pl.GetLevel() << "\r\n";
 	os << pl.GetExperience() << "\r\n";
+	os << pl.GetSkillpoints() << "\r\n";
 	os << *pl.GetInventory() << std::endl;
 
 	return os;

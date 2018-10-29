@@ -16,7 +16,7 @@ Stat* Helmet::Handle(Stat* stat) const
 
 void Helmet::Use()
 {
-	auto* output = new Output();
+	auto* output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
 	output->PrintNothingHappened(this);
 	delete output;
 }

@@ -47,19 +47,19 @@ void BaseRoom::setItem()
 	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
 	int chance = random->Generate(1, 100);
 	if (chance < 20) {
-		_item = new Potion();
+		_item = new (_NORMAL_BLOCK, __FILE__, __LINE__) Potion();
 	}
 	else if (chance < 30) {
-		_item = new Shoes();
+		_item = new (_NORMAL_BLOCK, __FILE__, __LINE__) Shoes();
 	}
 	else if (chance < 40) {
-		_item = new Helmet();
+		_item = new (_NORMAL_BLOCK, __FILE__, __LINE__) Helmet();
 	}
 	else if (chance < 50) {
-		_item = new BroadSword();
+		_item = new (_NORMAL_BLOCK, __FILE__, __LINE__) BroadSword();
 	}
 	else if (chance < 60) {
-		_item = new Shield();
+		_item = new (_NORMAL_BLOCK, __FILE__, __LINE__) Shield();
 	}
 	else {
 		_item = nullptr;
@@ -155,7 +155,7 @@ void BaseRoom::PlayerEnters(MonsterHolder * monsterHolder, BaseRoom* lastRoom)
 		}
 	}
 	setMonster(monsterHolder);
-	Output* output = new Output();
+	Output* output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
 	output->ClearScreen();
 	output->ShowRoomDescription(this);
 	output->BlankLine();

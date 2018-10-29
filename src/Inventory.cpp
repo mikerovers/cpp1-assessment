@@ -6,7 +6,7 @@
 Inventory::Inventory(int const size) : size(size)
 {
 	for (auto i = 0; i < size; i++) {
-		items[i] = new NullItem();
+		items[i] = new (_NORMAL_BLOCK, __FILE__, __LINE__) NullItem();
 	}
 }
 
@@ -45,7 +45,7 @@ bool Inventory::UseItem(const int index)
 	{
 		items[index]->Use();
 		delete items[index];
-		items[index] = new NullItem();
+		items[index] = new (_NORMAL_BLOCK, __FILE__, __LINE__) NullItem();
 
 		return true;
 	}
@@ -60,7 +60,7 @@ Item *Inventory::GetItem(const int index) const
 
 Stat* Inventory::GetStat() const
 {
-	return items[0]->Handle(new Stat);
+	return items[0]->Handle(new (_NORMAL_BLOCK, __FILE__, __LINE__) Stat);
 }
 
 std::ostream& operator<<(std::ostream& os, const Inventory& pl)

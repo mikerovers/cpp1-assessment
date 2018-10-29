@@ -46,6 +46,12 @@ void LoadCommand::Execute(Game* game)
 		player->SetExperience(experience);
 	}
 
+	int skillpoints;
+	if (infile >> skillpoints)
+	{
+		player->SetSkillpoints(skillpoints);
+	}
+
 	int maxLine = 50;
 	char line[50];
 	int count = 0;

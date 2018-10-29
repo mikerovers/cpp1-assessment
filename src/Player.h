@@ -31,14 +31,18 @@ public:
 
 	void SetExperience(int const experience);
 	void SetLevel(int const level);
+	void SetSkillpoints(int const skillpoints);
 	int GetLevel() const;
 	int GetExperience() const;
+	int GetSkillpoints() const;
 
 	void AddExperience(int const exp);
+	int IncreaseAttackStat();
 private:
 	Stat* stat;
 	int _level = 1;
 	int _experience = 0;
+	int _skillpoints = 0;
 	class BaseRoom* _currentRoom;
 	int health;
 	Inventory* _inventory;

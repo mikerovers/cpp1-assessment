@@ -17,7 +17,8 @@ void IncreaseAttackStatCommand::Execute(Game * game)
 	Player* player = game->GetPlayer();
 	Output* output = game->GetOutput();
 	int skillpoints = player->GetSkillpoints();
-	if (int attack = player->IncreaseAttackStat() != -1) {
+	int attack = player->IncreaseAttackStat();
+	if (attack != -1) {
 		output->ShowAttackStatImproved(attack);
 	}
 	else {
