@@ -34,4 +34,5 @@ public:
 	void PrintVictory(const Player* player, const Monster* monster) const;
 	void AskLoadPlayer();
 	void PrintLoadingError();
+	void ShowLoaded(bool newPlayer) const;
 };

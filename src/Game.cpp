@@ -65,6 +65,7 @@ void Game::Setup() {
 		auto* loadCommand = new LoadCommand();
 		try {
 			loadCommand->Execute(this);
+			_output->ShowLoaded(true);
 		} catch (FileNotOpenedException& e)
 		{
 			_output->ClearScreen();
@@ -81,7 +82,9 @@ void Game::Setup() {
 	else
 	{
 		SetupPlayer(nullptr);
+		_output->ShowLoaded(false);
 	}
+
 
 	_combatController = new (_NORMAL_BLOCK, __FILE__, __LINE__) CombatController(_inventory, _player);
 	DungeonBuilder* builder = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) DungeonBuilder();

@@ -147,6 +147,16 @@ void Output::PrintLoadingError()
 	printf("Error loading characters, starting with a new one. Did you save one? \n\n");
 }
 
+void Output::ShowLoaded(bool newPlayer) const
+{
+	if (newPlayer) {
+		printf("Loading character\n");
+	}
+	else {
+		printf("Creating new character\n");
+	}
+}
+
 void Output::ShowCommands() const {
 	printf("\"Commands\":		Show the commands\n");
 	printf("\"Map\":			Show the map\n");
