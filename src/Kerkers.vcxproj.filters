@@ -100,9 +100,6 @@
     <ClCompile Include="Inventory.cpp">
       <Filter>Source Files\Models</Filter>
     </ClCompile>
-    <ClCompile Include="Item.cpp">
-      <Filter>Source Files\Models</Filter>
-    </ClCompile>
     <ClCompile Include="Monster.cpp">
       <Filter>Source Files\Models</Filter>
     </ClCompile>
@@ -159,6 +156,9 @@
     </ClCompile>
     <ClCompile Include="MonsterHolder.cpp">
       <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Source Files\Models\Items</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -6,5 +6,6 @@ class PickUpCommand :
 public:
 	PickUpCommand();
 	~PickUpCommand();
+	void Execute(Game* game);
 };
 

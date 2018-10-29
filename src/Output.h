@@ -31,6 +31,8 @@ public:
 	void ShowEnemies(Monster* monster) const;
 	void BlankLine() const;
 	void ShowOptions() const;
+	void ShowItem(Item* item) const;
+	void ShowPickedUpItem(Item* item) const;
 	void PrintPlayerDeath(const Monster* monster, const Inventory* inventory) const;
 	void PrintStartCombat(const Monster* monster) const;
 	void PrintVictory(const Player* player, const Monster* monster) const;

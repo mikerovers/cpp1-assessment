@@ -12,8 +12,3 @@ StartRoom::~StartRoom()
 {
 
 }
-
-bool StartRoom::CanOverwriteRoom()
-{
-	return false;
-}

@@ -8,7 +8,5 @@ private:
 public:
 	DownStaircaseRoom();
 	~DownStaircaseRoom();
-	void PlayerEnters(MonsterHolder* monsterHolder);
-
 };
 

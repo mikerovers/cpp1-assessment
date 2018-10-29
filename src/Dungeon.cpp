@@ -135,7 +135,7 @@ void Dungeon::AddStairs() const {
 		while (true) {
 			width = random->Generate(0, _width - 1);
 			height = random->Generate(0, _height - 1);
-			if (_levels[d][height][width].GetDisplayValue() == 'N') {
+			if (_levels[d][height][width].GetValue() == 'N') {
 				break;
 			}
 		}
@@ -171,7 +171,7 @@ void Dungeon::AddEndBoss() const {
 	while (true) {
 		width = random->Generate(0, _width - 1);
 		height = random->Generate(0, _height - 1);
-		if (_levels[0][height][width].GetDisplayValue() == 'N') {
+		if (_levels[0][height][width].GetValue() == 'N') {
 			break;
 		}
 	}

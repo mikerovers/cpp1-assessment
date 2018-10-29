@@ -22,6 +22,7 @@ public:
 	int SetHealthConst(const int amount);
 
 	Inventory* GetInventory() const;
+	Item* PickUpitem();
 
 	friend std::ostream& operator<<(std::ostream& os, const Player& pl);
 	int GetBaseAttack() const;

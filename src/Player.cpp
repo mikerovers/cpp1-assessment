@@ -39,8 +39,8 @@ void Player::MoveTo(MonsterHolder* monsterHolder, BaseRoom * room)
 	SetCurrentRoom(room);
 
 	room->SetPlayer(this);
-	room->SetVisited();
 	room->PlayerEnters(monsterHolder, temp);
+	room->SetVisited();
 }
 
 int Player::GetHealth() const
@@ -62,6 +62,17 @@ Inventory* Player::GetInventory() const
 {
 	return _inventory;
 }
+
+
+Item* Player::PickUpitem()
+{
+	Item* item = _currentRoom->GetItem();
+	if (item != nullptr) {
+		_inventory->SetItem(item);
+	}
+	return item;
+}
+
 
 int Player::GetBaseAttack() const
 {

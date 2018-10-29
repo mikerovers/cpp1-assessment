@@ -6,7 +6,5 @@ class BaseStaircaseRoom :
 public:
 	BaseStaircaseRoom();
 	~BaseStaircaseRoom();
-	virtual void PlayerEnters(MonsterHolder* monsterHolder);
-	bool CanOverwriteRoom() override;
 };
 

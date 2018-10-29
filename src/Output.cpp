@@ -117,7 +117,28 @@ void Output::BlankLine() const
 void Output::ShowOptions() const
 {
 	printf("What do you want to do?\n");
-	printf("[fight|flight|search|rest|inventory|map]\n");
+	printf("[fight|flight|pickup|rest|inventory|map]\n");
+}
+
+void Output::ShowItem(Item* item) const
+{
+	if (item != nullptr) {
+		printf("You have found %s in the room\n", item->GetName());
+	}
+	else {
+		printf("There are no items in this room.\n");
+	}
+}
+
+void Output::ShowPickedUpItem(Item * item) const
+{
+	if (item != nullptr) {
+		printf("Picked up item %s\n", item->GetName());	
+
+	}
+	else {
+		printf("There are no items to pick up in this room.\n");
+	}
 }
 
 void Output::PrintPlayerDeath(const Monster* monster, const Inventory* inventory) const

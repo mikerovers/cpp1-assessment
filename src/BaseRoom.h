@@ -16,7 +16,7 @@ private:
 
 	bool _visited = false;
 
-	Item* _item;
+	Item* _item = nullptr;
 
 	void setItem();
 
@@ -39,6 +39,7 @@ public:
 	Monster* GetMonster();
 
 	Item* GetItem();
+	void SetItem();
 
 
 	void SetUpStairsRoom(BaseRoom * room);
@@ -50,11 +51,11 @@ public:
 
 	void SetRandomContent();
 	char GetDisplayValue();
+	char GetValue();
 	Player* GetPlayer();
 
 	char* GetDescription();
 
-	virtual bool CanOverwriteRoom() = 0;
 	void PlayerEnters(MonsterHolder* monsterHolder, BaseRoom* lastRoom);
 	void PlayerLeaves();
 

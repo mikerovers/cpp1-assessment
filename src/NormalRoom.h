@@ -7,9 +7,4 @@ private:
 public:
 	NormalRoom();
 	~NormalRoom();
-
-	void PlayerEnters(MonsterHolder* monsterHolder);
-	bool CanOverwriteRoom();
-
-
 };
