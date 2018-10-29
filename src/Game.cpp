@@ -42,15 +42,15 @@ Game::Game()
 
 void Game::Setup() {
 	int width = 0, height = 0, depth = 0;
-	while (width <= 0) {
+	while (width <= 1) {
 		_output->AskForDungeonWidth();
 		width = _input->GetIntInput();
 	}
-	while (height <= 0) {
+	while (height <= 1) {
 		_output->AskForDungeonHeight();
 		height = _input->GetIntInput();
 	}
-	while (depth <= 0) {
+	while (depth <= 2) {
 		_output->AskForDungeonDepth();
 		depth = _input->GetIntInput();
 	}

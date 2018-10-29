@@ -19,15 +19,15 @@ void Output::ShowIntroduction() const {
 }
 
 void Output::AskForDungeonWidth() const {
-	printf("Hoe breed moet de dungeon worden? (1-20)\n");
+	printf("Hoe breed moet de dungeon worden? (2-20)\n");
 }
 
 void Output::AskForDungeonHeight() const {
-	printf("Hoe hoog moet de dungeon worden? (1-20)\n");
+	printf("Hoe hoog moet de dungeon worden? (2-20)\n");
 }
 
 void Output::AskForDungeonDepth() const {
-	printf("Hoe diep moet de dungeon worden? (1-5)\n");
+	printf("Hoe diep moet de dungeon worden? (3-5)\n");
 }
 
 void Output::ShowGameStarted() const {
