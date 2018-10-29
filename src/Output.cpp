@@ -27,7 +27,7 @@ void Output::AskForDungeonHeight() const {
 }
 
 void Output::AskForDungeonDepth() const {
-	printf("Hoe diep moet de dungeon worden? (3-5)\n");
+	printf("Hoe diep moet de dungeon worden? (3-20)\n");
 }
 
 void Output::ShowGameStarted() const {
