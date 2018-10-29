@@ -51,4 +51,5 @@ public:
 	void ShowExperienceGain(int const level) const;
 	void ShowNoSkillpoints() const;
 	void ShowAttackStatImproved(int attack);
+	void ShowGameWon(const Game* game) const;
 };

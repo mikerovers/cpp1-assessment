@@ -57,6 +57,10 @@ const bool CombatController::Start(Monster* monster, Game *game) const
 			output->PrintVictory(_player, monster);
 			inCombat = false;
 			win = true;
+			if (monster->getLevel() == 99) { // killed the boss
+				output->ShowGameWon(game);
+				game->SetRunning(false);
+			}
 		}
 
 		delete command;

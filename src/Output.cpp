@@ -254,6 +254,12 @@ void Output::ShowAttackStatImproved(int attack)
 	printf("Attack has been increased to %d\n", attack);
 }
 
+void Output::ShowGameWon(const Game* game) const
+{
+	printf("You have won the game.");
+	PrintPlayerInfo(game);
+}
+
 void Output::ShowCommands() const {
 	printf("The following commands can be used out of combat:\n");
 	printf("\"Commands\":		Show the commands\n");
