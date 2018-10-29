@@ -4,10 +4,11 @@
 #include "MonsterParsingException.h"
 #include "FileReader.h"
 #include "FileNotOpenedException.h"
+#include "Output.h"
 
 const int MAXLINE = 256;
 
-void MonsterFileParser::parse(const char path[], MonsterHolder* monsterHolder)
+void MonsterFileParser::parse(const char path[], MonsterHolder* monsterHolder, Game* game)
 {
 	auto *reader = new FileReader();
 
@@ -33,12 +34,20 @@ void MonsterFileParser::parse(const char path[], MonsterHolder* monsterHolder)
 
 		monsterFile.close();
 	}
-	catch (FileNotOpenedException e) {
-
+	catch (FileNotOpenedException& e) {
+		game->GetOutput()->PrintFileError();
+		game->NullMonsterHolder();
+		
+		game->Exit();
 	}
-	catch (MonsterParsingException e) {
-
-	} 
+	catch (MonsterParsingException& e) {
+		game->GetOutput()->PrintMonsterParsingError();
+		game->Exit();
+	} catch(...)
+	{
+		game->GetOutput()->PrintMonsterParsingError();
+		game->Exit();
+	}
 }
 
 
@@ -47,7 +56,6 @@ Monster* MonsterFileParser::parseMonster(const char m[])
 	std::cmatch matches;
 
 	if (std::regex_search(m, matches, mRegex)) {
-		try {
 			auto m = matches[1].str();
 			const char * p = _strdup(m.c_str());
 
@@ -63,12 +71,9 @@ Monster* MonsterFileParser::parseMonster(const char m[])
 			);
 
 			return monster;
-		}
-		catch (int e) {
-			throw MonsterParsingException();
-		}
-	}
-	else {
+	} 
+	else 
+	{
 		return nullptr;
 	}
 }

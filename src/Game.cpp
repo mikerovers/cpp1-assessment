@@ -24,15 +24,11 @@ void Game::Init()
 
 	_monsterHolder = new (_NORMAL_BLOCK, __FILE__, __LINE__) MonsterHolder(monsterCount);
 
-	try {
-		auto *monsterParser = new (_NORMAL_BLOCK, __FILE__, __LINE__) MonsterFileParser;
-		monsterParser->parse("monsters.txt", _monsterHolder);
+	_running = true;
+	auto *monsterParser = new (_NORMAL_BLOCK, __FILE__, __LINE__) MonsterFileParser;
+	monsterParser->parse("monsters.txt", _monsterHolder, this);
 
-		delete monsterParser;
-	}
-	catch (MonsterParsingException& e) {
-		std::cerr << e.what() << "\n";
-	}
+	delete monsterParser;
 }
 
 Game::Game()
@@ -71,10 +67,10 @@ void Game::Setup() {
 			_output->ClearScreen();
 			_output->PrintLoadingError();
 			SetupPlayer(nullptr);
-		} catch (std::exception& e)
+		} catch(...)
 		{
 			_output->ClearScreen();
-			_output->PrintLoadingError();
+			_output->PrintParsingError();
 			SetupPlayer(nullptr);
 		}
 		delete loadCommand;
@@ -95,7 +91,6 @@ void Game::Setup() {
 
 void Game::Start() 
 {
-	_running = true;
 	CommandFactory* commandFactory = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) CommandFactory();
 	ICommand* command;
 
@@ -152,6 +147,11 @@ CombatController* Game::GetCombatController() const
 	return _combatController;
 }
 
+void Game::NullMonsterHolder() 
+{
+	_monsterHolder = nullptr;
+}
+
 int Game::GetCurrentLevel() const
 {
 	return _currentLevel;
@@ -176,6 +176,11 @@ void Game::SetupPlayer(Player* player)
 	{
 		_player = player;
 	}
+}
+
+void Game::Exit()
+{
+	_running = false;
 }
 
 Game::~Game()

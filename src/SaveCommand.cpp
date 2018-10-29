@@ -1,6 +1,8 @@
 ﻿#include "pch.h"
 #include "SaveCommand.h"
 #include <fstream>
+#include "FileNotOpenedException.h"
+#include "Output.h"
 
 SaveCommand::~SaveCommand() = default;
 
@@ -10,11 +12,20 @@ void SaveCommand::Execute(Game* game)
 
 	try {
 		std::ofstream outfile("player.txt", std::ofstream::binary);
+		if (!outfile.is_open())
+		{
+			throw FileNotOpenedException();
+		}
+
 		outfile << *game->GetPlayer();
 
 		outfile.close();
-	} catch (std::exception& e)
+	} catch (FileNotOpenedException& e)
+	{
+		game->GetOutput()->PrintSavingError();
+	}
+	catch (...)
 	{	
-		printf("Saving error.");
+		printf("Unknown saving error :(");
 	}
 }

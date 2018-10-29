@@ -38,6 +38,10 @@ public:
 	void PrintVictory(const Player* player, const Monster* monster) const;
 	void AskLoadPlayer();
 	void PrintLoadingError();
+	void PrintParsingError();
+	void PrintSavingError();
+	void PrintMonsterParsingError();
+	void PrintFileError();
 	void ShowLoaded(bool newPlayer) const;
 	void PrintAttackEvaded(const Monster* monster) const;
 	void PrintSuccessfullAttack(const Monster* monster, const int damage) const;

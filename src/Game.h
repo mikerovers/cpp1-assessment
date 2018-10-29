@@ -26,10 +26,12 @@ public:
 	class Player* GetPlayer() const;
 	class MonsterHolder* GetMonsterHolder() const;
 	CombatController* GetCombatController() const;
+	void NullMonsterHolder();
 	int GetCurrentLevel() const;
 	void SetCurrentLevel(int level);
 	void SetRunning(bool running);
 	void SetupPlayer(Player* player = nullptr);
+	void Exit();
 	Game();
 	~Game();
 };

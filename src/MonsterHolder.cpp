@@ -13,7 +13,7 @@ MonsterHolder::MonsterHolder(int monsterCount)
 MonsterHolder::~MonsterHolder()
 {
 	for (int i = 0; i < 14; i++) {
-		if (_monsters[i] != NULL)
+		if (_monsters[i] != nullptr)
 		delete _monsters[i];
 	}
 	delete _monsters;

@@ -169,6 +169,26 @@ void Output::PrintLoadingError()
 	printf("Error loading characters, starting with a new one. Did you save one? \n\n");
 }
 
+void Output::PrintParsingError()
+{
+	printf("Something went wrong with parsing your character. Creating a new one for you. \n");
+}
+
+void Output::PrintSavingError()
+{
+	printf("Something went wrong with saving your character. No panic!, he is not gone yet. \n");
+}
+
+void Output::PrintMonsterParsingError()
+{
+	printf("Something went wrong with monster loading, please panic!\n");
+}
+
+void Output::PrintFileError()
+{
+	printf("Something went wrong with handling files. Do you have permission to save and read files?\n");
+}
+
 void Output::ShowLoaded(bool newPlayer) const
 {
 	if (newPlayer) {
