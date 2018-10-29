@@ -62,7 +62,7 @@ void Game::Setup() {
 	
 	if (load == 'y')
 	{
-		auto* loadCommand = new LoadCommand();
+		auto* loadCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) LoadCommand();
 		try {
 			loadCommand->Execute(this);
 			_output->ShowLoaded(true);

@@ -32,7 +32,7 @@ void AttackCommand::Execute(Game* game, Monster* monster)
 		monster->setHP(monster->getHP() - playerDamage);
 
 	}
-
+	delete stat;
 	if (monster->getHP() > 0) {
 		// Monster attack.
 		int damage = monster->getDamage();

@@ -24,8 +24,9 @@ void RestCommand::Execute(Game* game)
 		game->GetOutput()->PrintRestNotAvailable();
 	} else
 	{
-		RandomGenerator* random = new RandomGenerator();
+		RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
 		const int result = random->Generate(1, 6);
+		delete random;
 
 		const bool attacked = result >= 1 && result <= 4;
 
@@ -36,5 +37,6 @@ void RestCommand::Execute(Game* game)
 		{
 			game->GetCombatController()->Start(game->GetMonsterHolder()->GetRandomMonsterByLevelRange(1, 5), game);
 		}
+
 	}
 }

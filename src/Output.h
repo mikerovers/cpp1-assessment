@@ -47,6 +47,8 @@ public:
 	void PrintRestNotAvailable() const;
 	void PrintRest(const int health, const bool attacked) const;
 	void NoMonsterToFight() const;
-	void LevelUp(int level) const;
-	void ShowExperienceGain(int level) const;
+	void LevelUp(int const level, int const skillpoints) const;
+	void ShowExperienceGain(int const level) const;
+	void ShowNoSkillpoints() const;
+	void ShowAttackStatImproved(int attack);
 };

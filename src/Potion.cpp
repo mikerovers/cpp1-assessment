@@ -5,7 +5,7 @@
 
 void Potion::Use()
 {
-	auto* output = new Output();
+	auto* output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
 	output->PrintHealthIncrease(15);
 	delete output;
 }

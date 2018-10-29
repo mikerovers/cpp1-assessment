@@ -176,6 +176,7 @@
     <ClInclude Include="Helmet.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="ICommandFactory.h" />
+    <ClInclude Include="IncreaseAttackStatCommand.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
@@ -233,6 +234,7 @@
     <ClCompile Include="Helmet.cpp" />
     <ClCompile Include="ICommand.cpp" />
     <ClCompile Include="ICommandFactory.cpp" />
+    <ClCompile Include="IncreaseAttackStatCommand.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />

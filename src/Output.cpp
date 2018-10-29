@@ -210,6 +210,7 @@ void Output::PrintPlayerInfo(const Game* game) const
 	printf("Your current evasion rate is: %d\n", game->GetPlayer()->GetBaseDefence() + stat->defense);
 	printf("You have %i experience points \n", game->GetPlayer()->GetExperience());
 	printf("Your level is %i \n", game->GetPlayer()->GetLevel());
+	printf("You have %i skillpoints to spend\n", game->GetPlayer()->GetSkillpoints());
 	delete stat;
 }
 
@@ -232,14 +233,25 @@ void Output::NoMonsterToFight() const
 	printf("There is no monster to fight here\n");
 }
 
-void Output::LevelUp(int level) const
+void Output::LevelUp(int const level, int const skillpoints) const
 {
 	printf("You have leveled up. Current level: %i\n", level);
+	printf("You have %i skillpoints left to spend (command: increase) \n", skillpoints);
 }
 
-void Output::ShowExperienceGain(int exp) const
+void Output::ShowExperienceGain(int const exp) const
 {
 	printf("You have gained %i experience points\n", exp);
+}
+
+void Output::ShowNoSkillpoints() const
+{
+	printf("You do not have enough skillpoints for perform this action\n");
+}
+
+void Output::ShowAttackStatImproved(int attack)
+{
+	printf("Attack has been increased to %d\n", attack);
 }
 
 void Output::ShowCommands() const {

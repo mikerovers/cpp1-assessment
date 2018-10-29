@@ -5,8 +5,8 @@
 
 void UseItemCommand::Execute(Game* game)
 {
-	auto* _input = new Input();
-	auto* _output = new Output();
+	auto* _input = new (_NORMAL_BLOCK, __FILE__, __LINE__) Input();
+	auto* _output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
 
 	_output->PrintInventory(game->GetPlayer()->GetInventory());
 	_output->AskForItem();

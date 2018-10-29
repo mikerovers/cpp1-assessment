@@ -166,6 +166,7 @@
     <ClCompile Include="Helmet.cpp">
       <Filter>Source Files\Models\Items</Filter>
     </ClCompile>
+    <ClCompile Include="IncreaseAttackStatCommand.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MonsterFileParser.h">
@@ -333,6 +334,7 @@
     <ClInclude Include="Helmet.h">
       <Filter>Header Files\Models\Items</Filter>
     </ClInclude>
+    <ClInclude Include="IncreaseAttackStatCommand.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">

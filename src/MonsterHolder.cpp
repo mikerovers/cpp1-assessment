@@ -21,7 +21,7 @@ MonsterHolder::~MonsterHolder()
 
 void MonsterHolder::Init()
 {
-	_monsters = new Monster*[14];
+	_monsters = new (_NORMAL_BLOCK, __FILE__, __LINE__) Monster*[14];
 }
 
 void MonsterHolder::AddMonster(Monster * monster, int index)
