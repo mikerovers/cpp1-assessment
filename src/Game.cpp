@@ -50,7 +50,7 @@ void Game::Setup() {
 		_output->AskForDungeonHeight();
 		height = _input->GetIntInput();
 	}
-	while (depth == 0 || !(depth >= 3 && depth <= 5)) {
+	while (depth == 0 || !(depth >= 3 && depth <= 20)) {
 		_output->AskForDungeonDepth();
 		depth = _input->GetIntInput();
 	}
