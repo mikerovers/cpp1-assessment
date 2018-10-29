@@ -39,6 +39,7 @@ public:
 	Monster* GetMonster();
 
 	Item* GetItem();
+	void RemoveItem();
 	void SetItem();
 
 

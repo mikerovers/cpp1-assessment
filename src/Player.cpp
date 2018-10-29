@@ -67,6 +67,7 @@ Inventory* Player::GetInventory() const
 Item* Player::PickUpitem()
 {
 	Item* item = _currentRoom->GetItem();
+	_currentRoom->RemoveItem();
 	if (item != nullptr) {
 		_inventory->SetItem(item);
 	}

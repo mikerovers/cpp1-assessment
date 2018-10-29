@@ -56,6 +56,7 @@ void BaseRoom::setItem()
 	else {
 		_item = nullptr;
 	}
+	delete random;
 }
 
 void BaseRoom::SetUpStairsRoom(BaseRoom* room)
@@ -93,7 +94,7 @@ BaseRoom::~BaseRoom()
 
 	_description = nullptr;
 	delete _player;
-	delete _monster;
+	//delete _monster;
 	if (_item) {
 		delete _item;
 	}
@@ -118,6 +119,10 @@ Monster * BaseRoom::GetMonster()
 Item * BaseRoom::GetItem()
 {
 	return _item;
+}
+
+void BaseRoom::RemoveItem() {
+	_item = nullptr;
 }
 
 void BaseRoom::SetMonsterLevels(int min, int max)
