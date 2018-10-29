@@ -10,6 +10,7 @@
 #include "MonsterHolder.h"
 #include "MonsterFileParser.h"
 #include "MonsterParsingException.h"
+#include "BroadSword.h"
 
 
 void Game::Init()
@@ -57,7 +58,6 @@ void Game::Setup() {
 	_player = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Player();
 	_inventory = new (_NORMAL_BLOCK, __FILE__, __LINE__) Inventory(5);
 	_combatController = new (_NORMAL_BLOCK, __FILE__, __LINE__) CombatController(_inventory, _player);
-	_combatController->Start(_monsterHolder->GetRandomMonsterByLevelRange(3, 4), this);
 	DungeonBuilder* builder = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) DungeonBuilder();
 	_dungeon = builder->BuildDungeon(_player, width, height, depth);
 	delete builder;
@@ -117,6 +117,11 @@ Player * Game::GetPlayer() const
 MonsterHolder * Game::GetMonsterHolder() const
 {
 	return _monsterHolder;
+}
+
+CombatController* Game::GetCombatController() const
+{
+	return _combatController;
 }
 
 int Game::GetCurrentLevel() const

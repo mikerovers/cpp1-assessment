@@ -2,6 +2,7 @@
 #include "Output.h"
 #include "Dungeon.h"
 #include "NullItem.h"
+#include "Game.h"
 
 Output::Output() {
 
@@ -137,11 +138,55 @@ void Output::PrintVictory(const Player* player, const Monster* monster) const
 	printf("Your remaining health is %d.\n", player->GetHealth());
 }
 
+void Output::PrintAttackEvaded(const Monster* monster) const
+{
+	printf("%s has evaded your attack. \n", monster->getName());
+}
+
+void Output::PrintSuccessfullAttack(const Monster* monster, const int damage) const
+{
+	printf("You decreased %s's with %d health points.\n", monster->getName(), damage);
+}
+
+void Output::PrintMonsterAttack(const Monster* monster, const int damage)
+{
+	printf("%s attacked you for %d of your health points.\n", monster->getName(), damage);
+}
+
+void Output::PrintPlayerEvaded(const Monster* monster) const
+{
+	printf("You evaded the attack from %s.", monster->getName());
+}
+
+void Output::PrintPlayerInfo(const Game* game) const
+{
+	printf("You have %d health left. \n", game->GetPlayer()->GetHealth());
+	auto* stat = game->GetInventory()->GetStat();
+	printf("Your current attack power is: %d\n", game->GetPlayer()->GetBaseAttack() + stat->attack);
+	printf("Your current evasion rate is: %d\n", game->GetPlayer()->GetBaseDefence() + stat->defense);
+	delete stat;
+}
+
+void Output::PrintRestNotAvailable() const
+{
+	printf("You are already rested. \n");
+}
+
+void Output::PrintRest(const int health, const bool attacked) const
+{
+	printf("You have rested. Your health has been recovered to %d\n", health);
+	if (attacked)
+	{
+		printf("But suddenly, you hear something in the distance!\n");
+	}
+}
+
 void Output::ShowCommands() const {
 	printf("\"Commands\":		Show the commands\n");
 	printf("\"Map\":			Show the map\n");
 	printf("\"Inventory\":		Show the inventory\n");
-	printf("\"Item\":			Use item from inventory\n");
+	printf("\"Item\":			Use or destroy item from inventory\n");
+	printf("\"Stats\":		Check your current stats \n");
 	printf("\"Exit\":			Exit the game\n");
 }
 

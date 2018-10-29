@@ -10,7 +10,7 @@ public:
 	CombatController(Inventory* inventory, Player* player);
 	~CombatController();
 
-	const bool Start(const Monster* monster, Game *game) const;
+	const bool Start(Monster* monster, Game *game) const;
 
 private:
 	Inventory* _inventory;

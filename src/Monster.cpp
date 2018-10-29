@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "Monster.h"
 #include <cstring>
+#include <random>
+#include <ctime>
 
 unsigned int Monster::getAttackChance() const
 {
@@ -72,12 +74,12 @@ void Monster::setName(const char *nam)
 	name = nam;
 }
 
-unsigned int Monster::getHP() const
+int Monster::getHP() const
 {
 	return HP;
 }
 
-void Monster::setHP(const unsigned int HP)
+void Monster::setHP(const int HP)
 {
 	Monster::HP = HP;
 }
@@ -162,5 +164,35 @@ Monster &Monster::operator=(Monster &&other) noexcept
 Monster::~Monster()
 {
 	delete[] name;
-	name = nullptr	;
+	name = nullptr;
+}
+
+int Monster::getDamage() const
+{
+	std::default_random_engine generator;
+	generator.seed(time(nullptr));
+
+	int totalDamage = 0;
+
+	std::uniform_int_distribution<int> attackChangeDistribution(getMinAmountOfDamage(), getMaxAmountOfDamage());
+	int randomChange = attackChangeDistribution(generator);
+
+	for (auto i = 0; i < randomChange; i++)
+	{
+		std::uniform_int_distribution<int> attackDamageDistribution(getMinAmountOfDamage(), getMaxAmountOfDamage());
+		totalDamage += attackDamageDistribution(generator);
+	}
+
+	return totalDamage;
+}
+
+bool Monster::getDefence() const
+{
+	std::default_random_engine generator;
+	generator.seed(time(nullptr));
+
+	std::uniform_int_distribution<int> attackChangeDistribution(0, 100);
+	int randomChange = attackChangeDistribution(generator);
+
+	return randomChange > getEvasionChance();
 }

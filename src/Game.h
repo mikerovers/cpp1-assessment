@@ -25,6 +25,7 @@ public:
 	class Inventory* GetInventory() const;
 	class Player* GetPlayer() const;
 	class MonsterHolder* GetMonsterHolder() const;
+	CombatController* GetCombatController() const;
 	int GetCurrentLevel() const;
 	void SetCurrentLevel(int level);
 	void SetRunning(bool running);
