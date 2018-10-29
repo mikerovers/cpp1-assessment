@@ -42,6 +42,7 @@ ICommand* CommandFactory::RetrieveCommand(char command[]) const {
 	else if (comparator->Compare("save", command, 4))
 	{
 		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) SaveCommand();
+	}
 	else if (comparator->Compare("stats", command, 5))
 	{
 		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) StatCommand();

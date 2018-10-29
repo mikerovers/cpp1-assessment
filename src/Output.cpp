@@ -155,6 +155,8 @@ void Output::ShowLoaded(bool newPlayer) const
 	}
 	else {
 		printf("Creating new character\n");
+	}
+}
 
 void Output::PrintAttackEvaded(const Monster* monster) const
 {

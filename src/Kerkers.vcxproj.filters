@@ -10,10 +10,64 @@
     <ClCompile Include="AbstractStatHandler.cpp">
       <Filter>Source Files\Controllers\Combat</Filter>
     </ClCompile>
-    <ClCompile Include="BaseRoom.cpp">
-      <Filter>Source Files\Models\Rooms</Filter>
+    <ClCompile Include="AttackCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
     </ClCompile>
-    <ClCompile Include="BaseStaircaseRoom.cpp">
+    <ClCompile Include="CheckInventoryCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckStatsCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CombatCommandFactory.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowMapCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowCommandsCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="RestCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="StatCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="UseItemCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="PickUpCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="NullCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="ICommandFactory.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="ICommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="FlightCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="FightCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="ExitCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandFactory.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseRoom.cpp">
       <Filter>Source Files\Models\Rooms</Filter>
     </ClCompile>
     <ClCompile Include="EndBossRoom.cpp">
@@ -22,16 +76,16 @@
     <ClCompile Include="NormalRoom.cpp">
       <Filter>Source Files\Models\Rooms</Filter>
     </ClCompile>
-    <ClCompile Include="UpStaircaseRoom.cpp">
-      <Filter>Source Files\Models\Rooms</Filter>
-    </ClCompile>
     <ClCompile Include="StartRoom.cpp">
       <Filter>Source Files\Models\Rooms</Filter>
     </ClCompile>
-    <ClCompile Include="BroadSword.cpp">
-      <Filter>Source Files\Models\Items</Filter>
+    <ClCompile Include="BaseStaircaseRoom.cpp">
+      <Filter>Source Files\Models\Rooms</Filter>
     </ClCompile>
-    <ClCompile Include="Item.cpp">
+    <ClCompile Include="DungeonBuilder.cpp">
+      <Filter>Source Files\Builders</Filter>
+    </ClCompile>
+    <ClCompile Include="BroadSword.cpp">
       <Filter>Source Files\Models\Items</Filter>
     </ClCompile>
     <ClCompile Include="NullItem.cpp">
@@ -43,7 +97,22 @@
     <ClCompile Include="Shield.cpp">
       <Filter>Source Files\Models\Items</Filter>
     </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
     <ClCompile Include="Stat.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Dungeon.cpp">
       <Filter>Source Files\Models</Filter>
     </ClCompile>
     <ClCompile Include="CanAttackWith.cpp">
@@ -52,50 +121,17 @@
     <ClCompile Include="CharArrayComparator.cpp">
       <Filter>Source Files\Util</Filter>
     </ClCompile>
-    <ClCompile Include="CheckInventoryCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
+    <ClCompile Include="CombatController.cpp">
+      <Filter>Source Files\Controllers\Combat</Filter>
     </ClCompile>
-    <ClCompile Include="CheckStatsCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="ExitCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="FightCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="FlightCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="ICommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="NullCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="PickUpCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="RestCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="ShowCommandsCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="ShowMapCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="UseItemCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="CommandFactory.cpp">
-      <Filter>Source Files\Commands</Filter>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Controllers</Filter>
     </ClCompile>
     <ClCompile Include="ContentTranslator.cpp">
       <Filter>Source Files\Util</Filter>
     </ClCompile>
-    <ClCompile Include="DungeonBuilder.cpp">
-      <Filter>Source Files\Builders</Filter>
+    <ClCompile Include="DownStaircaseRoom.cpp">
+      <Filter>Source Files\Models\Rooms</Filter>
     </ClCompile>
     <ClCompile Include="FileReader.cpp">
       <Filter>Source Files\IO</Filter>
@@ -106,70 +142,45 @@
     <ClCompile Include="Output.cpp">
       <Filter>Source Files\IO</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files\Controllers</Filter>
-    </ClCompile>
-    <ClCompile Include="Inventory.cpp">
-      <Filter>Source Files\Models</Filter>
-    </ClCompile>
-    <ClCompile Include="Monster.cpp">
-      <Filter>Source Files\Models</Filter>
-    </ClCompile>
-    <ClCompile Include="MonsterHolder.cpp">
-      <Filter>Source Files\Models</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files\Models</Filter>
-    </ClCompile>
-    <ClCompile Include="Dungeon.cpp">
-      <Filter>Source Files\Models</Filter>
-    </ClCompile>
-    <ClCompile Include="DownStaircaseRoom.cpp">
-      <Filter>Source Files\Models\Rooms</Filter>
-    </ClCompile>
-    <ClCompile Include="MonsterFileParser.cpp">
-      <Filter>Source Files\Util</Filter>
+    <ClCompile Include="FileNotOpenedException.cpp">
+      <Filter>Source Files\Exceptions</Filter>
     </ClCompile>
     <ClCompile Include="MonsterParsingException.cpp">
       <Filter>Source Files\Exceptions</Filter>
     </ClCompile>
-    <ClCompile Include="FileNotOpenedException.cpp">
-      <Filter>Source Files\Exceptions</Filter>
+    <ClCompile Include="MonsterFileParser.cpp">
+      <Filter>Source Files\Util</Filter>
     </ClCompile>
     <ClCompile Include="RandomGenerator.cpp">
       <Filter>Source Files\Util</Filter>
     </ClCompile>
-    <ClCompile Include="CombatCommandFactory.cpp">
-      <Filter>Source Files\Commands</Filter>
+    <ClCompile Include="UpStaircaseRoom.cpp">
+      <Filter>Source Files\Models\Rooms</Filter>
     </ClCompile>
-    <ClCompile Include="CombatController.cpp">
-      <Filter>Source Files\Controllers</Filter>
-    </ClCompile>
-    <ClCompile Include="ICommandFactory.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="AttackCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="SaveCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadCommand.cpp">
-    <ClCompile Include="StatCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
+    <ClCompile Include="MonsterHolder.cpp">
+      <Filter>Source Files\Models</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MonsterFileParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BaseStaircaseRoom.h">
-      <Filter>Header Files\Models\Rooms</Filter>
+    <ClInclude Include="AbstractStatHandler.h">
+      <Filter>Header Files\Controllers\Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackCommand.h">
+      <Filter>Header Files\Commands</Filter>
     </ClInclude>
     <ClInclude Include="BaseRoom.h">
+      <Filter>Header Files\Models\Rooms</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseStaircaseRoom.h">
       <Filter>Header Files\Models\Rooms</Filter>
     </ClInclude>
     <ClInclude Include="BroadSword.h">
@@ -184,7 +195,13 @@
     <ClInclude Include="CheckInventoryCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
+    <ClInclude Include="CombatController.h">
+      <Filter>Header Files\Controllers\Combat</Filter>
+    </ClInclude>
     <ClInclude Include="CheckStatsCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatCommandFactory.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
     <ClInclude Include="CommandFactory.h">
@@ -199,49 +216,34 @@
     <ClInclude Include="Dungeon.h">
       <Filter>Header Files\Models</Filter>
     </ClInclude>
-    <ClInclude Include="DungeonBuilder.h">
-      <Filter>Header Files\Builders</Filter>
-    </ClInclude>
-    <ClInclude Include="AbstractStatHandler.h">
-      <Filter>Header Files\Controllers\Combat</Filter>
-    </ClInclude>
-    <ClInclude Include="EndBossRoom.h">
-      <Filter>Header Files\Models\Rooms</Filter>
-    </ClInclude>
-    <ClInclude Include="ExitCommand.h">
+    <ClInclude Include="ICommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="FightCommand.h">
+    <ClInclude Include="ICommandFactory.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
     <ClInclude Include="FlightCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="ICommand.h">
+    <ClInclude Include="FightCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="ExitCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
     <ClInclude Include="NullCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="FileNotOpenedException.h">
-      <Filter>Header Files\Exceptions</Filter>
+    <ClInclude Include="PickUpCommand.h">
+      <Filter>Header Files\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="FileReader.h">
-      <Filter>Header Files\IO</Filter>
+    <ClInclude Include="RestCommand.h">
+      <Filter>Header Files\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files\Controllers</Filter>
-    </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>Header Files\IO</Filter>
-    </ClInclude>
-    <ClInclude Include="Inventory.h">
-      <Filter>Header Files\Models</Filter>
-    </ClInclude>
-    <ClInclude Include="Item.h">
-      <Filter>Header Files\Models\Items</Filter>
-    </ClInclude>
-    <ClInclude Include="UseItemCommand.h">
+    <ClInclude Include="SaveCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
     <ClInclude Include="ShowMapCommand.h">
@@ -250,38 +252,44 @@
     <ClInclude Include="ShowCommandsCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="RestCommand.h">
+    <ClInclude Include="StatCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="PickUpCommand.h">
+    <ClInclude Include="UseItemCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="UpStaircaseRoom.h">
-      <Filter>Header Files\Models\Rooms</Filter>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Controllers</Filter>
     </ClInclude>
-    <ClInclude Include="StartRoom.h">
+    <ClInclude Include="Input.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Output.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="FileReader.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="FileNotOpenedException.h">
+      <Filter>Header Files\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterParsingException.h">
+      <Filter>Header Files\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomGenerator.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="EndBossRoom.h">
       <Filter>Header Files\Models\Rooms</Filter>
     </ClInclude>
     <ClInclude Include="NormalRoom.h">
       <Filter>Header Files\Models\Rooms</Filter>
     </ClInclude>
-    <ClInclude Include="NullItem.h">
-      <Filter>Header Files\Models\Items</Filter>
+    <ClInclude Include="StartRoom.h">
+      <Filter>Header Files\Models\Rooms</Filter>
     </ClInclude>
-    <ClInclude Include="Potion.h">
-      <Filter>Header Files\Models\Items</Filter>
-    </ClInclude>
-    <ClInclude Include="Shield.h">
-      <Filter>Header Files\Models\Items</Filter>
-    </ClInclude>
-    <ClInclude Include="Stat.h">
-      <Filter>Header Files\Models\Items</Filter>
-    </ClInclude>
-    <ClInclude Include="MonsterParsingException.h">
-      <Filter>Header Files\Exceptions</Filter>
-    </ClInclude>
-    <ClInclude Include="MonsterFileParser.h">
-      <Filter>Header Files\Util</Filter>
+    <ClInclude Include="UpStaircaseRoom.h">
+      <Filter>Header Files\Models\Rooms</Filter>
     </ClInclude>
     <ClInclude Include="MonsterHolder.h">
       <Filter>Header Files\Models</Filter>
@@ -289,104 +297,102 @@
     <ClInclude Include="Monster.h">
       <Filter>Header Files\Models</Filter>
     </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Header Files\Models</Filter>
     </ClInclude>
-    <ClInclude Include="RandomGenerator.h">
-      <Filter>Header Files\Util</Filter>
+    <ClInclude Include="Stat.h">
+      <Filter>Header Files\Models</Filter>
     </ClInclude>
-    <ClInclude Include="Output.h">
-      <Filter>Header Files\IO</Filter>
+    <ClInclude Include="NullItem.h">
+      <Filter>Header Files\Models\Items</Filter>
     </ClInclude>
-    <ClInclude Include="CombatCommandFactory.h">
-      <Filter>Header Files\Commands</Filter>
+    <ClInclude Include="Shield.h">
+      <Filter>Header Files\Models\Items</Filter>
     </ClInclude>
-    <ClInclude Include="CombatController.h">
-      <Filter>Header Files\Controllers</Filter>
+    <ClInclude Include="Potion.h">
+      <Filter>Header Files\Models\Items</Filter>
     </ClInclude>
-    <ClInclude Include="ICommandFactory.h">
-      <Filter>Header Files\Commands</Filter>
+    <ClInclude Include="DungeonBuilder.h">
+      <Filter>Header Files\Builders</Filter>
     </ClInclude>
-    <ClInclude Include="AttackCommand.h">
-      <Filter>Header Files\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="SaveCommand.h">
-      <Filter>Header Files\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="LoadCommand.h">
-    <ClInclude Include="StatCommand.h">
-      <Filter>Header Files\Commands</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="monsters.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{d37507b7-58fd-4189-b65c-3d80e23acc44}</UniqueIdentifier>
+      <UniqueIdentifier>{d0bd49d2-07f9-4246-b41c-c3851efca809}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{e931d60f-6b43-45aa-9eb8-0bfa08c40abd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Builders">
-      <UniqueIdentifier>{0f637a6b-c427-465b-84d5-83ffbce4f11d}</UniqueIdentifier>
+      <UniqueIdentifier>{768b9b31-3fca-415a-aa56-a484957b6b6b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Models">
-      <UniqueIdentifier>{49e4e20e-0b27-4afe-a9da-494dbc60dbb6}</UniqueIdentifier>
+      <UniqueIdentifier>{b99f3862-7887-4ceb-b06f-24610cd77414}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Controllers">
-      <UniqueIdentifier>{a729b42a-5a82-49d1-9cb2-519851ef29a9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\IO">
-      <UniqueIdentifier>{323ddf5e-5502-4065-bd2b-be9f724c9736}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Util">
-      <UniqueIdentifier>{b7aa166d-57d6-4fed-b085-934156963187}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Models\Rooms">
-      <UniqueIdentifier>{37efda74-8198-4770-9236-76bdf975b91f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Models\Items">
-      <UniqueIdentifier>{2b721da7-cddd-46b3-844c-a8c48b10bb5f}</UniqueIdentifier>
+      <UniqueIdentifier>{945b7eae-ba53-4d55-972d-f5ee6aea0dd0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Commands">
-      <UniqueIdentifier>{1f509fda-0e31-4def-bbaf-4421b1d47f52}</UniqueIdentifier>
+      <UniqueIdentifier>{38af28eb-d4e5-4572-b041-3afca5d4fc0c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Controllers\Combat">
-      <UniqueIdentifier>{9de3763c-11eb-4d5d-9a00-546546764b07}</UniqueIdentifier>
+    <Filter Include="Header Files\Builders">
+      <UniqueIdentifier>{587db582-b1af-45b8-a697-85c728e6829d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Exceptions">
-      <UniqueIdentifier>{92ce83ab-04e8-4451-92e9-92c1e5d82706}</UniqueIdentifier>
+      <UniqueIdentifier>{f583a70a-0bbb-48e8-b5bc-6540b84de9d1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Commands">
-      <UniqueIdentifier>{ec31026e-2fb5-446c-aaa3-15966ed8b030}</UniqueIdentifier>
+    <Filter Include="Header Files\IO">
+      <UniqueIdentifier>{b0ed2754-ba5b-45c4-8b18-ff52aa5c6b87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Util">
+      <UniqueIdentifier>{192de704-288b-4e15-a286-714a913958e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controllers\Combat">
+      <UniqueIdentifier>{bb6d28c2-4b21-49d1-99cb-d024f9e1e79f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Models\Items">
+      <UniqueIdentifier>{ca503c9e-0824-440d-872a-0d910466b56b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Models\Rooms">
+      <UniqueIdentifier>{479e3277-bcd0-4d9f-a50d-68055d3fda71}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Models">
-      <UniqueIdentifier>{e0104d6c-6178-48a6-b9b9-adbc30dcda80}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Controllers">
-      <UniqueIdentifier>{1a929c3b-0563-49a6-9613-59cf4fd7a3cf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Exceptions">
-      <UniqueIdentifier>{09297e33-1da3-40ed-a515-73b011c6074c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\IO">
-      <UniqueIdentifier>{170d7962-c644-4f4e-a953-5ab72c078c41}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Util">
-      <UniqueIdentifier>{b5e92747-4ae8-43ee-b55c-5df4bc0358c0}</UniqueIdentifier>
+      <UniqueIdentifier>{1549fbd2-5d8b-42b7-ab3e-97808ad65237}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Builders">
-      <UniqueIdentifier>{297ecc7b-ed21-4ad7-aa61-c1eaaec8c2dc}</UniqueIdentifier>
+      <UniqueIdentifier>{d26e7e1d-3c0b-4395-a3a8-f6f8afff97e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controllers">
+      <UniqueIdentifier>{658fd5ac-96a9-4067-afbe-2041e5e53f5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Exceptions">
+      <UniqueIdentifier>{9184250a-542e-45c8-8d22-251c20b44d8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Commands">
+      <UniqueIdentifier>{4c440060-75c6-4b78-a96c-c3f765f38195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IO">
+      <UniqueIdentifier>{36cc1b63-5706-45b0-90e5-6aa56d382748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Util">
+      <UniqueIdentifier>{b75f772d-8e84-4777-9653-0a1aac1dfb61}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Controllers\Combat">
-      <UniqueIdentifier>{204ed55d-3a1d-4b79-b303-59e19438a11a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Models\Rooms">
-      <UniqueIdentifier>{605267a7-3014-4a9b-bbe6-bae632bcb1a1}</UniqueIdentifier>
+      <UniqueIdentifier>{3a420a8a-fe91-4748-9d3b-5d995a6e9b52}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Models\Items">
-      <UniqueIdentifier>{696f2ea4-d247-4758-a0e7-dfab389c46cb}</UniqueIdentifier>
+      <UniqueIdentifier>{3afe4390-51a6-487d-8755-d55eeeae8a3a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Models\Rooms">
+      <UniqueIdentifier>{a7a4298e-8898-439d-9d10-097c0bc2b488}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="monsters.txt">
+      <Filter>Header Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
