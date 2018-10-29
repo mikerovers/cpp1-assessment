@@ -251,6 +251,7 @@ void Output::ShowCommands() const {
 	printf("\"Stats\":		Check your current stats \n");
 	printf("\"Pickup\":		Pickup the item in the room if there is one \n");
 	printf("\"Flight\"		Move the player\n");
+	printf("\"Increase\"		Increase attack by 10 if you have a spare skillpoint\n");
 	printf("\"Save\"			Save the game\n");
 	printf("\"Rest\"			Take a nap, but lookout for enemies!\n");
 	printf("\"Stats\"			Show your current stats\n");
