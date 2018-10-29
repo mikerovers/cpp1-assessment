@@ -34,6 +34,18 @@ void LoadCommand::Execute(Game* game)
 		player->SetHealthConst(health);
 	}
 
+	int level;
+	if (infile >> level)
+	{
+		player->SetLevel(level);
+	}
+
+	int experience;
+	if (infile >> experience)
+	{
+		player->SetExperience(experience);
+	}
+
 	int maxLine = 50;
 	char line[50];
 	int count = 0;
