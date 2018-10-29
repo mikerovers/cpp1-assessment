@@ -151,6 +151,10 @@
     <ClCompile Include="AttackCommand.cpp">
       <Filter>Source Files\Commands</Filter>
     </ClCompile>
+    <ClCompile Include="SaveCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadCommand.cpp">
     <ClCompile Include="StatCommand.cpp">
       <Filter>Source Files\Commands</Filter>
     </ClCompile>
@@ -306,6 +310,10 @@
     <ClInclude Include="AttackCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
+    <ClInclude Include="SaveCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadCommand.h">
     <ClInclude Include="StatCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>

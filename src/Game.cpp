@@ -10,8 +10,9 @@
 #include "MonsterHolder.h"
 #include "MonsterFileParser.h"
 #include "MonsterParsingException.h"
+#include "LoadCommand.h"
+#include "FileNotOpenedException.h"
 #include "BroadSword.h"
-
 
 void Game::Init()
 {
@@ -54,12 +55,41 @@ void Game::Setup() {
 		depth = _input->GetIntInput();
 	}
 	_currentLevel = depth - 1;
+
+	_output->AskLoadPlayer();
+	char load = ' ';
+	std::cin >> load;
 	
-	_player = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) Player();
-	_inventory = new (_NORMAL_BLOCK, __FILE__, __LINE__) Inventory(5);
+	if (load == 'y')
+	{
+		auto* loadCommand = new LoadCommand();
+		try {
+			loadCommand->Execute(this);
+			_output->ShowLoaded(true);
+		} catch (FileNotOpenedException& e)
+		{
+			_output->ClearScreen();
+			_output->PrintLoadingError();
+			SetupPlayer(nullptr);
+		} catch (std::exception& e)
+		{
+			_output->ClearScreen();
+			_output->PrintLoadingError();
+			SetupPlayer(nullptr);
+		}
+		delete loadCommand;
+	}
+	else
+	{
+		SetupPlayer(nullptr);
+		_output->ShowLoaded(false);
+	}
+
+
 	_combatController = new (_NORMAL_BLOCK, __FILE__, __LINE__) CombatController(_inventory, _player);
 	DungeonBuilder* builder = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) DungeonBuilder();
 	_dungeon = builder->BuildDungeon(_player, width, height, depth);
+
 	delete builder;
 }
 
@@ -69,7 +99,6 @@ void Game::Start()
 	CommandFactory* commandFactory = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) CommandFactory();
 	ICommand* command;
 
-	_output->ClearScreen();
 	_output->ShowGameStarted();
 	while (Game::_running) {
 		char line[50];
@@ -82,7 +111,6 @@ void Game::Start()
 
 	delete _input;
 	delete _output;
-	delete _inventory;
 	delete _dungeon;
 	delete _monsterHolder;
 	delete _combatController;
@@ -106,7 +134,7 @@ Input * Game::GetInput() const
 
 Inventory* Game::GetInventory() const
 {
-	return _inventory;
+	return GetPlayer()->GetInventory();
 }
 
 Player * Game::GetPlayer() const
@@ -137,6 +165,17 @@ void Game::SetCurrentLevel(int level)
 void Game::SetRunning(bool const running)
 {
 	_running = running;
+}
+
+void Game::SetupPlayer(Player* player)
+{
+	if (player == nullptr)
+	{
+		_player = new (_NORMAL_BLOCK, __FILE__, __LINE__) Player();
+	} else
+	{
+		_player = player;
+	}
 }
 
 Game::~Game()

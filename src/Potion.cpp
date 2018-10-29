@@ -14,3 +14,7 @@ Potion::Potion(char *name) : Item(name)
 {
 
 }
+
+Potion::Potion(): Item(const_cast<char*>("Potion"))
+{
+}

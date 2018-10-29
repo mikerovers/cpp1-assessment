@@ -3,8 +3,14 @@
 #include "BaseRoom.h"
 #include <random>
 #include <ctime>
+#include <fstream>
 
 Player::Player(): stat(new Stat), health(80), baseAttack(20), baseDefence(20)
+{
+	_inventory = new (_NORMAL_BLOCK, __FILE__, __LINE__) Inventory(5);
+}
+
+Player::Player(const int health): health(health)
 {
 }
 
@@ -12,6 +18,7 @@ Player::Player(): stat(new Stat), health(80), baseAttack(20), baseDefence(20)
 Player::~Player()
 {
 	delete stat;
+	delete _inventory;
 }
 
 void Player::SetCurrentRoom(BaseRoom* room)
@@ -51,6 +58,11 @@ int Player::SetHealthConst(const int amount)
 	return health = amount;
 }
 
+Inventory* Player::GetInventory() const
+{
+	return _inventory;
+}
+
 int Player::GetBaseAttack() const
 {
 	return baseAttack;
@@ -81,4 +93,12 @@ void Player::SetStat(Stat* const newStat)
 {
 	delete stat;
 	stat = newStat;
+}
+
+std::ostream& operator<<(std::ostream& os, const Player& pl)
+{
+	os << pl.GetHealth() << "\r\n";
+	os << *pl.GetInventory() << std::endl;
+
+	return os;
 }

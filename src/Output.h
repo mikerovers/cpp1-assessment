@@ -34,6 +34,9 @@ public:
 	void PrintPlayerDeath(const Monster* monster, const Inventory* inventory) const;
 	void PrintStartCombat(const Monster* monster) const;
 	void PrintVictory(const Player* player, const Monster* monster) const;
+	void AskLoadPlayer();
+	void PrintLoadingError();
+	void ShowLoaded(bool newPlayer) const;
 	void PrintAttackEvaded(const Monster* monster) const;
 	void PrintSuccessfullAttack(const Monster* monster, const int damage) const;
 	void PrintMonsterAttack(const Monster* monster, const int damage);

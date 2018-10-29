@@ -178,6 +178,7 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="LoadCommand.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="MonsterFileParser.h" />
     <ClInclude Include="MonsterHolder.h" />
@@ -192,6 +193,7 @@
     <ClInclude Include="RandomGenerator.h" />
     <ClInclude Include="NormalRoom.h" />
     <ClInclude Include="RestCommand.h" />
+    <ClInclude Include="SaveCommand.h" />
     <ClInclude Include="Shield.h" />
     <ClInclude Include="ShowCommandsCommand.h" />
     <ClInclude Include="ShowMapCommand.h" />
@@ -232,6 +234,7 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Kerkers.cpp" />
+    <ClCompile Include="LoadCommand.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="MonsterFileParser.cpp" />
     <ClCompile Include="MonsterHolder.cpp" />
@@ -251,6 +254,7 @@
     <ClCompile Include="RandomGenerator.cpp" />
     <ClCompile Include="NormalRoom.cpp" />
     <ClCompile Include="RestCommand.cpp" />
+    <ClCompile Include="SaveCommand.cpp" />
     <ClCompile Include="Shield.cpp" />
     <ClCompile Include="ShowCommandsCommand.cpp" />
     <ClCompile Include="ShowMapCommand.cpp" />

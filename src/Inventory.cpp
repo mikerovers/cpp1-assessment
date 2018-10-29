@@ -41,7 +41,7 @@ bool Inventory::SetItem(Item *item)
 
 bool Inventory::UseItem(const int index)
 {
-	if (index < size)
+	if (index < size && index > -1)
 	{
 		items[index]->Use();
 		delete items[index];
@@ -61,4 +61,14 @@ Item *Inventory::GetItem(const int index) const
 Stat* Inventory::GetStat() const
 {
 	return items[0]->Handle(new Stat);
+}
+
+std::ostream& operator<<(std::ostream& os, const Inventory& pl)
+{
+	for (auto i = 0; i < 5; i++)
+	{
+		os << pl.GetItem(i)->GetName() << "\r\n";
+	}
+
+	return os;
 }

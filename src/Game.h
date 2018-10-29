@@ -1,7 +1,7 @@
 #pragma once
 #include "Dungeon.h"
-#include "BaseRoom.h"
 #include "MonsterHolder.h"
+#include "Inventory.h"
 
 class Game {
 private:
@@ -9,9 +9,9 @@ private:
 	class Player* _player;
 	class Output* _output;
 	class Input* _input;
-	class Inventory* _inventory;
 	class MonsterHolder* _monsterHolder;
 	class CombatController* _combatController;
+	Inventory* _inventory;
 	int _state;
 	bool _running;
 	int _currentLevel;
@@ -29,6 +29,7 @@ public:
 	int GetCurrentLevel() const;
 	void SetCurrentLevel(int level);
 	void SetRunning(bool running);
+	void SetupPlayer(Player* player = nullptr);
 	Game();
 	~Game();
 };
