@@ -5,8 +5,8 @@
 
 void UseItemCommand::Execute(Game* game)
 {
-	auto* _input = new (_NORMAL_BLOCK, __FILE__, __LINE__) Input();
-	auto* _output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
+	auto* const _input = new (_NORMAL_BLOCK, __FILE__, __LINE__) Input();
+	auto* const _output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
 
 	_output->PrintInventory(game->GetPlayer()->GetInventory());
 	_output->AskForItem();
@@ -19,7 +19,7 @@ void UseItemCommand::Execute(Game* game)
 
 	if (input < 5)
 	{
-		auto* inventory = game->GetPlayer()->GetInventory();
+		auto* const inventory = game->GetPlayer()->GetInventory();
 		_output->PrintItemUsed(inventory->GetItem(input));
 		inventory->UseItem(input);
 	}

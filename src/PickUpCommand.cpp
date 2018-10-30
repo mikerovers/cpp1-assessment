@@ -14,7 +14,7 @@ PickUpCommand::~PickUpCommand()
 
 void PickUpCommand::Execute(Game * game)
 {
-	Item* item = game->GetPlayer()->PickUpitem();
-	Output* output = game->GetOutput();
+	Item* const item = game->GetPlayer()->PickUpitem();
+	Output* const output = game->GetOutput();
 	output->ShowPickedUpItem(item);
 }

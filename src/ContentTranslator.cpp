@@ -62,7 +62,7 @@ char * ContentTranslator::GetDescription(int roomSize, int tidyness, int layout)
 	size_t secondLen = std::strlen(second);
 	size_t layoutLen = std::strlen(layoutArray);
 
-	char* description = new char[firstLen + roomSizeLen + tidynessLen + secondLen + layoutLen];
+	char* description = new char[firstLen + roomSizeLen + tidynessLen + secondLen + layoutLen + 1];
 	int descrCounter = 0;
 
 	for (int i = 0; i < firstLen; i++) {

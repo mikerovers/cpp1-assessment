@@ -24,7 +24,7 @@ void RestCommand::Execute(Game* game)
 		game->GetOutput()->PrintRestNotAvailable();
 	} else
 	{
-		RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
+		RandomGenerator* const random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
 		const int result = random->Generate(1, 6);
 		delete random;
 
