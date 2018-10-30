@@ -11,7 +11,7 @@ Player::Player(): stat(new (_NORMAL_BLOCK, __FILE__, __LINE__) Stat), health(80)
 	_inventory = new (_NORMAL_BLOCK, __FILE__, __LINE__) Inventory(5);
 }
 
-Player::Player(const int health): health(health)
+Player::Player(int const health): health(health)
 {
 }
 
@@ -22,19 +22,19 @@ Player::~Player()
 	delete _inventory;
 }
 
-void Player::SetCurrentRoom(BaseRoom* room)
+void Player::SetCurrentRoom(BaseRoom* const room)
 {
 	_currentRoom = room;
 }
 
-BaseRoom * Player::GetCurrentRoom()
+BaseRoom * const Player::GetCurrentRoom()
 {
 	return _currentRoom;
 }
 
-void Player::MoveTo(MonsterHolder* monsterHolder, BaseRoom * room)
+void Player::MoveTo(MonsterHolder* const monsterHolder, BaseRoom * const room)
 {
-	BaseRoom* temp = _currentRoom;
+	BaseRoom* const temp = _currentRoom;
 	_currentRoom->PlayerLeaves();
 
 	SetCurrentRoom(room);
@@ -44,30 +44,30 @@ void Player::MoveTo(MonsterHolder* monsterHolder, BaseRoom * room)
 	room->SetVisited();
 }
 
-int Player::GetHealth() const
+int const Player::GetHealth() const
 {
 	return health;
 }
 
-int Player::SetHealth(const int amount)
+int const Player::SetHealth(const int amount)
 {
 	return health += amount;
 }
 
-int Player::SetHealthConst(const int amount)
+int const Player::SetHealthConst(const int amount)
 {
 	return health = amount;
 }
 
-Inventory* Player::GetInventory() const
+Inventory* const Player::GetInventory() const
 {
 	return _inventory;
 }
 
 
-Item* Player::PickUpitem()
+Item* const Player::PickUpitem()
 {
-	Item* item = _currentRoom->GetItem();
+	Item* const item = _currentRoom->GetItem();
 	_currentRoom->RemoveItem();
 	if (item != nullptr) {
 		_inventory->SetItem(item);
@@ -76,12 +76,12 @@ Item* Player::PickUpitem()
 }
 
 
-int Player::GetBaseAttack() const
+int const Player::GetBaseAttack() const
 {
 	return baseAttack;
 }
 
-int Player::GetBaseDefence() const
+int const Player::GetBaseDefence() const
 {
 	if (baseDefence > 100)
 	{
@@ -91,7 +91,7 @@ int Player::GetBaseDefence() const
 	return baseDefence;
 }
 
-bool Player::GetDefence() const
+bool const Player::GetDefence() const
 {
 	std::default_random_engine generator;
 	generator.seed(time(nullptr));
@@ -102,26 +102,26 @@ bool Player::GetDefence() const
 	return randomChange > GetBaseDefence();
 }
 
-int Player::GetLevel() const
+int const Player::GetLevel() const
 {
 	return _level;
 }
 
-int Player::GetExperience() const
+int const Player::GetExperience() const
 {
 	return _experience;
 }
 
-int Player::GetSkillpoints() const
+int const Player::GetSkillpoints() const
 {
 	return _skillpoints;
 }
 
 
 
-void Player::AddExperience(const int const exp)
+void Player::AddExperience(int const exp)
 {
-	Output* output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
+	Output* const output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
 	output->ShowExperienceGain(exp);
 	_experience += exp;
 	while (_experience >= 15 && _level != 10) {
@@ -135,7 +135,7 @@ void Player::AddExperience(const int const exp)
 	delete output;
 }
 
-int Player::IncreaseAttackStat()
+int const Player::IncreaseAttackStat()
 {
 	if (_skillpoints == 0) {
 		return -1;
@@ -147,7 +147,7 @@ int Player::IncreaseAttackStat()
 	return baseAttack;
 }
 
-void Player::CheatBaseStats()
+void Player::CheatBaseStats() 
 {
 	baseAttack += 1000;
 	baseDefence += 1000;
@@ -163,11 +163,11 @@ void Player::SetExperience(int const experience)
 	_experience = experience;
 }
 
-void Player::SetLevel(const int const level) {
+void Player::SetLevel(int const level) {
 	_level = level;
 }
 
-void Player::SetSkillpoints(int const skillpoints)
+void Player::SetSkillpoints(int const skillpoints) 
 {
 	_skillpoints = skillpoints;
 }

@@ -27,7 +27,7 @@ Dungeon::~Dungeon() {
 	delete[] _levels;
 }
 
-class BaseRoom** Dungeon::GetGrid(int const level) const {
+class BaseRoom**  Dungeon::GetGrid(int const level) const {
 	return _levels[level];
 }
 
@@ -75,7 +75,7 @@ void Dungeon::AddDescription() const {
 	}
 }
 
-void Dungeon::setNeighbours(int d, int h, int w)
+void Dungeon::setNeighbours(int const d, int const h, int const w)
 {
 	_levels[d][h][w].SetNorthNeighbour(h > 0 ? &_levels[d][h - 1][w] : nullptr); // + 1
 	_levels[d][h][w].SetEastNeighbour(w < (_width - 1) ? &_levels[d][h][w + 1] : nullptr); // + 1
@@ -83,7 +83,7 @@ void Dungeon::setNeighbours(int d, int h, int w)
 	_levels[d][h][w].SetWestNeighbour(w > 0 ? &_levels[d][h][w - 1] : nullptr); // - 1
 }
 
-void Dungeon::setMonsterLevel(int d, int h, int w)
+void Dungeon::setMonsterLevel(int const d, int const h, int const w)
 {
 
 	if (_depth >= 2 && _depth < 5) // too small to calculate
@@ -99,9 +99,9 @@ void Dungeon::setMonsterLevel(int d, int h, int w)
 		}
 	}
 	else {
-		double a = (d + 1);
-		double b = (_depth + 1);
-		int c = a / b * 8;
+		double const a = (d + 1);
+		double const b = (_depth + 1);
+		int const c = a / b * 8;
 		int minLevel = 8 - c;
 		if (minLevel < 1) {
 			minLevel = 1;
@@ -111,12 +111,12 @@ void Dungeon::setMonsterLevel(int d, int h, int w)
 	}
 }
 
-void Dungeon::AddPlayer(Player* player) const {
-	RandomGenerator* random = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) RandomGenerator();
+void Dungeon::AddPlayer(Player* const player) const {
+	RandomGenerator* const random = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) RandomGenerator();
 	int width = random->Generate(0, _width - 1);
 	int height = random->Generate(0, _height - 1);
 	delete random;
-	BaseRoom* room = &_levels[_depth - 1][height][width];
+	BaseRoom* const room = &_levels[_depth - 1][height][width];
 	_levels[_depth - 1][height][width] = StartRoom();
 	_levels[_depth - 1][height][width].SetVisited();
 	_levels[_depth - 1][height][width].SetPlayer(player);
@@ -128,7 +128,7 @@ void Dungeon::AddStairs() const {
 		return;
 	}
 
-	RandomGenerator* random = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) RandomGenerator();
+	RandomGenerator* const random = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) RandomGenerator();
 	int widthLastUp, heightLastUp;
 	for (int d = 0; d < _depth; d++) {
 		int width, height;
@@ -165,7 +165,7 @@ void Dungeon::AddStairs() const {
 }
 
 void Dungeon::AddEndBoss() const {
-	RandomGenerator* random = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) RandomGenerator();
+	RandomGenerator* const random = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) RandomGenerator();
 	int width, height;
 
 	while (true) {

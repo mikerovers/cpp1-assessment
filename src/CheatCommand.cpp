@@ -11,8 +11,8 @@ CheatCommand::~CheatCommand()
 {
 }
 
-void CheatCommand::Execute(Game * game)
+void CheatCommand::Execute(Game * const game)
 {
-	Player* player = game->GetPlayer();
+	Player * const player = game->GetPlayer();
 	player->CheatBaseStats();
 }

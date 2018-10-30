@@ -16,7 +16,7 @@ public:
 	void GenerateGrid();
 	//void SetNeighbours();
 	void SetRoomCharacteristics();
-	void AddPlayer(Player* player) const;
+	void AddPlayer(Player* const player) const;
 	void AddStairs() const;
 	void AddEndBoss() const;
 	void AddDescription() const;

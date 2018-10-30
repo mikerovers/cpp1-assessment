@@ -14,8 +14,8 @@ IncreaseAttackStatCommand::~IncreaseAttackStatCommand()
 
 void IncreaseAttackStatCommand::Execute(Game * game)
 {
-	Player* player = game->GetPlayer();
-	Output* output = game->GetOutput();
+	Player* const player = game->GetPlayer();
+	Output* const output = game->GetOutput();
 	int skillpoints = player->GetSkillpoints();
 	int attack = player->IncreaseAttackStat();
 	if (attack != -1) {

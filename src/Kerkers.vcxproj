@@ -156,11 +156,9 @@
     <ClInclude Include="BaseRoom.h" />
     <ClInclude Include="BaseStaircaseRoom.h" />
     <ClInclude Include="BroadSword.h" />
-    <ClInclude Include="CanAttackWith.h" />
     <ClInclude Include="CharArrayComparator.h" />
     <ClInclude Include="CheatCommand.h" />
     <ClInclude Include="CheckInventoryCommand.h" />
-    <ClInclude Include="CheckStatsCommand.h" />
     <ClInclude Include="CombatController.h" />
     <ClInclude Include="CombatCommandFactory.h" />
     <ClInclude Include="CommandFactory.h" />
@@ -215,11 +213,9 @@
     <ClCompile Include="BaseRoom.cpp" />
     <ClCompile Include="BaseStaircaseRoom.cpp" />
     <ClCompile Include="BroadSword.cpp" />
-    <ClCompile Include="CanAttackWith.cpp" />
     <ClCompile Include="CharArrayComparator.cpp" />
     <ClCompile Include="CheatCommand.cpp" />
     <ClCompile Include="CheckInventoryCommand.cpp" />
-    <ClCompile Include="CheckStatsCommand.cpp" />
     <ClCompile Include="CombatController.cpp" />
     <ClCompile Include="CombatCommandFactory.cpp" />
     <ClCompile Include="CommandFactory.cpp" />

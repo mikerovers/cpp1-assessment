@@ -13,7 +13,7 @@ ShowMapCommand::~ShowMapCommand()
 
 void ShowMapCommand::Execute(Game* game)
 {
-	Dungeon* dungeon = game->GetDungeon();
-	Output* output = game->GetOutput();
+	Dungeon* const dungeon = game->GetDungeon();
+	Output* const output = game->GetOutput();
 	output->ShowMap(dungeon, game->GetCurrentLevel());
 }

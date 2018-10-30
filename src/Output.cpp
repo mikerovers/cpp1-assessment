@@ -34,7 +34,7 @@ void Output::ShowGameStarted() const {
 	printf("Het spel is gestart. Voer \"commands\" in voor beschikbare commando's.\n");
 }
 
-void Output::PrintInventory(const Inventory* inventory) const
+void Output::PrintInventory(const Inventory* const inventory) const
 {
 	for (auto i = 0; i < inventory->size; i++) {
 		if (typeid(inventory->GetItem(i)) != typeid(NullItem)) {
@@ -54,7 +54,7 @@ void Output::PrintItemUsed(Item* const item) const
 	printf("You used %s!\n", item->GetName());
 }
 
-void Output::PrintNothingHappened(const Item* item) const
+void Output::PrintNothingHappened(const Item* const item) const
 {
 	printf("Nothing happened with %s \n", item->GetName());
 }
@@ -64,23 +64,17 @@ void Output::AskForItem() const
 	printf("Which item do you want to use (0 - 4)? \n");
 }
 
-void Output::PrintHealthIncrease(const int amount) const
+void Output::PrintHealthIncrease(int const amount) const
 {
 	printf("Your health has increased with %d points.\n", amount);
 }
-
-void Output::AskDirections() const
-{
-}
-
-
 
 void Output::ShowRoomDescription(BaseRoom * room) const
 {
 	printf(room->GetDescription());
 }
 
-void Output::ShowExits(BaseRoom * room) const
+void Output::ShowExits(BaseRoom * const room) const
 {
 	printf("The following exists are available\n");
 
@@ -98,7 +92,7 @@ void Output::ShowExits(BaseRoom * room) const
 	}
 }
 
-void Output::ShowEnemies(Monster * monster) const
+void Output::ShowEnemies(Monster * const monster) const
 {
 	if (monster) {
 		printf("Monster has spawned: %s\n", monster->getName());
@@ -120,7 +114,7 @@ void Output::ShowOptions() const
 	printf("[fight|flight|pickup|rest|inventory|map]\n");
 }
 
-void Output::ShowItem(Item* item) const
+void Output::ShowItem(const Item* const item) const
 {
 	if (item != nullptr) {
 		printf("You have found %s in the room\n", item->GetName());
@@ -130,7 +124,7 @@ void Output::ShowItem(Item* item) const
 	}
 }
 
-void Output::ShowPickedUpItem(Item * item) const
+void Output::ShowPickedUpItem(const Item * const item) const
 {
 	if (item != nullptr) {
 		printf("Picked up item %s\n", item->GetName());	
@@ -141,7 +135,7 @@ void Output::ShowPickedUpItem(Item * item) const
 	}
 }
 
-void Output::PrintPlayerDeath(const Monster* monster, const Inventory* inventory, Game* game) const
+void Output::PrintPlayerDeath(const Monster* const monster, const Inventory* const inventory, Game* const game) const
 {
 	printf("You died by the claws of %s.", monster->getName());
 	printf("You had the following items on you when you died: \n");
@@ -151,12 +145,12 @@ void Output::PrintPlayerDeath(const Monster* monster, const Inventory* inventory
 
 }
 
-void Output::PrintStartCombat(const Monster* monster) const
+void Output::PrintStartCombat(const Monster* const monster) const
 {
 	printf("A wild %s appeared! Looks like it is level %u! \n", monster->getName(), monster->getLevel());
 }
 
-void Output::PrintVictory(const Player* player, const Monster* monster) const
+void Output::PrintVictory(const Player* const player, const Monster* const monster) const
 {
 	printf("You achieved victory over %s!\n", monster->getName());
 	printf("Your remaining health is %d.\n", player->GetHealth());
@@ -172,7 +166,7 @@ void Output::PrintLoadingError()
 	printf("Error loading characters, starting with a new one. Did you save one? \n\n");
 }
 
-void Output::ShowLoaded(bool newPlayer) const
+void Output::ShowLoaded(bool const newPlayer) const
 {
 	if (newPlayer) {
 		printf("Loading character\n");
@@ -182,27 +176,27 @@ void Output::ShowLoaded(bool newPlayer) const
 	}
 }
 
-void Output::PrintAttackEvaded(const Monster* monster) const
+void Output::PrintAttackEvaded(const Monster* const monster) const
 {
 	printf("%s has evaded your attack. \n", monster->getName());
 }
 
-void Output::PrintSuccessfullAttack(const Monster* monster, const int damage) const
+void Output::PrintSuccessfullAttack(Monster* const monster, int const damage) const
 {
 	printf("You decreased %s's with %d health points.\n", monster->getName(), damage);
 }
 
-void Output::PrintMonsterAttack(const Monster* monster, const int damage)
+void Output::PrintMonsterAttack(Monster* const monster, int const damage)
 {
 	printf("%s attacked you for %d of your health points.\n", monster->getName(), damage);
 }
 
-void Output::PrintPlayerEvaded(const Monster* monster) const
+void Output::PrintPlayerEvaded(const Monster* const monster) const
 {
 	printf("You evaded the attack from %s.", monster->getName());
 }
 
-void Output::PrintPlayerInfo(const Game* game) const
+void Output::PrintPlayerInfo(const Game* const game) const
 {
 	printf("You have %d health left. \n", game->GetPlayer()->GetHealth());
 	auto* stat = game->GetInventory()->GetStat();
@@ -219,7 +213,7 @@ void Output::PrintRestNotAvailable() const
 	printf("You are already rested. \n");
 }
 
-void Output::PrintRest(const int health, const bool attacked) const
+void Output::PrintRest(int const health, bool const attacked) const
 {
 	printf("You have rested. Your health has been recovered to %d\n", health);
 	if (attacked)
@@ -249,15 +243,26 @@ void Output::ShowNoSkillpoints() const
 	printf("You do not have enough skillpoints for perform this action\n");
 }
 
-void Output::ShowAttackStatImproved(int attack)
+void Output::ShowAttackStatImproved(int const attack)
 {
 	printf("Attack has been increased to %d\n", attack);
 }
 
-void Output::ShowGameWon(const Game* game) const
+void Output::ShowGameWon(Game* const game) const
 {
 	printf("You have won the game. Congratulations!\n\n");
 	PrintPlayerInfo(game);
+}
+
+void Output::ShowMoveStairs(bool const up) const
+{
+	if (up) {
+		printf("You have moved up the stairs\n");
+	}
+	else {
+		printf("You have moved down the stairs\n");
+
+	}
 }
 
 void Output::ShowCommands() const {
@@ -287,8 +292,9 @@ void Output::ClearScreen() const {
 	system("CLS");
 }
 
-void Output::ShowMap(Dungeon* const dungeon, int level) const {
-	BaseRoom** grid = dungeon->GetGrid(level);
+void Output::ShowMap(Dungeon * const dungeon, int const level) const {
+
+	BaseRoom * const* const grid = dungeon->GetGrid(level);
 	int width = dungeon->GetWidth();
 	int height = dungeon->GetHeight();
 
@@ -311,45 +317,6 @@ void Output::ShowMap(Dungeon* const dungeon, int level) const {
 	printf("L  : Stairs down\n");
 	printf("H  : Stairs up \n");
 	printf(".  : Not yet visited \n");
-}
-
-
-void Output::ShowNeighbours(Dungeon* const dungeon, int level) const {
-	BaseRoom** grid = dungeon->GetGrid(level);
-	int width = dungeon->GetWidth();
-	int height = dungeon->GetHeight();
-
-	int counter = 0;
-	for (int h = 0; h < height; h++)
-	{
-		for (int w = 0; w < width; w++)
-		{
-			BaseRoom* northRoom = grid[h][w].GetNorthNeighbour();
-			BaseRoom* eastRoom = grid[h][w].GetEastNeighbour();
-			BaseRoom* southRoom = grid[h][w].GetSouthNeighbour();
-			BaseRoom* westRoom = grid[h][w].GetWestNeighbour();
-
-			counter++;
-			std::cout << "Nummer" << counter << ":" << std::endl;
-
-			printf("North");
-			if (northRoom != nullptr) printf("%i,", northRoom->GetDisplayValue());
-			printf("\n");
-
-			printf("East");
-			if (eastRoom != nullptr) printf("%i,", eastRoom->GetDisplayValue());
-			printf("\n");
-
-			printf("South");
-			if (southRoom != nullptr) printf("%i,", southRoom->GetDisplayValue());
-			printf("\n");
-
-			printf("West");
-			if (westRoom != nullptr) printf("%i,", westRoom->GetDisplayValue());
-			printf("\n");
-		}
-		printf("\n");
-	}
 }
 
 void Output::ShowFalseCommand() const {

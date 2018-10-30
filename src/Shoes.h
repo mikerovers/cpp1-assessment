@@ -6,7 +6,7 @@ class Shoes :
 public:
 	Shoes();
 
-	Stat* Handle(Stat* stat) const override;
+	Stat* Handle(Stat* const stat) const override;
 	void Use() override;
 };
 

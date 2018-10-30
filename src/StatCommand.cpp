@@ -7,6 +7,6 @@ StatCommand::~StatCommand()
 
 void StatCommand::Execute(Game* game)
 {
-	auto* output = game->GetOutput();
+	auto* const output = game->GetOutput();
 	output->PrintPlayerInfo(game);
 }

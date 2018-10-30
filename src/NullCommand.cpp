@@ -13,6 +13,6 @@ NullCommand::~NullCommand()
 
 void NullCommand::Execute(Game* game)
 {
-	Output* output = game->GetOutput();
+	Output* const output = game->GetOutput();
 	output->ShowFalseCommand();
 }

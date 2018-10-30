@@ -5,6 +5,6 @@ class Shield : public Item
 {
 public:
 	Shield();
-	Stat* Handle(Stat* stat) const override;
+	Stat* Handle(Stat* const stat) const override;
 	void Use() override;
 };

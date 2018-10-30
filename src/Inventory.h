@@ -9,12 +9,12 @@ public:
 	~Inventory();
 
 	const int size;
-	bool SetItem(Item* item);
-	bool UseItem(const int index);
-	Item* GetItem(const int index) const;
-	Stat* GetStat() const;
+	bool const SetItem(Item* const item);
+	bool const UseItem(int const index);
+	Item* const GetItem(int const index) const;
+	Stat* const GetStat() const;
 
 	friend std::ostream& operator<<(std::ostream& os, const Inventory& pl);
 private:
-	Item* items[5]{};
+	Item*  items[5]{};
 };

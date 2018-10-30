@@ -20,7 +20,7 @@ LoadCommand::~LoadCommand()
 
 void LoadCommand::Execute(Game* game)
 {
-	auto* player = new (_NORMAL_BLOCK, __FILE__, __LINE__) Player();
+	auto* const player = new (_NORMAL_BLOCK, __FILE__, __LINE__) Player();
 
 	std::ifstream infile("player.txt");
 	if (!infile.is_open())
@@ -74,11 +74,11 @@ void LoadCommand::Execute(Game* game)
 
 Item* LoadCommand::GetItem(char* description) const
 {
-	const auto comparator = new (_NORMAL_BLOCK, __FILE__, __LINE__) CharArrayComparator();
-	Item* item;
+	auto const comparator = new (_NORMAL_BLOCK, __FILE__, __LINE__) CharArrayComparator();
+	Item * item;
 	if (comparator->Compare("potion", description, 6))
 	{
-		item = new (_NORMAL_BLOCK, __FILE__, __LINE__) Potion();
+		item = new (_NORMAL_BLOCK, __FILE__, __LINE__) Potion() ;
 	}
 	else if (comparator->Compare("broadsword", description, 10))
 	{

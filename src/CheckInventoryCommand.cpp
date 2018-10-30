@@ -11,9 +11,9 @@ CheckInventoryCommand::~CheckInventoryCommand()
 {
 }
 
-void CheckInventoryCommand::Execute(Game* game)
+void CheckInventoryCommand::Execute(Game * const game)
 {
-	Inventory* inventory = game->GetPlayer()->GetInventory();
-	Output* output = game->GetOutput();
+	Inventory * const inventory = game->GetPlayer()->GetInventory();
+	Output * const output = game->GetOutput();
 	output->PrintInventory(inventory);
 }

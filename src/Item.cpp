@@ -6,7 +6,7 @@ Item::Item(char *name) : name(name)
 
 }
 
-char *Item::GetName() const
+char * Item::GetName() const
 {
 	return name;
 }

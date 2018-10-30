@@ -16,12 +16,12 @@ FlightCommand::~FlightCommand()
 
 void FlightCommand::Execute(Game* game)
 {
-	Output* output = game->GetOutput();
-	Input* input = game->GetInput();
-	Player* player = game->GetPlayer();
+	Output* const output = game->GetOutput();
+	Input* const input = game->GetInput();
+	Player* const player = game->GetPlayer();
 	MonsterHolder* monsterHolder = game->GetMonsterHolder();
 	output->ShowExits(game->GetPlayer()->GetCurrentRoom());
-	CharArrayComparator *comparator = new (_NORMAL_BLOCK, __FILE__, __LINE__) CharArrayComparator();
+	CharArrayComparator * const comparator = new (_NORMAL_BLOCK, __FILE__, __LINE__) CharArrayComparator();
 	bool valid = false;
 	const char* command = nullptr;
 

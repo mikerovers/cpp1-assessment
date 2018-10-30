@@ -56,13 +56,13 @@ char * ContentTranslator::GetDescription(int roomSize, int tidyness, int layout)
 		}break;
 	}
 
-	size_t firstLen = std::strlen(first);
-	size_t roomSizeLen = std::strlen(roomSizeArray);
-	size_t tidynessLen = std::strlen(tidynessArray);
-	size_t secondLen = std::strlen(second);
-	size_t layoutLen = std::strlen(layoutArray);
+	size_t const firstLen = std::strlen(first);
+	size_t const roomSizeLen = std::strlen(roomSizeArray);
+	size_t const tidynessLen = std::strlen(tidynessArray);
+	size_t const secondLen = std::strlen(second);
+	size_t const layoutLen = std::strlen(layoutArray);
 
-	char* description = new char[firstLen + roomSizeLen + tidynessLen + secondLen + layoutLen];
+	char* const description = new char[firstLen + roomSizeLen + tidynessLen + secondLen + layoutLen + 1];
 	int descrCounter = 0;
 
 	for (int i = 0; i < firstLen; i++) {

@@ -13,7 +13,6 @@
 #include "CheatCommand.h"
 #include "UseItemCommand.h"
 #include "SaveCommand.h"
-#include "CheckStatsCommand.h"
 #include "StatCommand.h"
 #include "RestCommand.h"
 #include "PickUpCommand.h"

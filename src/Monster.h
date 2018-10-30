@@ -4,34 +4,34 @@ class Monster
 {
 public:
 	Monster() = default;
-	Monster(const char *name, unsigned int level, unsigned int attackChance, unsigned int attacksPerRound,
-		unsigned int minAmountOfDamage, unsigned int maxAmountOfDamage, unsigned int evasionChance,
-		unsigned int HP);
+	Monster(const char *name, unsigned int const level, unsigned int const attackChance, unsigned int const attacksPerRound,
+		unsigned int const minAmountOfDamage, unsigned int const maxAmountOfDamage, unsigned int const evasionChance,
+		unsigned int const HP);
 	~Monster();
 
-	int getDamage() const;
-	bool getDefence() const;
+	int const getDamage() const;
+	bool const getDefence() const;
 
 	Monster&operator=(const Monster& other);
 	Monster(const Monster& other);
 	Monster(Monster&& other) noexcept;
 	Monster&operator=(Monster&& other) noexcept;
 
-	unsigned int getAttackChance() const;
-	void setAttackChance(unsigned int attackChance);
-	unsigned int getAttacksPerRound() const;
-	void setAttacksPerRound(unsigned int attacksPerRound);
-	unsigned int getMinAmountOfDamage() const;
-	void setMinAmountOfDamage(unsigned int minAmountOfDamage);
-	unsigned int getMaxAmountOfDamage() const;
-	void setMaxAmountOfDamage(unsigned int maxAmountOfDamage);
-	unsigned int getEvasionChance() const;
-	void setEvasionChance(unsigned int evasionChance);
-	unsigned int getLevel() const;
-	void setLevel(unsigned int level);
-	const char* getName() const;
+	unsigned int const getAttackChance() const;
+	void setAttackChance(unsigned int const attackChance);
+	unsigned int const getAttacksPerRound() const;
+	void setAttacksPerRound(unsigned int const attacksPerRound);
+	unsigned int const getMinAmountOfDamage() const;
+	void setMinAmountOfDamage(unsigned int const minAmountOfDamage);
+	unsigned int const getMaxAmountOfDamage() const;
+	void setMaxAmountOfDamage(unsigned int  constmaxAmountOfDamage);
+	unsigned int const getEvasionChance() const;
+	void setEvasionChance(unsigned int  constevasionChance);
+	unsigned int const getLevel() const;
+	void setLevel(unsigned int const level);
+	const char* const getName() const;
 	void setName(const char* nam);
-	int getHP() const;
+	int const getHP() const;
 	void setHP(const int HP);
 private:
 	unsigned int attackChance;

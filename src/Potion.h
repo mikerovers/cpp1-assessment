@@ -4,7 +4,7 @@
 class Potion : public Item
 {
 public:
-	explicit Potion(char* name);
+	explicit Potion(char* const name);
 	explicit Potion();
 	void Use() override;
 };

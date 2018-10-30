@@ -16,9 +16,6 @@
     <ClCompile Include="CheckInventoryCommand.cpp">
       <Filter>Source Files\Commands</Filter>
     </ClCompile>
-    <ClCompile Include="CheckStatsCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
     <ClCompile Include="CombatCommandFactory.cpp">
       <Filter>Source Files\Commands</Filter>
     </ClCompile>
@@ -112,9 +109,6 @@
     <ClCompile Include="Dungeon.cpp">
       <Filter>Source Files\Models</Filter>
     </ClCompile>
-    <ClCompile Include="CanAttackWith.cpp">
-      <Filter>Source Files\Models</Filter>
-    </ClCompile>
     <ClCompile Include="CharArrayComparator.cpp">
       <Filter>Source Files\Util</Filter>
     </ClCompile>
@@ -198,9 +192,6 @@
     <ClInclude Include="BroadSword.h">
       <Filter>Header Files\Models\Items</Filter>
     </ClInclude>
-    <ClInclude Include="CanAttackWith.h">
-      <Filter>Header Files\Models</Filter>
-    </ClInclude>
     <ClInclude Include="CharArrayComparator.h">
       <Filter>Header Files\Util</Filter>
     </ClInclude>
@@ -209,9 +200,6 @@
     </ClInclude>
     <ClInclude Include="CombatController.h">
       <Filter>Header Files\Controllers\Combat</Filter>
-    </ClInclude>
-    <ClInclude Include="CheckStatsCommand.h">
-      <Filter>Header Files\Commands</Filter>
     </ClInclude>
     <ClInclude Include="CombatCommandFactory.h">
       <Filter>Header Files\Commands</Filter>
