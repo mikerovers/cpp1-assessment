@@ -15,8 +15,8 @@ ContentTranslator::~ContentTranslator()
 
 char * ContentTranslator::GetDescription(int roomSize, int tidyness, int layout)
 {
-	char roomSizeArray[50];
-	char tidynessArray[50];
+	char roomSizeArray[15];
+	char tidynessArray[20];
 	char layoutArray[50];
 	char first[11] = "Het is een";
 	char second[13] = " ruimte, met";
@@ -56,13 +56,13 @@ char * ContentTranslator::GetDescription(int roomSize, int tidyness, int layout)
 		}break;
 	}
 
-	int firstLen = std::strlen(first);
-	int roomSizeLen = std::strlen(roomSizeArray);
-	int tidynessLen = std::strlen(tidynessArray);
-	int secondLen = std::strlen(second);
-	int layoutLen = std::strlen(layoutArray);
+	size_t firstLen = std::strlen(first);
+	size_t roomSizeLen = std::strlen(roomSizeArray);
+	size_t tidynessLen = std::strlen(tidynessArray);
+	size_t secondLen = std::strlen(second);
+	size_t layoutLen = std::strlen(layoutArray);
 
-	char* description = new char[firstLen + roomSizeLen + tidynessLen + secondLen + layoutLen + 1];
+	char* description = new char[firstLen + roomSizeLen + tidynessLen + secondLen + layoutLen];
 	int descrCounter = 0;
 
 	for (int i = 0; i < firstLen; i++) {
@@ -90,6 +90,8 @@ char * ContentTranslator::GetDescription(int roomSize, int tidyness, int layout)
 		description[descrCounter] = layoutArray[i];
 		descrCounter++;
 	}
+
+	description[descrCounter] = '\0';
 
 	return description;
 }

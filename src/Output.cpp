@@ -245,7 +245,7 @@ void Output::ShowExperienceGain(int const exp) const
 }
 
 void Output::ShowNoSkillpoints() const
-{
+{ 
 	printf("You do not have enough skillpoints for perform this action\n");
 }
 
