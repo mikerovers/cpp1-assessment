@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "Item.h"
-#include "CanAttackWith.h"
 #include "AbstractStatHandler.h"
 
 class BroadSword : public Item

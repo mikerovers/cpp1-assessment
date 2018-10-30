@@ -13,9 +13,9 @@
 
 void BaseRoom::SetRandomContent()
 {
-	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
-	int roomSize = random->Generate(0, 2);
-	int tidyness = random->Generate(0, 1);
+	RandomGenerator* const random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
+	int const roomSize = random->Generate(0, 2);
+	int const tidyness = random->Generate(0, 1);
 	int layout = random->Generate(0, 2);
 	delete random;
 
@@ -139,14 +139,17 @@ void BaseRoom::SetMonsterLevels(int min, int max)
 	_maxMonsterLevel = max;
 }
 
-void BaseRoom::PlayerEnters(MonsterHolder * monsterHolder, BaseRoom* lastRoom)
+void BaseRoom::PlayerEnters(MonsterHolder * const monsterHolder, BaseRoom* const lastRoom)
 {
+	Output* const output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
+
 	if (!_visited) {
 		setItem();
 	}
 	if (_upStairsRoom) {
 		if (_upStairsRoom != lastRoom) {
 			_player->MoveTo(monsterHolder, _upStairsRoom);
+
 		}
 	}
 	else if (_downStairsRoom) {
@@ -155,7 +158,6 @@ void BaseRoom::PlayerEnters(MonsterHolder * monsterHolder, BaseRoom* lastRoom)
 		}
 	}
 	setMonster(monsterHolder);
-	Output* output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
 	output->ClearScreen();
 	output->ShowRoomDescription(this);
 	output->BlankLine();

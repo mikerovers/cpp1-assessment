@@ -6,6 +6,6 @@ class CheckInventoryCommand :
 public:
 	CheckInventoryCommand();
 	~CheckInventoryCommand();
-	void Execute(Game* game) override;
+	void Execute(Game *const game) override ;
 };
 

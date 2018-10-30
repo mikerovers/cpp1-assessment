@@ -6,7 +6,7 @@ class FightCommand :
 public:
 	FightCommand();
 	~FightCommand();
-	void Execute(Game* game);
+	void Execute(Game* const game);
 
 };
 

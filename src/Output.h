@@ -52,4 +52,5 @@ public:
 	void ShowNoSkillpoints() const;
 	void ShowAttackStatImproved(int attack);
 	void ShowGameWon(const Game* game) const;
+	void ShowMoveStairs(const bool up) const;
 };

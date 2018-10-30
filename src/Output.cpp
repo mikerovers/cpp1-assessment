@@ -260,6 +260,17 @@ void Output::ShowGameWon(const Game* game) const
 	PrintPlayerInfo(game);
 }
 
+void Output::ShowMoveStairs(const bool up) const
+{
+	if (up) {
+		printf("You have moved up the stairs\n");
+	}
+	else {
+		printf("You have moved down the stairs\n");
+
+	}
+}
+
 void Output::ShowCommands() const {
 	printf("The following commands can be used out of combat:\n");
 	printf("\"Commands\":		Show the commands\n");
