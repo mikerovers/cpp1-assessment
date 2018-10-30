@@ -62,7 +62,7 @@ void Game::Setup() {
 	
 	if (load == 'y')
 	{
-		auto* loadCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) LoadCommand();
+		auto* const loadCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) LoadCommand();
 		try {
 			loadCommand->Execute(this);
 			_output->ShowLoaded(true);
@@ -87,7 +87,7 @@ void Game::Setup() {
 
 
 	_combatController = new (_NORMAL_BLOCK, __FILE__, __LINE__) CombatController(_inventory, _player);
-	DungeonBuilder* builder = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) DungeonBuilder();
+	DungeonBuilder* const builder = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) DungeonBuilder();
 	_dungeon = builder->BuildDungeon(_player, width, height, depth);
 
 	delete builder;
@@ -96,7 +96,7 @@ void Game::Setup() {
 void Game::Start() 
 {
 	_running = true;
-	CommandFactory* commandFactory = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) CommandFactory();
+	CommandFactory* const commandFactory = new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) CommandFactory();
 	ICommand* command;
 
 	_output->ShowGameStarted();

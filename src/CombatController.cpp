@@ -19,7 +19,7 @@ CombatController::~CombatController()
 
 const bool CombatController::Start(Monster* monster, Game *game) const
 {
-	auto* output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
+	auto* const output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
 	auto inCombat = true;
 	auto win = false;
 
@@ -30,7 +30,7 @@ const bool CombatController::Start(Monster* monster, Game *game) const
 		char line[50];
 		std::cin >> line;
 		output->ClearScreen();
-		ICommand* command = _combatCommandFactory->RetrieveCommand(line);
+		ICommand* const command = _combatCommandFactory->RetrieveCommand(line);
 		if (typeid(*command) == typeid(AttackCommand))
 		{
 			AttackCommand* aCommand = dynamic_cast<AttackCommand*>(command);

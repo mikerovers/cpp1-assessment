@@ -4,77 +4,77 @@
 #include <random>
 #include <ctime>
 
-unsigned int Monster::getAttackChance() const
+unsigned int const Monster::getAttackChance() const
 {
 	return attackChance;
 }
 
-void Monster::setAttackChance(unsigned int attackChance)
+void Monster::setAttackChance(unsigned int const attackChance)
 {
 	Monster::attackChance = attackChance;
 }
 
-unsigned int Monster::getAttacksPerRound() const
+unsigned int const Monster::getAttacksPerRound() const
 {
 	return attacksPerRound;
 }
 
-void Monster::setAttacksPerRound(unsigned int attacksPerRound)
+void Monster::setAttacksPerRound(unsigned int const attacksPerRound)
 {
 	Monster::attacksPerRound = attacksPerRound;
 }
 
-unsigned int Monster::getMinAmountOfDamage() const
+unsigned int const Monster::getMinAmountOfDamage() const
 {
 	return minAmountOfDamage;
 }
 
-void Monster::setMinAmountOfDamage(unsigned int minAmountOfDamage)
+void Monster::setMinAmountOfDamage(unsigned int const minAmountOfDamage)
 {
 	Monster::minAmountOfDamage = minAmountOfDamage;
 }
 
-unsigned int Monster::getMaxAmountOfDamage() const
+unsigned int const Monster::getMaxAmountOfDamage() const
 {
 	return maxAmountOfDamage;
 }
 
-void Monster::setMaxAmountOfDamage(unsigned int maxAmountOfDamage)
+void Monster::setMaxAmountOfDamage(unsigned int const maxAmountOfDamage)
 {
 	Monster::maxAmountOfDamage = maxAmountOfDamage;
 }
 
-unsigned int Monster::getEvasionChance() const
+unsigned int const Monster::getEvasionChance() const
 {
 	return evasionChance;
 }
 
-void Monster::setEvasionChance(unsigned int evasionChance)
+void Monster::setEvasionChance(unsigned int const evasionChance)
 {
 	Monster::evasionChance = evasionChance;
 }
 
-unsigned int Monster::getLevel() const
+unsigned int const Monster::getLevel() const
 {
 	return level;
 }
 
-void Monster::setLevel(unsigned int level)
+void Monster::setLevel(unsigned int const level)
 {
 	Monster::level = level;
 }
 
-const char* Monster::getName() const
+const char* const Monster::getName() const
 {
 	return name;
 }
 
-void Monster::setName(const char *nam)
+void Monster::setName(const char * const nam)
 {
 	name = nam;
 }
 
-int Monster::getHP() const
+int const Monster::getHP() const
 {
 	return HP;
 }
@@ -84,9 +84,9 @@ void Monster::setHP(const int HP)
 	Monster::HP = HP;
 }
 
-Monster::Monster(const char *name, unsigned int level, unsigned int attackChance, unsigned int attacksPerRound,
-	unsigned int minAmountOfDamage, unsigned int maxAmountOfDamage, unsigned int evasionChance,
-	unsigned int HP)
+Monster::Monster(const char *name, unsigned int const level, unsigned int const attackChance, unsigned int const attacksPerRound,
+	unsigned int const minAmountOfDamage, unsigned int const maxAmountOfDamage, unsigned int const evasionChance,
+	unsigned int const HP)
 	: attackChance(attackChance), attacksPerRound(attacksPerRound), minAmountOfDamage(minAmountOfDamage), maxAmountOfDamage(maxAmountOfDamage),
 	evasionChance(evasionChance), level(level), HP(HP),
 	name(name)
@@ -167,7 +167,7 @@ Monster::~Monster()
 	name = nullptr;
 }
 
-int Monster::getDamage() const
+int const Monster::getDamage() const
 {
 	std::default_random_engine generator;
 	generator.seed(time(nullptr));
@@ -186,7 +186,7 @@ int Monster::getDamage() const
 	return totalDamage;
 }
 
-bool Monster::getDefence() const
+bool const Monster::getDefence() const
 {
 	std::default_random_engine generator;
 	generator.seed(time(nullptr));

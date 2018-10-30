@@ -11,7 +11,7 @@
 
 ICommand* CombatCommandFactory::RetrieveCommand(char command[]) const
 {
-	const auto const comparator = new (_NORMAL_BLOCK, __FILE__, __LINE__) CharArrayComparator();
+	auto const comparator = new (_NORMAL_BLOCK, __FILE__, __LINE__) CharArrayComparator();
 	ICommand* returnCommand;
 	if (comparator->Compare("commands", command, 8)) {
 		returnCommand = new (_NORMAL_BLOCK, __FILE__, __LINE__) ShowCommandsCommand();

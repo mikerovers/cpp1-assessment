@@ -6,7 +6,7 @@ Helmet::Helmet() : Item(const_cast<char*>("Helmet"))
 {
 }
 
-Stat* Helmet::Handle(Stat* stat) const
+Stat* Helmet::Handle(Stat* const stat) const
 {
 	stat->defense += 20;
 	stat->attack += 2;
@@ -16,7 +16,7 @@ Stat* Helmet::Handle(Stat* stat) const
 
 void Helmet::Use()
 {
-	auto* output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
+	auto* const output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
 	output->PrintNothingHappened(this);
 	delete output;
 }

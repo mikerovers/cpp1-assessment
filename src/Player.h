@@ -12,32 +12,33 @@ public:
 	~Player();
 
 	void SetStat(Stat* const newStat);
-	void SetCurrentRoom(class BaseRoom* room);
+	void SetCurrentRoom(class BaseRoom* const room);
 
-	class BaseRoom* GetCurrentRoom();
+	class BaseRoom* const GetCurrentRoom();
 
-	void MoveTo(MonsterHolder* monsterHolder, class BaseRoom* room);
-	int GetHealth() const;
-	int SetHealth(const int amount);
-	int SetHealthConst(const int amount);
+	void MoveTo(MonsterHolder* monsterHolder, class BaseRoom* const room);
+	int const GetHealth() const;
+	int const SetHealth(const int amount);
+	int const SetHealthConst(const int amount);
 
-	Inventory* GetInventory() const;
-	Item* PickUpitem();
+	Inventory* const GetInventory() const;
+	Item* const PickUpitem();
 
 	friend std::ostream& operator<<(std::ostream& os, const Player& pl);
-	int GetBaseAttack() const;
-	int GetBaseDefence() const;
-	bool GetDefence() const;
+	int const GetBaseAttack() const;
+	int const GetBaseDefence() const;
+	bool const GetDefence() const;
 
 	void SetExperience(int const experience);
 	void SetLevel(int const level);
 	void SetSkillpoints(int const skillpoints);
-	int GetLevel() const;
-	int GetExperience() const;
-	int GetSkillpoints() const;
+	int const GetLevel() const;
+	int const GetExperience() const;
+	int const GetSkillpoints() const;
+
 
 	void AddExperience(int const exp);
-	int IncreaseAttackStat();
+	int const IncreaseAttackStat();
 
 	void CheatBaseStats();
 private:

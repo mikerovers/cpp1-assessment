@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-MonsterHolder::MonsterHolder(int monsterCount)
+MonsterHolder::MonsterHolder(int const monsterCount)
 {
 	_size = monsterCount;
 	Init();
@@ -24,23 +24,23 @@ void MonsterHolder::Init()
 	_monsters = new (_NORMAL_BLOCK, __FILE__, __LINE__) Monster*[14];
 }
 
-void MonsterHolder::AddMonster(Monster * monster, int index)
+void MonsterHolder::AddMonster(Monster * const monster, int const index)
 {
 	_monsters[index] = monster;
 }
 
-Monster ** MonsterHolder::GetMonsters()
+Monster *const * const MonsterHolder::GetMonsters()
 {
 	return _monsters;
 }
 
-Monster * MonsterHolder::GetRandomMonsterByLevelRange(int min, int max)
+Monster * const MonsterHolder::GetRandomMonsterByLevelRange(int const min, int const max)
 {
 	Monster* monsters[14];
 
 	int counter = 0;
 	for (int i = 1; i < _size; i++) {
-		Monster* monster = _monsters[i];
+		Monster* const monster = _monsters[i];
 		int monsterLevel = GetMonsters()[i]->getLevel();
 		if (monsterLevel >= min && monsterLevel <= max) {
 			monsters[counter] = _monsters[i];
@@ -48,7 +48,7 @@ Monster * MonsterHolder::GetRandomMonsterByLevelRange(int min, int max)
 		}
 	}
 
-	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
+	RandomGenerator* const random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
 	int chosenIndex = random->Generate(0, counter - 1);
 	Monster* monster = monsters[chosenIndex];
 
@@ -57,9 +57,9 @@ Monster * MonsterHolder::GetRandomMonsterByLevelRange(int min, int max)
 	return monster;
 }
 
-Monster * MonsterHolder::GetRandomBoss()
+Monster * const MonsterHolder::GetRandomBoss()
 {
-	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
+	RandomGenerator* const random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
 	int chosenIndex = random->Generate(12, 13);
 	delete random;
 	return _monsters[chosenIndex];

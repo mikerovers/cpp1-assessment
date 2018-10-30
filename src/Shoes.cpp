@@ -7,7 +7,7 @@ Shoes::Shoes() : Item(const_cast<char*>("Shoes"))
 {
 }
 
-Stat* Shoes::Handle(Stat* stat) const
+Stat* Shoes::Handle(Stat* const stat) const
 {
 	stat->defense += 15;
 	stat->attack += 15;
@@ -17,7 +17,7 @@ Stat* Shoes::Handle(Stat* stat) const
 
 void Shoes::Use()
 {
-	auto* output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
+	auto* const output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
 	output->PrintNothingHappened(this);
 	delete output;
 }

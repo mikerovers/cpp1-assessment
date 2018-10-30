@@ -13,7 +13,7 @@ void UseItemCommand::Execute(Game* game)
 
 	int input = -1;
 	while (input == -1 || input > 5)
-	{
+	{	
 		input = _input->GetIntInput();
 	}
 

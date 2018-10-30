@@ -6,7 +6,7 @@ Shield::Shield(): Item(const_cast<char*>("Ugly shield"))
 {
 }
 
-Stat* Shield::Handle(Stat* stat) const
+Stat* Shield::Handle(Stat* const stat) const
 {
 	stat->defense += 50;
 	stat->attack += 3;
@@ -16,7 +16,7 @@ Stat* Shield::Handle(Stat* stat) const
 
 void Shield::Use()
 {
-	auto* output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
+	auto* const output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
 	output->PrintNothingHappened(this);
 	delete output;
 }

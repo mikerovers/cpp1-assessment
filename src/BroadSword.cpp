@@ -7,7 +7,7 @@ BroadSword::BroadSword(): Item(const_cast<char*>("Broadsword"))
 
 }
 
-Stat* BroadSword::Handle(Stat* stat) const
+Stat* BroadSword::Handle(Stat* const stat) const
 {
 	stat->defense += 1;
 	stat->attack += 15;
@@ -17,7 +17,7 @@ Stat* BroadSword::Handle(Stat* stat) const
 
 void BroadSword::Use()
 {
-	auto* output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
+	auto* const output = new (_NORMAL_BLOCK, __FILE__, __LINE__) Output();
 	output->PrintNothingHappened(this);
 	delete output;
 }

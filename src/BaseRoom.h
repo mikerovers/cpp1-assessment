@@ -36,43 +36,43 @@ public:
 	virtual ~BaseRoom();
 	BaseRoom&operator=(const BaseRoom& other);
 
-	Monster* GetMonster();
+	Monster* GetMonster() const;
 
-	Item* GetItem();
+	Item* GetItem() const;
 	void RemoveItem();
 	void SetItem();
 
 
-	void SetUpStairsRoom(BaseRoom * room);
-	BaseRoom * GetUpStairsRoom();
-	void SetDownStairsRoom(BaseRoom * room);
-	BaseRoom * GetDownStairsRoom();
+	void SetUpStairsRoom(BaseRoom * const room);
+	BaseRoom * GetUpStairsRoom() const;
+	void SetDownStairsRoom(BaseRoom *const  room);
+	BaseRoom * GetDownStairsRoom() const;
 
-	void SetMonsterLevels(int min, int max);
+	void SetMonsterLevels(int const min, int const max);
 
 	void SetRandomContent();
-	char GetDisplayValue();
-	char GetValue();
-	Player* GetPlayer();
+	char GetDisplayValue() const;
+	char GetValue() const;
+	Player* const GetPlayer() const;
 
-	char* GetDescription();
+	char* const GetDescription() const;
 
-	void PlayerEnters(MonsterHolder* monsterHolder, BaseRoom* lastRoom);
+	void PlayerEnters(MonsterHolder* const monsterHolder, BaseRoom* const lastRoom);
 	void PlayerLeaves();
 
 	void SetVisited();
 	void SetPlayer(Player* player);
 
-	BaseRoom* GetNorthNeighbour();
-	void SetNorthNeighbour(BaseRoom* room);
+	BaseRoom* const GetNorthNeighbour() const;
+	void SetNorthNeighbour(BaseRoom* const room);
 
-	BaseRoom* GetEastNeighbour();
-	void SetEastNeighbour(BaseRoom* room);
+	BaseRoom* const GetEastNeighbour() const;
+	void SetEastNeighbour(BaseRoom* const room);
 
-	BaseRoom* GetSouthNeighbour();
-	void SetSouthNeighbour(BaseRoom* room);
+	BaseRoom* const GetSouthNeighbour() const;
+	void SetSouthNeighbour(BaseRoom* const room);
 
-	BaseRoom* GetWestNeighbour();
-	void SetWestNeighbour(BaseRoom* room);
+	BaseRoom* const GetWestNeighbour() const;
+	void SetWestNeighbour(BaseRoom* const room);
 };
 

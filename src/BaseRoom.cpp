@@ -19,7 +19,7 @@ void BaseRoom::SetRandomContent()
 	int layout = random->Generate(0, 2);
 	delete random;
 
-	ContentTranslator* translator = new (_NORMAL_BLOCK, __FILE__, __LINE__) ContentTranslator();
+	ContentTranslator* const translator = new (_NORMAL_BLOCK, __FILE__, __LINE__) ContentTranslator();
 	_description = translator->GetDescription(roomSize, tidyness, layout);
 	delete translator;
 }
@@ -30,7 +30,7 @@ void BaseRoom::setMonster(MonsterHolder* monsterHolder)
 		_monster = monsterHolder->GetRandomBoss();
 	}
 	else {
-		RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
+		RandomGenerator* const random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
 		int chance = random->Generate(1, 100);
 		if (chance >= 50) {
 			_monster = monsterHolder->GetRandomMonsterByLevelRange(_minMonsterLevel, _maxMonsterLevel);
@@ -44,7 +44,7 @@ void BaseRoom::setMonster(MonsterHolder* monsterHolder)
 
 void BaseRoom::setItem()
 {
-	RandomGenerator* random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
+	RandomGenerator* const random = new (_NORMAL_BLOCK, __FILE__, __LINE__) RandomGenerator();
 	int chance = random->Generate(1, 100);
 	if (chance < 20) {
 		_item = new (_NORMAL_BLOCK, __FILE__, __LINE__) Potion();
@@ -67,22 +67,22 @@ void BaseRoom::setItem()
 	delete random;
 }
 
-void BaseRoom::SetUpStairsRoom(BaseRoom* room)
+void BaseRoom::SetUpStairsRoom(BaseRoom* const room)
 {
 	_upStairsRoom = room;
 }
 
-BaseRoom * BaseRoom::GetUpStairsRoom()
+BaseRoom * BaseRoom::GetUpStairsRoom() const
 {
 	return _upStairsRoom;
 }
 
-void BaseRoom::SetDownStairsRoom(BaseRoom* room)
+void BaseRoom::SetDownStairsRoom(BaseRoom* const room)
 {
 	_downStairsRoom = room;
 }
 
-BaseRoom * BaseRoom::GetDownStairsRoom()
+BaseRoom * BaseRoom::GetDownStairsRoom() const
 {
 	return _downStairsRoom;
 }
@@ -119,21 +119,21 @@ BaseRoom & BaseRoom::operator=(const BaseRoom & other)
 	return *this;
 }
 
-Monster * BaseRoom::GetMonster()
+Monster * BaseRoom::GetMonster() const
 {
 	return _monster;
 }
 
-Item * BaseRoom::GetItem()
+Item * BaseRoom::GetItem() const
 {
 	return _item;
 }
 
-void BaseRoom::RemoveItem() {
+void BaseRoom::RemoveItem()  {
 	_item = nullptr;
 }
 
-void BaseRoom::SetMonsterLevels(int min, int max)
+void BaseRoom::SetMonsterLevels(int const min, int const max)
 {
 	_minMonsterLevel = min;
 	_maxMonsterLevel = max;
@@ -176,7 +176,7 @@ void BaseRoom::PlayerLeaves() {
 	_monster = nullptr;
 }
 
-char BaseRoom::GetDisplayValue()
+char BaseRoom::GetDisplayValue() const
 {
 
 	if (_player != nullptr) {
@@ -188,7 +188,7 @@ char BaseRoom::GetDisplayValue()
 	return _displayValue;
 }
 
-char BaseRoom::GetValue() {
+char BaseRoom::GetValue() const {
 	return _displayValue;
 }
 
@@ -201,52 +201,52 @@ void BaseRoom::SetPlayer(Player* player) {
 	_player = player;
 }
 
-Player* BaseRoom::GetPlayer()
+Player* const BaseRoom::GetPlayer() const
 {
 	return _player;
 }
 
-char * BaseRoom::GetDescription()
+char * const BaseRoom::GetDescription() const
 {
 	return _description;
 }
 
-BaseRoom * BaseRoom::GetNorthNeighbour()
+BaseRoom * const BaseRoom::GetNorthNeighbour() const
 {
 	return _northNeighBour;
 }
 
-void BaseRoom::SetNorthNeighbour(BaseRoom * room)
+void BaseRoom::SetNorthNeighbour(BaseRoom * const room)
 {
 	_northNeighBour = room;
 }
 
-BaseRoom * BaseRoom::GetEastNeighbour()
+BaseRoom * const BaseRoom::GetEastNeighbour() const
 {
 	return _eastNeighBour;
 }
 
-void BaseRoom::SetEastNeighbour(BaseRoom * room)
+void BaseRoom::SetEastNeighbour(BaseRoom * const room)
 {
 	_eastNeighBour = room;
 }
 
-BaseRoom * BaseRoom::GetSouthNeighbour()
+BaseRoom * const BaseRoom::GetSouthNeighbour() const
 {
 	return _southNeighBour;
 }
 
-void BaseRoom::SetSouthNeighbour(BaseRoom * room)
+void BaseRoom::SetSouthNeighbour(BaseRoom * const room)
 {
 	_southNeighBour = room;
 }
 
-BaseRoom * BaseRoom::GetWestNeighbour()
+BaseRoom * const BaseRoom::GetWestNeighbour() const
 {
 	return _westNeighBour;
 }
 
-void BaseRoom::SetWestNeighbour(BaseRoom * room)
+void BaseRoom::SetWestNeighbour(BaseRoom * const room)
 {
 	_westNeighBour = room;
 }

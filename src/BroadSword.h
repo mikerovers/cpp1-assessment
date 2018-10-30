@@ -7,6 +7,6 @@ class BroadSword : public Item
 public:
 	BroadSword();
 
-	Stat* Handle(Stat* stat) const override;
+	Stat* Handle(Stat* const stat) const override;
 	void Use() override;
 };

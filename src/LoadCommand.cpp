@@ -74,7 +74,7 @@ void LoadCommand::Execute(Game* game)
 
 Item* LoadCommand::GetItem(char* description) const
 {
-	const auto const comparator = new (_NORMAL_BLOCK, __FILE__, __LINE__) CharArrayComparator();
+	auto const comparator = new (_NORMAL_BLOCK, __FILE__, __LINE__) CharArrayComparator();
 	Item * item;
 	if (comparator->Compare("potion", description, 6))
 	{

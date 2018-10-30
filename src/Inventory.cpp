@@ -13,12 +13,12 @@ Inventory::Inventory(int const size) : size(size)
 Inventory::~Inventory()
 {
 	for (auto i = 0; i < size; i++) {
-		auto* item = items[i];
+		auto* const item = items[i];
 		delete item;
 	}
 }
 
-bool Inventory::SetItem(Item *item)
+bool const Inventory::SetItem(Item * const item)
 {
 	for (auto i = 0; i < size; i++) {
 		auto a = items[i];
@@ -39,7 +39,7 @@ bool Inventory::SetItem(Item *item)
 	return false;
 }
 
-bool Inventory::UseItem(const int index)
+bool const Inventory::UseItem(int const index)
 {
 	if (index < size && index > -1)
 	{
@@ -53,12 +53,12 @@ bool Inventory::UseItem(const int index)
 	return false;
 }
 
-Item *Inventory::GetItem(const int index) const
+Item * const const Inventory::GetItem(int const index) const
 {
 	return items[index];
 }
 
-Stat* Inventory::GetStat() const
+Stat* const Inventory::GetStat() const
 {
 	return items[0]->Handle(new (_NORMAL_BLOCK, __FILE__, __LINE__) Stat);
 }

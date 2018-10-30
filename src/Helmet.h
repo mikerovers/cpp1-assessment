@@ -5,7 +5,7 @@ class Helmet :
 {
 public:
 	Helmet();
-	Stat* Handle(Stat* stat) const override;
+	Stat* Handle(Stat* const stat) const override;
 	void Use() override;
 };
 

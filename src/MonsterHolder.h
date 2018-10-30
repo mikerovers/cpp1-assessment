@@ -7,14 +7,14 @@ private:
 	Monster** _monsters;
 	int _size;
 public:
-	MonsterHolder(int monsterCount);
+	MonsterHolder(int const monsterCount);
 	~MonsterHolder();
 
 	void Init();
-	void AddMonster(Monster* monster, int index);
+	void AddMonster(Monster*const  monster, int const index);
 
-	Monster** GetMonsters();
-	Monster* GetRandomMonsterByLevelRange(int min, int max);
-	Monster* GetRandomBoss();
+	Monster* const* const GetMonsters();
+	Monster* const GetRandomMonsterByLevelRange(int const min, int const max);
+	Monster* const GetRandomBoss();
 };
 
