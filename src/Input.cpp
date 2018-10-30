@@ -15,7 +15,7 @@ Input::~Input()
 
 int Input::GetIntInput() const
 {
-	char line[50];
+	char line[256];
 	std::cin >> line;
 	int number;
 	std::istringstream iss(line);
@@ -29,7 +29,7 @@ int Input::GetIntInput() const
 
 char* Input::GetInput() const
 {
-	char line[50];
+	char line[256]; 
 	std::cin >> line;
 	return line;
 }

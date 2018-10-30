@@ -29,8 +29,8 @@ void FlightCommand::Execute(Game* game)
 	while (!command)
 	{
 		command = input->GetInput();
-		char array[10];
-		strcpy_s(array, 10, command);
+		char array[256];
+		strcpy_s(array, 256, command);
 
 		if (comparator->Compare("north", array, 5) && player->GetCurrentRoom()->GetNorthNeighbour()) {
 			roomToGo = player->GetCurrentRoom()->GetNorthNeighbour();

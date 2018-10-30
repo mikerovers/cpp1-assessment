@@ -256,7 +256,7 @@ void Output::ShowAttackStatImproved(int attack)
 
 void Output::ShowGameWon(const Game* game) const
 {
-	printf("You have won the game.");
+	printf("You have won the game. Congratulations!\n\n");
 	PrintPlayerInfo(game);
 }
 
