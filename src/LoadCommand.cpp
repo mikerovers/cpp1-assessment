@@ -3,7 +3,6 @@
 #include <fstream>
 #include "FileNotOpenedException.h"
 #include "Potion.h"
-#include <string>
 #include "CharArrayComparator.h"
 #include "NullCommand.h"
 #include "NullItem.h"

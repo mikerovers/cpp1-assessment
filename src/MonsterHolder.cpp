@@ -39,7 +39,7 @@ Monster * const MonsterHolder::GetRandomMonsterByLevelRange(int const min, int c
 	Monster* monsters[14];
 
 	int counter = 0;
-	for (int i = 1; i < _size; i++) {
+	for (int i = 0; i < _size; i++) {
 		Monster* const monster = _monsters[i];
 		int monsterLevel = GetMonsters()[i]->getLevel();
 		if (monsterLevel >= min && monsterLevel <= max) {
